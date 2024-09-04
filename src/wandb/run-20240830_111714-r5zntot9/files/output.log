@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 333, in <module>
-    main()
-  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 322, in main
-    raise RuntimeError(
-RuntimeError: The folder is not empty, please check to avoid overwriting!
- /media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_image_GIT_ViT_infonce_token
