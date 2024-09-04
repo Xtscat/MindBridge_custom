@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 247, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 236, in main
+    raise RuntimeError(
+RuntimeError: The folder is not empty, please check to avoid overwriting!
+ /media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_image_vitb32_multilayer

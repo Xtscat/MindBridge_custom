@@ -1,0 +1,3808 @@
+
+MindBrige_image_sketch_vitb32_infonce_234_8_11 starting with epoch 0 / 200
+  0%|                                                                                                                                                 | 0/200 [00:00<?, ?it/s]
+>>> Epoch0 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 609.1135768345424
+train/lr: 0.00025453683251453466
+train/num_steps: 35
+train/cosine_sim_image_2: 0.06428889176708513
+train/cosine_sim_image_3: 0.05256594457563811
+train/cosine_sim_image_4: 0.0471501297267553
+train/cosine_sim_image_8: 0.05844547192433051
+train/cosine_sim_image_11: 0.2775817571340927
+train/loss_mse_image_2: 0.5270694915737425
+train/loss_mse_image_3: 0.5227839559316635
+train/loss_mse_image_4: 0.5214655816555023
+train/loss_mse_image_8: 0.5632776183741434
+train/loss_mse_image_11: 0.770222852059773
+train/loss_mae_image_2: 0.5417043021747044
+train/loss_mae_image_3: 0.5391258129051754
+train/loss_mae_image_4: 0.5386740744113923
+train/loss_mae_image_8: 0.5632776183741434
+train/loss_mae_image_11: 0.644678316797529
+train/loss_nce_image_2: 6.869258185795375
+train/loss_nce_image_3: 6.868732016427177
+train/loss_nce_image_4: 6.869155529567173
+train/loss_nce_image_8: 6.871044567653111
+train/loss_nce_image_11: 6.872255938393729
+train/loss_rec: 1.062140781538827
+train/loss_cyc: 0.6949903317860194
+Evaluating...
+>>> Epoch0 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 179.30916341145834
+val/val_num_steps: 6
+val/val_cosine_sim_image_2: 0.2101052850484848
+val/val_cosine_sim_image_3: 0.18148337304592133
+val/val_cosine_sim_image_4: 0.1577700898051262
+val/val_cosine_sim_image_8: 0.18222205092509589
+val/val_cosine_sim_image_11: 0.6716842154661814
+val/val_loss_mse_image_2: 0.05036484822630882
+val/val_loss_mse_image_3: 0.046996608997384705
+val/val_loss_mse_image_4: 0.04760137697060903
+val/val_loss_mse_image_8: 0.08524444947640102
+val/val_loss_mse_image_11: 0.2088912377754847
+val/val_loss_mae_image_2: 0.17197826504707336
+val/val_loss_mae_image_3: 0.16580604761838913
+val/val_loss_mae_image_4: 0.16710724184910455
+val/val_loss_mae_image_8: 0.22654236604770026
+val/val_loss_mae_image_11: 0.34928447008132935
+val/val_loss_nce_image_2: 5.308824300765991
+val/val_loss_nce_image_3: 5.306334177652995
+val/val_loss_nce_image_4: 5.306746959686279
+val/val_loss_nce_image_8: 5.318096399307251
+val/val_loss_nce_image_11: 5.3166929086049395
+val/val_loss_rec: 0.7373268604278564
+
+  0%|▌                                                                                                      | 1/200 [00:23<1:18:42, 23.73s/it, epoch=0, lr=0.000255, loss=609]
+>>> Epoch1 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 217.5580047607422
+train/lr: 0.0005
+train/num_steps: 70
+train/cosine_sim_image_2: 0.17505872334752764
+train/cosine_sim_image_3: 0.15355182396514075
+train/cosine_sim_image_4: 0.13020162667546953
+train/cosine_sim_image_8: 0.1583084836602211
+train/cosine_sim_image_11: 0.6569016473633903
+train/loss_mse_image_2: 0.07542345662202155
+train/loss_mse_image_3: 0.07199479309575899
+train/loss_mse_image_4: 0.07261777913996152
+train/loss_mse_image_8: 0.2594527453184128
+train/loss_mse_image_11: 0.22782751066344126
+train/loss_mae_image_2: 0.21526219078472683
+train/loss_mae_image_3: 0.21058618256023953
+train/loss_mae_image_4: 0.21155512971537455
+train/loss_mae_image_8: 0.2594527453184128
+train/loss_mae_image_11: 0.3686331425394331
+train/loss_nce_image_2: 6.871890340532575
+train/loss_nce_image_3: 6.870743274688721
+train/loss_nce_image_4: 6.870967197418213
+train/loss_nce_image_8: 6.8792031969342915
+train/loss_nce_image_11: 6.877081980024065
+train/loss_rec: 0.7635411552020481
+train/loss_cyc: 0.1483537659049034
+Evaluating...
+
+  1%|█                                                                                                        | 2/200 [00:54<1:31:17, 27.67s/it, epoch=1, lr=0.0005, loss=218]
+>>> Epoch1 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 132.35454813639322
+val/val_num_steps: 12
+val/val_cosine_sim_image_2: 0.45411576330661774
+val/val_cosine_sim_image_3: 0.43168777227401733
+val/val_cosine_sim_image_4: 0.38256501654783887
+val/val_cosine_sim_image_8: 0.36252717673778534
+val/val_cosine_sim_image_11: 0.739891916513443
+val/val_loss_mse_image_2: 0.018786226709683735
+val/val_loss_mse_image_3: 0.01542898795257012
+val/val_loss_mse_image_4: 0.016129887973268826
+val/val_loss_mse_image_8: 0.05262879220147928
+val/val_loss_mse_image_11: 0.16831705222527185
+val/val_loss_mae_image_2: 0.10164343317349751
+val/val_loss_mae_image_3: 0.09303531671563785
+val/val_loss_mae_image_4: 0.09582353383302689
+val/val_loss_mae_image_8: 0.17591839780410132
+val/val_loss_mae_image_11: 0.31199806928634644
+val/val_loss_nce_image_2: 5.3262248039245605
+val/val_loss_nce_image_3: 5.322776158650716
+val/val_loss_nce_image_4: 5.3229695955912275
+val/val_loss_nce_image_8: 5.358623504638672
+val/val_loss_nce_image_11: 5.3152947425842285
+val/val_loss_rec: 0.7207296590010325
+val/val_loss_cyc: 0.016962050460278988
+>>> Epoch2 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 183.64127371651784
+train/lr: 0.0004999685948546319
+train/num_steps: 105
+train/cosine_sim_image_2: 0.2229368541921888
+train/cosine_sim_image_3: 0.19660509995051792
+train/cosine_sim_image_4: 0.1680684838976179
+train/cosine_sim_image_8: 0.1991158366203308
+train/cosine_sim_image_11: 0.692948922089168
+train/loss_mse_image_2: 0.04743924470884459
+train/loss_mse_image_3: 0.044067864226443425
+train/loss_mse_image_4: 0.04471785564507757
+train/loss_mse_image_8: 0.22327879326684133
+train/loss_mse_image_11: 0.1977718664067132
+train/loss_mae_image_2: 0.1710856407880783
+train/loss_mae_image_3: 0.16553372314998083
+train/loss_mae_image_4: 0.16681799292564392
+train/loss_mae_image_8: 0.22327879326684133
+train/loss_mae_image_11: 0.342096118416105
+train/loss_nce_image_2: 6.87374290738787
+train/loss_nce_image_3: 6.8717703546796525
+train/loss_nce_image_4: 6.872236742292132
+train/loss_nce_image_8: 6.8854333060128345
+train/loss_nce_image_11: 6.877874660491943
+train/loss_rec: 0.7485759547778539
+train/loss_cyc: 0.10263826123305729
+
+  2%|█▌                                                                                                       | 3/200 [01:20<1:28:23, 26.92s/it, epoch=2, lr=0.0005, loss=184]
+>>> Epoch2 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch2 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch2 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch2 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch2 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch2 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 130.2574717203776
+val/val_num_steps: 18
+val/val_cosine_sim_image_2: 0.4846193740765254
+val/val_cosine_sim_image_3: 0.4653010269006093
+val/val_cosine_sim_image_4: 0.4198576708634694
+val/val_cosine_sim_image_8: 0.3799454818169276
+val/val_cosine_sim_image_11: 0.7422441442807516
+val/val_loss_mse_image_2: 0.017684662404159706
+val/val_loss_mse_image_3: 0.014355956266323725
+val/val_loss_mse_image_4: 0.014984773471951485
+val/val_loss_mse_image_8: 0.051493472730120025
+val/val_loss_mse_image_11: 0.16703048100074133
+val/val_loss_mae_image_2: 0.0978586512307326
+val/val_loss_mae_image_3: 0.08908934891223907
+val/val_loss_mae_image_4: 0.09178437789281209
+val/val_loss_mae_image_8: 0.1737213432788849
+val/val_loss_mae_image_11: 0.31063886483510333
+val/val_loss_nce_image_2: 5.329177379608154
+val/val_loss_nce_image_3: 5.324169635772705
+val/val_loss_nce_image_4: 5.32418966293335
+val/val_loss_nce_image_8: 5.363254467646281
+val/val_loss_nce_image_11: 5.315414031346639
+val/val_loss_rec: 0.724869042634964
+val/val_loss_cyc: 0.012207885272800922
+>>> Epoch3 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 165.80296892438616
+train/lr: 0.0004998743873246048
+train/num_steps: 140
+train/cosine_sim_image_2: 0.27528253708566935
+train/cosine_sim_image_3: 0.2455248326063156
+train/cosine_sim_image_4: 0.21127657166549138
+train/cosine_sim_image_8: 0.23997603697436196
+train/cosine_sim_image_11: 0.7121531793049404
+train/loss_mse_image_2: 0.03459938812468733
+train/loss_mse_image_3: 0.03123096376657486
+train/loss_mse_image_4: 0.03186998212976115
+train/loss_mse_image_8: 0.20359643570014407
+train/loss_mse_image_11: 0.18493446580001285
+train/loss_mae_image_2: 0.14447840409619467
+train/loss_mae_image_3: 0.1380581361906869
+train/loss_mae_image_4: 0.13962041097027914
+train/loss_mae_image_8: 0.20359643570014407
+train/loss_mae_image_11: 0.32931724871907914
+train/loss_nce_image_2: 6.876252678462437
+train/loss_nce_image_3: 6.874336501530238
+train/loss_nce_image_4: 6.87434640611921
+train/loss_nce_image_8: 6.891817583356585
+train/loss_nce_image_11: 6.878501742226737
+train/loss_rec: 0.7429827332496644
+train/loss_cyc: 0.04968976474234036
+
+  2%|██                                                                                                       | 4/200 [01:45<1:25:59, 26.32s/it, epoch=3, lr=0.0005, loss=166]
+>>> Epoch3 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch3 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch3 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch3 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch3 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch3 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 128.82974751790366
+val/val_num_steps: 24
+val/val_cosine_sim_image_2: 0.5098834832509359
+val/val_cosine_sim_image_3: 0.4957164575656255
+val/val_cosine_sim_image_4: 0.4514705538749695
+val/val_cosine_sim_image_8: 0.3942665209372838
+val/val_cosine_sim_image_11: 0.7438198129336039
+val/val_loss_mse_image_2: 0.016938264792164166
+val/val_loss_mse_image_3: 0.01361138637488087
+val/val_loss_mse_image_4: 0.014253599724421898
+val/val_loss_mse_image_8: 0.050702584286530815
+val/val_loss_mse_image_11: 0.16640306760867438
+val/val_loss_mae_image_2: 0.09514523670077324
+val/val_loss_mae_image_3: 0.08622041220466296
+val/val_loss_mae_image_4: 0.0890783282617728
+val/val_loss_mae_image_8: 0.1721614102522532
+val/val_loss_mae_image_11: 0.3097172925869624
+val/val_loss_nce_image_2: 5.33377202351888
+val/val_loss_nce_image_3: 5.330065886179606
+val/val_loss_nce_image_4: 5.33131758371989
+val/val_loss_nce_image_8: 5.37371031443278
+val/val_loss_nce_image_11: 5.315593878428142
+val/val_loss_rec: 0.7164840499560038
+val/val_loss_cyc: 0.0056436042456577224
+>>> Epoch4 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch4 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 152.7327200753348
+train/lr: 0.0004997174011261605
+train/num_steps: 175
+train/cosine_sim_image_2: 0.33847251789910454
+train/cosine_sim_image_3: 0.3072114603860038
+train/cosine_sim_image_4: 0.26697291093213216
+train/cosine_sim_image_8: 0.2865352613585336
+train/cosine_sim_image_11: 0.7265822121075222
+train/loss_mse_image_2: 0.026025152898260524
+train/loss_mse_image_3: 0.022654801713568824
+train/loss_mse_image_4: 0.02329238381768976
+train/loss_mse_image_8: 0.18923065747533527
+train/loss_mse_image_11: 0.17633926144668033
+train/loss_mae_image_2: 0.12351942381688527
+train/loss_mae_image_3: 0.1161888478057725
+train/loss_mae_image_4: 0.1181073620915413
+train/loss_mae_image_8: 0.18923065747533527
+train/loss_mae_image_11: 0.32045802048274447
+train/loss_nce_image_2: 6.879460511888777
+train/loss_nce_image_3: 6.87653454371861
+train/loss_nce_image_4: 6.877150739942278
+train/loss_nce_image_8: 6.900876780918666
+train/loss_nce_image_11: 6.878919179098947
+train/loss_rec: 0.7361734645707266
+train/loss_cyc: 0.01660703221069915
+Evaluating...
+>>> Epoch4 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch4 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch4 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch4 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch4 | Eval4 | voxel: torch.Size([200, 8192])
+
+  2%|██▋                                                                                                      | 5/200 [02:10<1:23:49, 25.79s/it, epoch=4, lr=0.0005, loss=153]
+val/val_loss: 128.0270563761393
+val/val_num_steps: 30
+val/val_cosine_sim_image_2: 0.5239497125148773
+val/val_cosine_sim_image_3: 0.5131283005078634
+val/val_cosine_sim_image_4: 0.47012748817602795
+val/val_cosine_sim_image_8: 0.4018704642852147
+val/val_cosine_sim_image_11: 0.7446672916412354
+val/val_loss_mse_image_2: 0.01655914510289828
+val/val_loss_mse_image_3: 0.013234183347473541
+val/val_loss_mse_image_4: 0.013877829071134329
+val/val_loss_mse_image_8: 0.05032350619633993
+val/val_loss_mse_image_11: 0.16591133922338486
+val/val_loss_mae_image_2: 0.09366538872321446
+val/val_loss_mae_image_3: 0.08465866992870967
+val/val_loss_mae_image_4: 0.08762686823805173
+val/val_loss_mae_image_8: 0.17140015214681625
+val/val_loss_mae_image_11: 0.30918074150880176
+val/val_loss_nce_image_2: 5.331624984741211
+val/val_loss_nce_image_3: 5.3278880914052325
+val/val_loss_nce_image_4: 5.33098292350769
+val/val_loss_nce_image_8: 5.367361227671306
+val/val_loss_nce_image_11: 5.3151326179504395
+val/val_loss_rec: 0.7086247901121775
+val/val_loss_cyc: 0.0016593299418066938
+>>> Epoch5 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch5 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 146.87648097446987
+train/lr: 0.0004994976757797351
+train/num_steps: 210
+train/cosine_sim_image_2: 0.38171527300562175
+train/cosine_sim_image_3: 0.3513820835522243
+train/cosine_sim_image_4: 0.3080293604305812
+train/cosine_sim_image_8: 0.31618969014712744
+train/cosine_sim_image_11: 0.7329496281487601
+train/loss_mse_image_2: 0.02249720325427396
+train/loss_mse_image_3: 0.019125638529658318
+train/loss_mse_image_4: 0.019766296765633993
+train/loss_mse_image_8: 0.18287708674158368
+train/loss_mse_image_11: 0.17279995509556362
+train/loss_mae_image_2: 0.11357652012790953
+train/loss_mae_image_3: 0.10570891286645617
+train/loss_mae_image_4: 0.10788344038384301
+train/loss_mae_image_8: 0.18287708674158368
+train/loss_mae_image_11: 0.3166488366467612
+train/loss_nce_image_2: 6.881681210654122
+train/loss_nce_image_3: 6.878244958605085
+train/loss_nce_image_4: 6.879639979771206
+train/loss_nce_image_8: 6.906932067871094
+train/loss_nce_image_11: 6.87905239377703
+train/loss_rec: 0.7232638886996678
+train/loss_cyc: 0.008979185777051108
+Evaluating...
+>>> Epoch5 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch5 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch5 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch5 | Eval3 | voxel: torch.Size([200, 8192])
+
+  3%|███                                                                                                    | 6/200 [02:32<1:19:24, 24.56s/it, epoch=5, lr=0.000499, loss=147]
+>>> Epoch5 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 127.7460225423177
+val/val_num_steps: 36
+val/val_cosine_sim_image_2: 0.5283453166484833
+val/val_cosine_sim_image_3: 0.5187744498252869
+val/val_cosine_sim_image_4: 0.47632824381192523
+val/val_cosine_sim_image_8: 0.4046815832455953
+val/val_cosine_sim_image_11: 0.7450262109438578
+val/val_loss_mse_image_2: 0.016448884271085262
+val/val_loss_mse_image_3: 0.01312299802278479
+val/val_loss_mse_image_4: 0.013764134763429562
+val/val_loss_mse_image_8: 0.05019208788871765
+val/val_loss_mse_image_11: 0.165781170129776
+val/val_loss_mae_image_2: 0.09320443620284398
+val/val_loss_mae_image_3: 0.08416129400332768
+val/val_loss_mae_image_4: 0.08716078102588654
+val/val_loss_mae_image_8: 0.17115373412768045
+val/val_loss_mae_image_11: 0.3090035766363144
+val/val_loss_nce_image_2: 5.328598578770955
+val/val_loss_nce_image_3: 5.325010697046916
+val/val_loss_nce_image_4: 5.328318277994792
+val/val_loss_nce_image_8: 5.364789406458537
+val/val_loss_nce_image_11: 5.315359354019165
+val/val_loss_rec: 0.6833738187948862
+val/val_loss_cyc: 0.0012641946280685563
+>>> Epoch6 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch6 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 143.65177743094307
+train/lr: 0.0004992152666000097
+train/num_steps: 245
+train/cosine_sim_image_2: 0.4128936503614698
+train/cosine_sim_image_3: 0.38462779351643156
+train/cosine_sim_image_4: 0.3395680682999747
+train/cosine_sim_image_8: 0.3366379533495222
+train/cosine_sim_image_11: 0.7364311763218471
+train/loss_mse_image_2: 0.020651273535830635
+train/loss_mse_image_3: 0.017280114442110063
+train/loss_mse_image_4: 0.017920856443899017
+train/loss_mse_image_8: 0.17944844620568412
+train/loss_mse_image_11: 0.17094119191169738
+train/loss_mae_image_2: 0.10791137090751103
+train/loss_mae_image_3: 0.09969903890575682
+train/loss_mae_image_4: 0.1020460199032511
+train/loss_mae_image_8: 0.17944844620568412
+train/loss_mae_image_11: 0.314635751077107
+train/loss_nce_image_2: 6.883702305385045
+train/loss_nce_image_3: 6.879652309417724
+train/loss_nce_image_4: 6.881482151576451
+train/loss_nce_image_8: 6.910950919560023
+train/loss_nce_image_11: 6.879164613996234
+train/loss_rec: 0.7111488018717085
+train/loss_cyc: 0.0071747626577104845
+
+  4%|███▌                                                                                                   | 7/200 [02:58<1:19:56, 24.85s/it, epoch=6, lr=0.000499, loss=144]
+>>> Epoch6 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch6 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch6 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch6 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch6 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch6 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 127.61841328938802
+val/val_num_steps: 42
+val/val_cosine_sim_image_2: 0.5304868320624033
+val/val_cosine_sim_image_3: 0.5216990311940511
+val/val_cosine_sim_image_4: 0.47962838411331177
+val/val_cosine_sim_image_8: 0.4061851054430008
+val/val_cosine_sim_image_11: 0.7451969583829244
+val/val_loss_mse_image_2: 0.016396164583663147
+val/val_loss_mse_image_3: 0.013066395030667385
+val/val_loss_mse_image_4: 0.013705753876517216
+val/val_loss_mse_image_8: 0.050116742650667824
+val/val_loss_mse_image_11: 0.1657562106847763
+val/val_loss_mae_image_2: 0.09296428536375363
+val/val_loss_mae_image_3: 0.08391282955805461
+val/val_loss_mae_image_4: 0.08692653104662895
+val/val_loss_mae_image_8: 0.17099345475435257
+val/val_loss_mae_image_11: 0.3089158336321513
+val/val_loss_nce_image_2: 5.327876726786296
+val/val_loss_nce_image_3: 5.3248701095581055
+val/val_loss_nce_image_4: 5.329413255055745
+val/val_loss_nce_image_8: 5.370554526646932
+val/val_loss_nce_image_11: 5.3153440952301025
+val/val_loss_rec: 0.6738759279251099
+val/val_loss_cyc: 0.001059226206659029
+>>> Epoch7 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch7 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 141.54239414760045
+train/lr: 0.0004988702446819846
+train/num_steps: 280
+train/cosine_sim_image_2: 0.4370643138885498
+train/cosine_sim_image_3: 0.41113473432404657
+train/cosine_sim_image_4: 0.36535145470074243
+train/cosine_sim_image_8: 0.3518533979143415
+train/cosine_sim_image_11: 0.7387650915554591
+train/loss_mse_image_2: 0.019494178731526646
+train/loss_mse_image_3: 0.016124221682548522
+train/loss_mse_image_4: 0.016762861662677358
+train/loss_mse_image_8: 0.17722700408526829
+train/loss_mse_image_11: 0.16971234892095838
+train/loss_mae_image_2: 0.1041564622095653
+train/loss_mae_image_3: 0.09570392029626029
+train/loss_mae_image_4: 0.09817803863968168
+train/loss_mae_image_8: 0.17722700408526829
+train/loss_mae_image_11: 0.3133514787469591
+train/loss_nce_image_2: 6.884553909301758
+train/loss_nce_image_3: 6.880704784393311
+train/loss_nce_image_4: 6.882816287449428
+train/loss_nce_image_8: 6.914095919472831
+train/loss_nce_image_11: 6.879166548592703
+train/loss_rec: 0.6959083608218601
+train/loss_cyc: 0.006276784810636725
+
+  4%|████                                                                                                   | 8/200 [03:26<1:22:42, 25.84s/it, epoch=7, lr=0.000499, loss=142]
+>>> Epoch7 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch7 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch7 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch7 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch7 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch7 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 127.52848434448242
+val/val_num_steps: 48
+val/val_cosine_sim_image_2: 0.5316113829612732
+val/val_cosine_sim_image_3: 0.5231049557526907
+val/val_cosine_sim_image_4: 0.48096874356269836
+val/val_cosine_sim_image_8: 0.4068413923184077
+val/val_cosine_sim_image_11: 0.7453789611657461
+val/val_loss_mse_image_2: 0.016369236633181572
+val/val_loss_mse_image_3: 0.01303988058740894
+val/val_loss_mse_image_4: 0.01368250884115696
+val/val_loss_mse_image_8: 0.05008922889828682
+val/val_loss_mse_image_11: 0.16559707125027975
+val/val_loss_mae_image_2: 0.09286106129487355
+val/val_loss_mae_image_3: 0.08380051702260971
+val/val_loss_mae_image_4: 0.08683021863301595
+val/val_loss_mae_image_8: 0.1709269111355146
+val/val_loss_mae_image_11: 0.30882049600283307
+val/val_loss_nce_image_2: 5.32818078994751
+val/val_loss_nce_image_3: 5.3247917493184405
+val/val_loss_nce_image_4: 5.328365882237752
+val/val_loss_nce_image_8: 5.365193446477254
+val/val_loss_nce_image_11: 5.315288305282593
+val/val_loss_rec: 0.664036879936854
+val/val_loss_cyc: 0.000917445324982206
+>>> Epoch8 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch8 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 140.16075788225447
+train/lr: 0.0004984626968830829
+train/num_steps: 315
+train/cosine_sim_image_2: 0.45493379150118146
+train/cosine_sim_image_3: 0.4312151627881186
+train/cosine_sim_image_4: 0.38525442736489435
+train/cosine_sim_image_8: 0.36262883373669214
+train/cosine_sim_image_11: 0.7403205582073756
+train/loss_mse_image_2: 0.01875816700713975
+train/loss_mse_image_3: 0.015389264162097658
+train/loss_mse_image_4: 0.01602898436997618
+train/loss_mse_image_8: 0.17579781711101533
+train/loss_mse_image_11: 0.16887269871575492
+train/loss_mae_image_2: 0.1016673505306244
+train/loss_mae_image_3: 0.09305062017270498
+train/loss_mae_image_4: 0.09562714291470391
+train/loss_mae_image_8: 0.17579781711101533
+train/loss_mae_image_11: 0.3125154648508344
+train/loss_nce_image_2: 6.885400336129325
+train/loss_nce_image_3: 6.8814583642142155
+train/loss_nce_image_4: 6.88386835370745
+train/loss_nce_image_8: 6.915659182412284
+train/loss_nce_image_11: 6.879094178336008
+train/loss_rec: 0.6852362717900957
+train/loss_cyc: 0.005829508256699358
+Evaluating...
+
+  4%|████▋                                                                                                  | 9/200 [03:51<1:21:50, 25.71s/it, epoch=8, lr=0.000498, loss=140]
+>>> Epoch8 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch8 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch8 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch8 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch8 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 127.50585810343425
+val/val_num_steps: 54
+val/val_cosine_sim_image_2: 0.5320880909760793
+val/val_cosine_sim_image_3: 0.52364515264829
+val/val_cosine_sim_image_4: 0.48160837093989056
+val/val_cosine_sim_image_8: 0.40704060594240826
+val/val_cosine_sim_image_11: 0.7455097635587057
+val/val_loss_mse_image_2: 0.016358238955338795
+val/val_loss_mse_image_3: 0.013029729637006918
+val/val_loss_mse_image_4: 0.013671400491148233
+val/val_loss_mse_image_8: 0.05008301263054212
+val/val_loss_mse_image_11: 0.16550916184981665
+val/val_loss_mae_image_2: 0.09280306349198024
+val/val_loss_mae_image_3: 0.0837513046960036
+val/val_loss_mae_image_4: 0.08677798012892406
+val/val_loss_mae_image_8: 0.17090125878651938
+val/val_loss_mae_image_11: 0.3087634891271591
+val/val_loss_nce_image_2: 5.3280792236328125
+val/val_loss_nce_image_3: 5.323782761891683
+val/val_loss_nce_image_4: 5.327269713083903
+val/val_loss_nce_image_8: 5.362240155537923
+val/val_loss_nce_image_11: 5.315144141515096
+val/val_loss_rec: 0.6836588978767395
+val/val_loss_cyc: 0.0008251678664237261
+>>> Epoch9 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch9 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 139.23136291503906
+train/lr: 0.0004979927258012835
+train/num_steps: 350
+train/cosine_sim_image_2: 0.4681192287376949
+train/cosine_sim_image_3: 0.44644602537155154
+train/cosine_sim_image_4: 0.4005995409829276
+train/cosine_sim_image_8: 0.3705245920589992
+train/cosine_sim_image_11: 0.7413566895893642
+train/loss_mse_image_2: 0.01827050814671176
+train/loss_mse_image_3: 0.014900073861437185
+train/loss_mse_image_4: 0.015538614030395236
+train/loss_mse_image_8: 0.17483132566724505
+train/loss_mse_image_11: 0.16828647937093463
+train/loss_mae_image_2: 0.09997668457882745
+train/loss_mae_image_3: 0.09123420204435076
+train/loss_mae_image_4: 0.09387776660067694
+train/loss_mae_image_8: 0.17483132566724505
+train/loss_mae_image_11: 0.31194077389580865
+train/loss_nce_image_2: 6.885965306418282
+train/loss_nce_image_3: 6.881644071851458
+train/loss_nce_image_4: 6.883996622903006
+train/loss_nce_image_8: 6.916783673422677
+train/loss_nce_image_11: 6.87911468233381
+train/loss_rec: 0.6884905610765729
+train/loss_cyc: 0.005993531990264143
+
+  5%|█████                                                                                                 | 10/200 [04:15<1:20:07, 25.30s/it, epoch=9, lr=0.000498, loss=139]
+>>> Epoch9 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch9 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch9 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch9 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch9 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch9 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 127.44691212972005
+val/val_num_steps: 60
+val/val_cosine_sim_image_2: 0.5324985782305399
+val/val_cosine_sim_image_3: 0.5241879721482595
+val/val_cosine_sim_image_4: 0.48233793179194134
+val/val_cosine_sim_image_8: 0.4075942784547806
+val/val_cosine_sim_image_11: 0.7455920974413554
+val/val_loss_mse_image_2: 0.01634778765340646
+val/val_loss_mse_image_3: 0.013019331575681766
+val/val_loss_mse_image_4: 0.01365858813126882
+val/val_loss_mse_image_8: 0.05004976813991865
+val/val_loss_mse_image_11: 0.1653943806886673
+val/val_loss_mae_image_2: 0.09277197470267613
+val/val_loss_mae_image_3: 0.083709171662728
+val/val_loss_mae_image_4: 0.08673431600133578
+val/val_loss_mae_image_8: 0.17085086305936178
+val/val_loss_mae_image_11: 0.30871187647183734
+val/val_loss_nce_image_2: 5.3276166915893555
+val/val_loss_nce_image_3: 5.323548634847005
+val/val_loss_nce_image_4: 5.32847785949707
+val/val_loss_nce_image_8: 5.365664005279541
+val/val_loss_nce_image_11: 5.315119981765747
+val/val_loss_rec: 0.6609596312046051
+val/val_loss_cyc: 0.0007143209901793549
+>>> Epoch10 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch10 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 138.5455038888114
+train/lr: 0.0004974604497492927
+train/num_steps: 385
+train/cosine_sim_image_2: 0.47796838538987296
+train/cosine_sim_image_3: 0.4579403945377895
+train/cosine_sim_image_4: 0.4122897982597351
+train/cosine_sim_image_8: 0.3764683340276991
+train/cosine_sim_image_11: 0.7421860473496573
+train/loss_mse_image_2: 0.017928248909967286
+train/loss_mse_image_3: 0.014560594569359507
+train/loss_mse_image_4: 0.015199171884783676
+train/loss_mse_image_8: 0.17414791413715908
+train/loss_mse_image_11: 0.16779321602412633
+train/loss_mae_image_2: 0.09875871326242175
+train/loss_mae_image_3: 0.08994014092854091
+train/loss_mae_image_4: 0.09264360857861383
+train/loss_mae_image_8: 0.17414791413715908
+train/loss_mae_image_11: 0.3114646230425153
+train/loss_nce_image_2: 6.885661533900669
+train/loss_nce_image_3: 6.881233174460275
+train/loss_nce_image_4: 6.883680479867118
+train/loss_nce_image_8: 6.917216069357735
+train/loss_nce_image_11: 6.879038224901472
+train/loss_rec: 0.6803349341664996
+train/loss_cyc: 0.0065245896444789
+
+  6%|█████▌                                                                                               | 11/200 [04:40<1:18:53, 25.05s/it, epoch=10, lr=0.000497, loss=139]
+>>> Epoch10 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch10 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch10 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch10 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch10 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch10 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 127.43655649820964
+val/val_num_steps: 66
+val/val_cosine_sim_image_2: 0.532426247994105
+val/val_cosine_sim_image_3: 0.5238977173964182
+val/val_cosine_sim_image_4: 0.4818974534670512
+val/val_cosine_sim_image_8: 0.4074469407399495
+val/val_cosine_sim_image_11: 0.7456066906452179
+val/val_loss_mse_image_2: 0.016350606456398964
+val/val_loss_mse_image_3: 0.013025104533880949
+val/val_loss_mse_image_4: 0.01366668101400137
+val/val_loss_mse_image_8: 0.05006369141240915
+val/val_loss_mse_image_11: 0.16539039462804794
+val/val_loss_mae_image_2: 0.09277612219254176
+val/val_loss_mae_image_3: 0.08372417092323303
+val/val_loss_mae_image_4: 0.08675418297449748
+val/val_loss_mae_image_8: 0.17085857937733331
+val/val_loss_mae_image_11: 0.30868759751319885
+val/val_loss_nce_image_2: 5.326485474904378
+val/val_loss_nce_image_3: 5.321773926417033
+val/val_loss_nce_image_4: 5.324029127756755
+val/val_loss_nce_image_8: 5.362301667531331
+val/val_loss_nce_image_11: 5.314716815948486
+val/val_loss_rec: 0.656913568576177
+val/val_loss_cyc: 0.0006221352086868137
+>>> Epoch11 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch11 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 138.0722229003906
+train/lr: 0.0004968660027247604
+train/num_steps: 420
+train/cosine_sim_image_2: 0.4856699066502707
+train/cosine_sim_image_3: 0.4670272350311279
+train/cosine_sim_image_4: 0.4216097840241024
+train/cosine_sim_image_8: 0.3809071362018585
+train/cosine_sim_image_11: 0.7426851681300572
+train/loss_mse_image_2: 0.01767800892038005
+train/loss_mse_image_3: 0.014312344283929893
+train/loss_mse_image_4: 0.014951378665864467
+train/loss_mse_image_8: 0.17364980365548816
+train/loss_mse_image_11: 0.16753734648227692
+train/loss_mae_image_2: 0.09786161077874048
+train/loss_mae_image_3: 0.0889847925731114
+train/loss_mae_image_4: 0.09172856254237038
+train/loss_mae_image_8: 0.17364980365548816
+train/loss_mae_image_11: 0.311217086655753
+train/loss_nce_image_2: 6.884799494062151
+train/loss_nce_image_3: 6.880139487130301
+train/loss_nce_image_4: 6.881904002598354
+train/loss_nce_image_8: 6.916037014552525
+train/loss_nce_image_11: 6.878827381134033
+train/loss_rec: 0.6875565307480949
+train/loss_cyc: 0.007968368314738785
+Evaluating...
+>>> Epoch11 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch11 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch11 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch11 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch11 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch11 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 127.38308207194011
+val/val_num_steps: 72
+val/val_cosine_sim_image_2: 0.532444695631663
+val/val_cosine_sim_image_3: 0.5241509278615316
+val/val_cosine_sim_image_4: 0.4824209312597911
+val/val_cosine_sim_image_8: 0.40774666766325635
+val/val_cosine_sim_image_11: 0.7456828653812408
+val/val_loss_mse_image_2: 0.01634976516167323
+val/val_loss_mse_image_3: 0.013020032706360022
+val/val_loss_mse_image_4: 0.013657035926977793
+val/val_loss_mse_image_8: 0.05004440868894259
+val/val_loss_mse_image_11: 0.1652943715453148
+val/val_loss_mae_image_2: 0.0927621213098367
+val/val_loss_mae_image_3: 0.08370571086804073
+val/val_loss_mae_image_4: 0.08672933280467987
+val/val_loss_mae_image_8: 0.17083316296339035
+val/val_loss_mae_image_11: 0.3086571494738261
+val/val_loss_nce_image_2: 5.323407967885335
+val/val_loss_nce_image_3: 5.318557659784953
+val/val_loss_nce_image_4: 5.320852359135945
+val/val_loss_nce_image_8: 5.357761224110921
+val/val_loss_nce_image_11: 5.314302682876587
+val/val_loss_rec: 0.6423506041367849
+
+  6%|██████                                                                                               | 12/200 [05:02<1:15:53, 24.22s/it, epoch=11, lr=0.000497, loss=138]
+>>> Epoch12 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch12 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 137.66001674107142
+train/lr: 0.0004962095343765459
+train/num_steps: 455
+train/cosine_sim_image_2: 0.4916601325784411
+train/cosine_sim_image_3: 0.4741933754512242
+train/cosine_sim_image_4: 0.42913010801587786
+train/cosine_sim_image_8: 0.38464385441371374
+train/cosine_sim_image_11: 0.7431708012308393
+train/loss_mse_image_2: 0.0174912013645683
+train/loss_mse_image_3: 0.014123345352709293
+train/loss_mse_image_4: 0.014759378560951778
+train/loss_mse_image_8: 0.1732361350740705
+train/loss_mse_image_11: 0.1672259999173028
+train/loss_mae_image_2: 0.09718442282506398
+train/loss_mae_image_3: 0.0882525031055723
+train/loss_mae_image_4: 0.09102072779621397
+train/loss_mae_image_8: 0.1732361350740705
+train/loss_mae_image_11: 0.3109133294650486
+train/loss_nce_image_2: 6.881959969656808
+train/loss_nce_image_3: 6.876371274675642
+train/loss_nce_image_4: 6.8768867492675785
+train/loss_nce_image_8: 6.911194378989084
+train/loss_nce_image_11: 6.878072602408273
+train/loss_rec: 0.6835527232715062
+train/loss_cyc: 0.010032519006303378
+Evaluating...
+>>> Epoch12 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch12 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch12 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch12 | Eval3 | voxel: torch.Size([200, 8192])
+
+  6%|██████▌                                                                                              | 13/200 [05:31<1:19:44, 25.59s/it, epoch=12, lr=0.000496, loss=138]
+>>> Epoch12 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 127.37124379475911
+val/val_num_steps: 78
+val/val_cosine_sim_image_2: 0.5325071116288503
+val/val_cosine_sim_image_3: 0.5242523650328318
+val/val_cosine_sim_image_4: 0.48245762288570404
+val/val_cosine_sim_image_8: 0.4083453267812729
+val/val_cosine_sim_image_11: 0.7457957565784454
+val/val_loss_mse_image_2: 0.01634805214901765
+val/val_loss_mse_image_3: 0.013018026016652584
+val/val_loss_mse_image_4: 0.01365647092461586
+val/val_loss_mse_image_8: 0.050014312689503036
+val/val_loss_mse_image_11: 0.1651997591058413
+val/val_loss_mae_image_2: 0.09277301530043285
+val/val_loss_mae_image_3: 0.08371686438719432
+val/val_loss_mae_image_4: 0.0867371882001559
+val/val_loss_mae_image_8: 0.17079131553570429
+val/val_loss_mae_image_11: 0.3085935314496358
+val/val_loss_nce_image_2: 5.317121982574463
+val/val_loss_nce_image_3: 5.310182412465413
+val/val_loss_nce_image_4: 5.308428049087524
+val/val_loss_nce_image_8: 5.346927881240845
+val/val_loss_nce_image_11: 5.313114325205485
+val/val_loss_rec: 0.6900739471117655
+val/val_loss_cyc: 0.0005414442275650799
+>>> Epoch13 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch13 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 137.48867492675782
+train/lr: 0.0004954912099670453
+train/num_steps: 490
+train/cosine_sim_image_2: 0.4941748338086264
+train/cosine_sim_image_3: 0.4771112671920231
+train/cosine_sim_image_4: 0.4320775491850717
+train/cosine_sim_image_8: 0.38620671800204687
+train/cosine_sim_image_11: 0.7434157013893128
+train/loss_mse_image_2: 0.017422834996666227
+train/loss_mse_image_3: 0.014060115840818201
+train/loss_mse_image_4: 0.014701644357826029
+train/loss_mse_image_8: 0.1730987846851349
+train/loss_mse_image_11: 0.16714571331228528
+train/loss_mae_image_2: 0.09691185653209686
+train/loss_mae_image_3: 0.08797563506024224
+train/loss_mae_image_4: 0.09077919402292796
+train/loss_mae_image_8: 0.1730987846851349
+train/loss_mae_image_11: 0.310832405941827
+train/loss_nce_image_2: 6.875388949257987
+train/loss_nce_image_3: 6.868549714769636
+train/loss_nce_image_4: 6.86674747467041
+train/loss_nce_image_8: 6.900507531847272
+train/loss_nce_image_11: 6.876365770612444
+train/loss_rec: 0.680909834589277
+train/loss_cyc: 0.013050461666924612
+
+  7%|███████                                                                                              | 14/200 [05:59<1:21:58, 26.44s/it, epoch=13, lr=0.000495, loss=137]
+>>> Epoch13 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch13 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch13 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch13 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch13 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch13 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 127.4362907409668
+val/val_num_steps: 84
+val/val_cosine_sim_image_2: 0.5297785003980001
+val/val_cosine_sim_image_3: 0.5201519231001536
+val/val_cosine_sim_image_4: 0.4775497764348984
+val/val_cosine_sim_image_8: 0.4065627654393514
+val/val_cosine_sim_image_11: 0.7457558115323385
+val/val_loss_mse_image_2: 0.016414485561350983
+val/val_loss_mse_image_3: 0.013095141543696323
+val/val_loss_mse_image_4: 0.01374155500282844
+val/val_loss_mse_image_8: 0.050111815333366394
+val/val_loss_mse_image_11: 0.16528813540935516
+val/val_loss_mae_image_2: 0.09298049534360568
+val/val_loss_mae_image_3: 0.08396690090497334
+val/val_loss_mae_image_4: 0.08700654158989589
+val/val_loss_mae_image_8: 0.17095091690619788
+val/val_loss_mae_image_11: 0.3086507072051366
+val/val_loss_nce_image_2: 5.310467958450317
+val/val_loss_nce_image_3: 5.3021243413289385
+val/val_loss_nce_image_4: 5.30085817972819
+val/val_loss_nce_image_8: 5.337063550949097
+val/val_loss_nce_image_11: 5.312664906183879
+val/val_loss_rec: 0.6519410312175751
+val/val_loss_cyc: 0.0005020872680082297
+>>> Epoch14 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch14 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 137.04371207101005
+train/lr: 0.0004947112103305874
+train/num_steps: 525
+train/cosine_sim_image_2: 0.4996552680219923
+train/cosine_sim_image_3: 0.48356381569589885
+train/cosine_sim_image_4: 0.4388733003820692
+train/cosine_sim_image_8: 0.38998316185814996
+train/cosine_sim_image_11: 0.7439117363521031
+train/loss_mse_image_2: 0.017254860858832086
+train/loss_mse_image_3: 0.013894954243940966
+train/loss_mse_image_4: 0.014532948178904397
+train/loss_mse_image_8: 0.17267948985099793
+train/loss_mse_image_11: 0.16682004247392926
+train/loss_mae_image_2: 0.09630906730890273
+train/loss_mae_image_3: 0.08733258800847189
+train/loss_mae_image_4: 0.09015124206032071
+train/loss_mae_image_8: 0.17267948985099793
+train/loss_mae_image_11: 0.3105117474283491
+train/loss_nce_image_2: 6.864571693965367
+train/loss_nce_image_3: 6.8555255889892575
+train/loss_nce_image_4: 6.85046501159668
+train/loss_nce_image_8: 6.8823144912719725
+train/loss_nce_image_11: 6.8736273901803155
+train/loss_rec: 0.6606973273413522
+train/loss_cyc: 0.015559793237064566
+Evaluating...
+>>> Epoch14 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch14 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch14 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch14 | Eval3 | voxel: torch.Size([200, 8192])
+
+  8%|███████▌                                                                                             | 15/200 [06:25<1:20:48, 26.21s/it, epoch=14, lr=0.000495, loss=137]
+>>> Epoch14 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 129.54070027669272
+val/val_num_steps: 90
+val/val_cosine_sim_image_2: 0.5089483757813772
+val/val_cosine_sim_image_3: 0.4954437663157781
+val/val_cosine_sim_image_4: 0.4470719446738561
+val/val_cosine_sim_image_8: 0.38464880486329395
+val/val_cosine_sim_image_11: 0.7431858877340952
+val/val_loss_mse_image_2: 0.01715128030627966
+val/val_loss_mse_image_3: 0.013855863517771164
+val/val_loss_mse_image_4: 0.014678392248849073
+val/val_loss_mse_image_8: 0.05172182743748029
+val/val_loss_mse_image_11: 0.16743405411640802
+val/val_loss_mae_image_2: 0.09457013880213101
+val/val_loss_mae_image_3: 0.08581118161479633
+val/val_loss_mae_image_4: 0.08936393012603124
+val/val_loss_mae_image_8: 0.17374442021052042
+val/val_loss_mae_image_11: 0.3106108208497365
+val/val_loss_nce_image_2: 5.391422112782796
+val/val_loss_nce_image_3: 5.404679298400879
+val/val_loss_nce_image_4: 5.425603310267131
+val/val_loss_nce_image_8: 5.462898174921672
+val/val_loss_nce_image_11: 5.31224783261617
+val/val_loss_rec: 0.6487485567728678
+val/val_loss_cyc: 0.0009142259659711272
+>>> Epoch15 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch15 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 137.0338601248605
+train/lr: 0.0004938697318279091
+train/num_steps: 560
+train/cosine_sim_image_2: 0.4995529864515577
+train/cosine_sim_image_3: 0.48354269691876
+train/cosine_sim_image_4: 0.4391430641923632
+train/cosine_sim_image_8: 0.39065955366407124
+train/cosine_sim_image_11: 0.744019877910614
+train/loss_mse_image_2: 0.017275037350399154
+train/loss_mse_image_3: 0.013916926006121294
+train/loss_mse_image_4: 0.01455442759075335
+train/loss_mse_image_8: 0.17266923061438968
+train/loss_mse_image_11: 0.16685221024921962
+train/loss_mae_image_2: 0.09637447404009955
+train/loss_mae_image_3: 0.08740712489400591
+train/loss_mae_image_4: 0.09022295070546014
+train/loss_mae_image_8: 0.17266923061438968
+train/loss_mae_image_11: 0.3105117048536028
+train/loss_nce_image_2: 6.858544567653111
+train/loss_nce_image_3: 6.849667399270194
+train/loss_nce_image_4: 6.843765585763114
+train/loss_nce_image_8: 6.872392422812325
+train/loss_nce_image_11: 6.871058259691511
+train/loss_rec: 0.6510729244777135
+train/loss_cyc: 0.018346486214016165
+
+  8%|████████                                                                                             | 16/200 [06:50<1:19:20, 25.87s/it, epoch=15, lr=0.000494, loss=137]
+>>> Epoch15 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch15 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch15 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch15 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch15 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch15 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 126.91406885782878
+val/val_num_steps: 96
+val/val_cosine_sim_image_2: 0.5281352897485098
+val/val_cosine_sim_image_3: 0.5171795586744944
+val/val_cosine_sim_image_4: 0.473859782020251
+val/val_cosine_sim_image_8: 0.4068588962157567
+val/val_cosine_sim_image_11: 0.7465636730194092
+val/val_loss_mse_image_2: 0.0164724833642443
+val/val_loss_mse_image_3: 0.013170414138585329
+val/val_loss_mse_image_4: 0.013828427996486425
+val/val_loss_mse_image_8: 0.05010433867573738
+val/val_loss_mse_image_11: 0.1647364025314649
+val/val_loss_mae_image_2: 0.09295971691608429
+val/val_loss_mae_image_3: 0.08397572735945384
+val/val_loss_mae_image_4: 0.08706953997413318
+val/val_loss_mae_image_8: 0.17087730268637338
+val/val_loss_mae_image_11: 0.3082013577222824
+val/val_loss_nce_image_2: 5.234615087509155
+val/val_loss_nce_image_3: 5.212591012318929
+val/val_loss_nce_image_4: 5.192792336146037
+val/val_loss_nce_image_8: 5.213979482650757
+val/val_loss_nce_image_11: 5.2927482922871905
+val/val_loss_rec: 0.6272506316502889
+val/val_loss_cyc: 0.0005204250531581541
+Not best - current_similarity: 1.682 @ epoch 15, best_similarity: 1.685 @ epoch 10
+>>> Epoch16 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch16 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 136.41838684082032
+train/lr: 0.0004929669862967237
+train/num_steps: 595
+train/cosine_sim_image_2: 0.5039326940264021
+train/cosine_sim_image_3: 0.48847911272730143
+train/cosine_sim_image_4: 0.4446078249386379
+train/cosine_sim_image_8: 0.3954422507967268
+train/cosine_sim_image_11: 0.7449909584862845
+train/loss_mse_image_2: 0.01715574748814106
+train/loss_mse_image_3: 0.013804897266839231
+train/loss_mse_image_4: 0.014437367022037507
+train/loss_mse_image_8: 0.17223102109772817
+train/loss_mse_image_11: 0.1663068971463612
+train/loss_mae_image_2: 0.09587156495877674
+train/loss_mae_image_3: 0.08688213271754129
+train/loss_mae_image_4: 0.08971106282302312
+train/loss_mae_image_8: 0.17223102109772817
+train/loss_mae_image_11: 0.3099926812308175
+train/loss_nce_image_2: 6.813258538927351
+train/loss_nce_image_3: 6.797961548396519
+train/loss_nce_image_4: 6.780160290854318
+train/loss_nce_image_8: 6.802699429648263
+train/loss_nce_image_11: 6.857095868246896
+train/loss_rec: 0.6444263543401446
+train/loss_cyc: 0.016589612061423915
+
+  8%|████████▌                                                                                            | 17/200 [07:12<1:15:21, 24.71s/it, epoch=16, lr=0.000493, loss=136]
+>>> Epoch16 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch16 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch16 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch16 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch16 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch16 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 126.37185796101888
+val/val_num_steps: 102
+val/val_cosine_sim_image_2: 0.5362838804721832
+val/val_cosine_sim_image_3: 0.5280488431453705
+val/val_cosine_sim_image_4: 0.48786283036073047
+val/val_cosine_sim_image_8: 0.4174370417992274
+val/val_cosine_sim_image_11: 0.7476645608743032
+val/val_loss_mse_image_2: 0.01625772441426913
+val/val_loss_mse_image_3: 0.012946101992080608
+val/val_loss_mse_image_4: 0.01356125824774305
+val/val_loss_mse_image_8: 0.04953368132313093
+val/val_loss_mse_image_11: 0.16417488952477774
+val/val_loss_mae_image_2: 0.09256808956464131
+val/val_loss_mae_image_3: 0.08351159219940503
+val/val_loss_mae_image_4: 0.0864629012842973
+val/val_loss_mae_image_8: 0.17003543178240457
+val/val_loss_mae_image_11: 0.30762339135011035
+val/val_loss_nce_image_2: 5.223262945810954
+val/val_loss_nce_image_3: 5.2024560769399
+val/val_loss_nce_image_4: 5.17345929145813
+val/val_loss_nce_image_8: 5.19914698600769
+val/val_loss_nce_image_11: 5.285516023635864
+val/val_loss_rec: 0.6198537151018778
+val/val_loss_cyc: 0.0006540250809242328
+>>> Epoch17 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch17 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 135.75807451520646
+train/lr: 0.000492003200998391
+train/num_steps: 630
+train/cosine_sim_image_2: 0.509070634841919
+train/cosine_sim_image_3: 0.494474629844938
+train/cosine_sim_image_4: 0.4515599489212036
+train/cosine_sim_image_8: 0.4012181852545057
+train/cosine_sim_image_11: 0.746004010949816
+train/loss_mse_image_2: 0.017013842559286525
+train/loss_mse_image_3: 0.013667919992336205
+train/loss_mse_image_4: 0.014286534488201141
+train/loss_mse_image_8: 0.17163098667349133
+train/loss_mse_image_11: 0.1657366807971682
+train/loss_mae_image_2: 0.09534898762192046
+train/loss_mae_image_3: 0.08633225836924144
+train/loss_mae_image_4: 0.08914730783019748
+train/loss_mae_image_8: 0.17163098667349133
+train/loss_mae_image_11: 0.3094439847128732
+train/loss_nce_image_2: 6.770083536420549
+train/loss_nce_image_3: 6.748703234536308
+train/loss_nce_image_4: 6.718409006936209
+train/loss_nce_image_8: 6.739184175218854
+train/loss_nce_image_11: 6.843211351122175
+train/loss_rec: 0.6299940705299377
+train/loss_cyc: 0.014370997436344624
+Evaluating...
+>>> Epoch17 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch17 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch17 | Eval2 | voxel: torch.Size([200, 8192])
+
+  9%|█████████                                                                                            | 18/200 [07:35<1:13:33, 24.25s/it, epoch=17, lr=0.000492, loss=136]
+>>> Epoch17 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch17 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 126.3756815592448
+val/val_num_steps: 108
+val/val_cosine_sim_image_2: 0.5277513265609741
+val/val_cosine_sim_image_3: 0.5166023870309194
+val/val_cosine_sim_image_4: 0.4742296387751897
+val/val_cosine_sim_image_8: 0.4085334191719691
+val/val_cosine_sim_image_11: 0.7475411792596182
+val/val_loss_mse_image_2: 0.016489734252293903
+val/val_loss_mse_image_3: 0.013187465102722248
+val/val_loss_mse_image_4: 0.013828125316649675
+val/val_loss_mse_image_8: 0.0499980046103398
+val/val_loss_mse_image_11: 0.16418320685625076
+val/val_loss_mae_image_2: 0.09288612628976504
+val/val_loss_mae_image_3: 0.08389950916171074
+val/val_loss_mae_image_4: 0.08694135894378026
+val/val_loss_mae_image_8: 0.1706072340408961
+val/val_loss_mae_image_11: 0.30768736203511554
+val/val_loss_nce_image_2: 5.170772075653076
+val/val_loss_nce_image_3: 5.140443722407023
+val/val_loss_nce_image_4: 5.101448218027751
+val/val_loss_nce_image_8: 5.109636704126994
+val/val_loss_nce_image_11: 5.26880669593811
+val/val_loss_rec: 0.6131877799828848
+val/val_loss_cyc: 0.0005719864663357536
+>>> Epoch18 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch18 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 135.50045296805246
+train/lr: 0.0004909786185607056
+train/num_steps: 665
+train/cosine_sim_image_2: 0.5098638321672168
+train/cosine_sim_image_3: 0.495243022271565
+train/cosine_sim_image_4: 0.45233951807022094
+train/cosine_sim_image_8: 0.4025924529348101
+train/cosine_sim_image_11: 0.7465201769556318
+train/loss_mse_image_2: 0.017003070137330465
+train/loss_mse_image_3: 0.01366164032369852
+train/loss_mse_image_4: 0.014282878674566745
+train/loss_mse_image_8: 0.17152117533343178
+train/loss_mse_image_11: 0.16544006509440287
+train/loss_mae_image_2: 0.09521462555442538
+train/loss_mae_image_3: 0.08620589141334806
+train/loss_mae_image_4: 0.08904762949262346
+train/loss_mae_image_8: 0.17152117533343178
+train/loss_mae_image_11: 0.3092101318495614
+train/loss_nce_image_2: 6.744789518628802
+train/loss_nce_image_3: 6.718738787514823
+train/loss_nce_image_4: 6.6796746253967285
+train/loss_nce_image_8: 6.6957325117928645
+train/loss_nce_image_11: 6.833471856798444
+train/loss_rec: 0.6291937249047416
+train/loss_cyc: 0.011940019923661437
+Evaluating...
+>>> Epoch18 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch18 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch18 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch18 | Eval3 | voxel: torch.Size([200, 8192])
+
+ 10%|█████████▌                                                                                           | 19/200 [08:05<1:18:11, 25.92s/it, epoch=18, lr=0.000491, loss=136]
+>>> Epoch18 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 126.16003036499023
+val/val_num_steps: 114
+val/val_cosine_sim_image_2: 0.5358690023422241
+val/val_cosine_sim_image_3: 0.527586042881012
+val/val_cosine_sim_image_4: 0.48752406736214954
+val/val_cosine_sim_image_8: 0.4190170218547185
+val/val_cosine_sim_image_11: 0.7482328712940216
+val/val_loss_mse_image_2: 0.01626601784179608
+val/val_loss_mse_image_3: 0.012953922773400942
+val/val_loss_mse_image_4: 0.013565228320658207
+val/val_loss_mse_image_8: 0.04940814711153507
+val/val_loss_mse_image_11: 0.16376120100418726
+val/val_loss_mae_image_2: 0.09258722141385078
+val/val_loss_mae_image_3: 0.08354974165558815
+val/val_loss_mae_image_4: 0.08650368948777516
+val/val_loss_mae_image_8: 0.169869564473629
+val/val_loss_mae_image_11: 0.3072955658038457
+val/val_loss_nce_image_2: 5.202099084854126
+val/val_loss_nce_image_3: 5.178299983342488
+val/val_loss_nce_image_4: 5.141980409622192
+val/val_loss_nce_image_8: 5.168447573979695
+val/val_loss_nce_image_11: 5.272936105728149
+val/val_loss_rec: 0.6196311414241791
+val/val_loss_cyc: 0.0006038450228516012
+>>> Epoch19 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch19 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 135.2189426967076
+train/lr: 0.0004898934969168171
+train/num_steps: 700
+train/cosine_sim_image_2: 0.5129536202975682
+train/cosine_sim_image_3: 0.4990208455494472
+train/cosine_sim_image_4: 0.45662196704319546
+train/cosine_sim_image_8: 0.405996710062027
+train/cosine_sim_image_11: 0.7470864874976022
+train/loss_mse_image_2: 0.016904102052961077
+train/loss_mse_image_3: 0.013562890488122191
+train/loss_mse_image_4: 0.014177946134337358
+train/loss_mse_image_8: 0.17123644522258213
+train/loss_mse_image_11: 0.1651023498603276
+train/loss_mae_image_2: 0.09496698315654482
+train/loss_mae_image_3: 0.08593823036977223
+train/loss_mae_image_4: 0.08876738037381854
+train/loss_mae_image_8: 0.17123644522258213
+train/loss_mae_image_11: 0.30890097532953537
+train/loss_nce_image_2: 6.738850498199463
+train/loss_nce_image_3: 6.711408805847168
+train/loss_nce_image_4: 6.667079162597656
+train/loss_nce_image_8: 6.674949537004744
+train/loss_nce_image_11: 6.828159441266741
+train/loss_rec: 0.62196432692664
+train/loss_cyc: 0.011471136207027095
+Evaluating...
+>>> Epoch19 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch19 | Eval1 | voxel: torch.Size([200, 8192])
+
+ 10%|██████████▏                                                                                           | 20/200 [08:31<1:17:57, 25.99s/it, epoch=19, lr=0.00049, loss=135]
+>>> Epoch19 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch19 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch19 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 125.67118072509766
+val/val_num_steps: 120
+val/val_cosine_sim_image_2: 0.5342654585838318
+val/val_cosine_sim_image_3: 0.5242741107940674
+val/val_cosine_sim_image_4: 0.48337967693805695
+val/val_cosine_sim_image_8: 0.4184884925683339
+val/val_cosine_sim_image_11: 0.7490864594777426
+val/val_loss_mse_image_2: 0.01631780123958985
+val/val_loss_mse_image_3: 0.013028151666124662
+val/val_loss_mse_image_4: 0.013652411910394827
+val/val_loss_mse_image_8: 0.049476289500792824
+val/val_loss_mse_image_11: 0.16334028790394464
+val/val_loss_mae_image_2: 0.0925824058552583
+val/val_loss_mae_image_3: 0.08359498033920924
+val/val_loss_mae_image_4: 0.08659701173504193
+val/val_loss_mae_image_8: 0.1698844457666079
+val/val_loss_mae_image_11: 0.30694053570429486
+val/val_loss_nce_image_2: 5.1303049723307295
+val/val_loss_nce_image_3: 5.089183489481608
+val/val_loss_nce_image_4: 5.0263291994730634
+val/val_loss_nce_image_8: 5.03474775950114
+val/val_loss_nce_image_11: 5.2533126672108965
+val/val_loss_rec: 0.5954182048638662
+val/val_loss_cyc: 0.00045010721078142524
+>>> Epoch20 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch20 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 134.67636653355189
+train/lr: 0.0004887481092402964
+train/num_steps: 735
+train/cosine_sim_image_2: 0.515527309690203
+train/cosine_sim_image_3: 0.5016008419649941
+train/cosine_sim_image_4: 0.45922548600605556
+train/cosine_sim_image_8: 0.40929173742021835
+train/cosine_sim_image_11: 0.7479985594749451
+train/loss_mse_image_2: 0.01683661224586623
+train/loss_mse_image_3: 0.013508155862135546
+train/loss_mse_image_4: 0.014126170187124185
+train/loss_mse_image_8: 0.1709431950535093
+train/loss_mse_image_11: 0.1645519256591797
+train/loss_mae_image_2: 0.09465372349534716
+train/loss_mae_image_3: 0.08563144568886076
+train/loss_mae_image_4: 0.0884842751281602
+train/loss_mae_image_8: 0.1709431950535093
+train/loss_mae_image_11: 0.308431579385485
+train/loss_nce_image_2: 6.69183464050293
+train/loss_nce_image_3: 6.6545866693769185
+train/loss_nce_image_4: 6.591609110151018
+train/loss_nce_image_8: 6.594349956512451
+train/loss_nce_image_11: 6.812051282610212
+train/loss_rec: 0.6131411722728184
+train/loss_cyc: 0.00935998596251011
+Evaluating...
+
+ 10%|██████████▌                                                                                          | 21/200 [08:56<1:16:03, 25.50s/it, epoch=20, lr=0.000489, loss=135]
+>>> Epoch20 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch20 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch20 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch20 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch20 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 125.61488342285156
+val/val_num_steps: 126
+val/val_cosine_sim_image_2: 0.5303479929765066
+val/val_cosine_sim_image_3: 0.5187388857205709
+val/val_cosine_sim_image_4: 0.4770143081744512
+val/val_cosine_sim_image_8: 0.41537119448184967
+val/val_cosine_sim_image_11: 0.7492466966311137
+val/val_loss_mse_image_2: 0.016426407421628635
+val/val_loss_mse_image_3: 0.013147025369107723
+val/val_loss_mse_image_4: 0.01378117377559344
+val/val_loss_mse_image_8: 0.04964221641421318
+val/val_loss_mse_image_11: 0.16326010475556055
+val/val_loss_mae_image_2: 0.09271037578582764
+val/val_loss_mae_image_3: 0.0837622694671154
+val/val_loss_mae_image_4: 0.08679560323556264
+val/val_loss_mae_image_8: 0.1701139435172081
+val/val_loss_mae_image_11: 0.3069206128517787
+val/val_loss_nce_image_2: 5.100188732147217
+val/val_loss_nce_image_3: 5.053486982981364
+val/val_loss_nce_image_4: 4.982998212178548
+val/val_loss_nce_image_8: 4.9844255447387695
+val/val_loss_nce_image_11: 5.241010586420695
+val/val_loss_rec: 0.5963106552759806
+val/val_loss_cyc: 0.0004839202980898942
+>>> Epoch21 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch21 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 134.463455418178
+train/lr: 0.0004875427438763659
+train/num_steps: 770
+train/cosine_sim_image_2: 0.5164790749549866
+train/cosine_sim_image_3: 0.502578957591738
+train/cosine_sim_image_4: 0.46027919735227313
+train/cosine_sim_image_8: 0.41052535602024626
+train/cosine_sim_image_11: 0.7483815090996878
+train/loss_mse_image_2: 0.016815539821982382
+train/loss_mse_image_3: 0.013490436678486211
+train/loss_mse_image_4: 0.014107663610151836
+train/loss_mse_image_8: 0.1708143549306052
+train/loss_mse_image_11: 0.1643270914043699
+train/loss_mae_image_2: 0.09454618373087474
+train/loss_mae_image_3: 0.0855253455894334
+train/loss_mae_image_4: 0.08837429732084275
+train/loss_mae_image_8: 0.1708143549306052
+train/loss_mae_image_11: 0.3082289559500558
+train/loss_nce_image_2: 6.6736314364842
+train/loss_nce_image_3: 6.633869579860142
+train/loss_nce_image_4: 6.565465600149972
+train/loss_nce_image_8: 6.565893636431013
+train/loss_nce_image_11: 6.803504521506174
+train/loss_rec: 0.6026719229561942
+train/loss_cyc: 0.008911851500826223
+
+ 11%|███████████                                                                                          | 22/200 [09:22<1:16:10, 25.68s/it, epoch=21, lr=0.000488, loss=134]
+>>> Epoch21 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch21 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch21 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch21 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch21 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch21 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 125.3408432006836
+val/val_num_steps: 132
+val/val_cosine_sim_image_2: 0.5342544416586558
+val/val_cosine_sim_image_3: 0.52355228861173
+val/val_cosine_sim_image_4: 0.4822668929894765
+val/val_cosine_sim_image_8: 0.418577919403712
+val/val_cosine_sim_image_11: 0.7495676279067993
+val/val_loss_mse_image_2: 0.016322093084454536
+val/val_loss_mse_image_3: 0.013044951173166433
+val/val_loss_mse_image_4: 0.013674865321566662
+val/val_loss_mse_image_8: 0.04946803798278173
+val/val_loss_mse_image_11: 0.16310172528028488
+val/val_loss_mae_image_2: 0.09254646177093188
+val/val_loss_mae_image_3: 0.08358192319671313
+val/val_loss_mae_image_4: 0.08659178391098976
+val/val_loss_mae_image_8: 0.1698095997174581
+val/val_loss_mae_image_11: 0.306700403491656
+val/val_loss_nce_image_2: 5.0823319753011065
+val/val_loss_nce_image_3: 5.031394084294637
+val/val_loss_nce_image_4: 4.954272429148356
+val/val_loss_nce_image_8: 4.964179992675781
+val/val_loss_nce_image_11: 5.23420508702596
+val/val_loss_rec: 0.5899103879928589
+val/val_loss_cyc: 0.0003666497893088187
+>>> Epoch22 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch22 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 134.20020621163505
+train/lr: 0.0004862777042693098
+train/num_steps: 805
+train/cosine_sim_image_2: 0.5173942855426243
+train/cosine_sim_image_3: 0.5031930233751024
+train/cosine_sim_image_4: 0.4609960632664817
+train/cosine_sim_image_8: 0.4125189764159066
+train/cosine_sim_image_11: 0.7488354563713073
+train/loss_mse_image_2: 0.01679398976266384
+train/loss_mse_image_3: 0.013478676043450832
+train/loss_mse_image_4: 0.014095322282186577
+train/loss_mse_image_8: 0.1706215032509395
+train/loss_mse_image_11: 0.1641253445829664
+train/loss_mae_image_2: 0.09447116638932909
+train/loss_mae_image_3: 0.08545864139284406
+train/loss_mae_image_4: 0.08830853636775698
+train/loss_mae_image_8: 0.1706215032509395
+train/loss_mae_image_11: 0.3080344089439937
+train/loss_nce_image_2: 6.641019099099296
+train/loss_nce_image_3: 6.595976652417864
+train/loss_nce_image_4: 6.520485496520996
+train/loss_nce_image_8: 6.525522981371198
+train/loss_nce_image_11: 6.794771126338413
+train/loss_rec: 0.5997609325817653
+train/loss_cyc: 0.008328221325895616
+
+ 12%|███████████▌                                                                                         | 23/200 [09:44<1:12:36, 24.61s/it, epoch=22, lr=0.000486, loss=134]
+>>> Epoch22 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch22 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch22 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch22 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch22 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch22 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 125.0859146118164
+val/val_num_steps: 138
+val/val_cosine_sim_image_2: 0.5361578861872355
+val/val_cosine_sim_image_3: 0.5260634322961172
+val/val_cosine_sim_image_4: 0.48500750958919525
+val/val_cosine_sim_image_8: 0.42265109717845917
+val/val_cosine_sim_image_11: 0.7501733005046844
+val/val_loss_mse_image_2: 0.01627293787896633
+val/val_loss_mse_image_3: 0.012995982387413582
+val/val_loss_mse_image_4: 0.013626179502656063
+val/val_loss_mse_image_8: 0.04924150121708711
+val/val_loss_mse_image_11: 0.1628201405207316
+val/val_loss_mae_image_2: 0.09247822935382526
+val/val_loss_mae_image_3: 0.08350274090965588
+val/val_loss_mae_image_4: 0.0864817425608635
+val/val_loss_mae_image_8: 0.1694726993640264
+val/val_loss_mae_image_11: 0.30640089015165967
+val/val_loss_nce_image_2: 5.067536036173503
+val/val_loss_nce_image_3: 5.0115368366241455
+val/val_loss_nce_image_4: 4.922663927078247
+val/val_loss_nce_image_8: 4.942193826039632
+val/val_loss_nce_image_11: 5.223782221476237
+val/val_loss_rec: 0.5884599685668945
+val/val_loss_cyc: 0.00043910605503090966
+>>> Epoch23 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch23 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 133.833130972726
+train/lr: 0.0004849533088860842
+train/num_steps: 840
+train/cosine_sim_image_2: 0.5193925755364555
+train/cosine_sim_image_3: 0.5049987809998648
+train/cosine_sim_image_4: 0.4630245396069118
+train/cosine_sim_image_8: 0.41546941144125804
+train/cosine_sim_image_11: 0.7493570838655744
+train/loss_mse_image_2: 0.01674195107604776
+train/loss_mse_image_3: 0.013441280355410916
+train/loss_mse_image_4: 0.014055839633303029
+train/loss_mse_image_8: 0.17037425466946193
+train/loss_mse_image_11: 0.16379990535123007
+train/loss_mae_image_2: 0.09430254527500698
+train/loss_mae_image_3: 0.08529946676322392
+train/loss_mae_image_4: 0.0881400493638856
+train/loss_mae_image_8: 0.17037425466946193
+train/loss_mae_image_11: 0.3077139871461051
+train/loss_nce_image_2: 6.599404784611293
+train/loss_nce_image_3: 6.549418694632394
+train/loss_nce_image_4: 6.4645270892551965
+train/loss_nce_image_8: 6.480991731371199
+train/loss_nce_image_11: 6.7861215727669855
+train/loss_rec: 0.5965181606156486
+train/loss_cyc: 0.008008646805371557
+
+ 12%|████████████                                                                                         | 24/200 [10:08<1:12:06, 24.58s/it, epoch=23, lr=0.000485, loss=134]
+>>> Epoch23 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch23 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch23 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch23 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch23 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch23 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 125.23855336507161
+val/val_num_steps: 144
+val/val_cosine_sim_image_2: 0.5294723510742188
+val/val_cosine_sim_image_3: 0.5148987174034119
+val/val_cosine_sim_image_4: 0.46927277247111004
+val/val_cosine_sim_image_8: 0.413895050684611
+val/val_cosine_sim_image_11: 0.7498792409896851
+val/val_loss_mse_image_2: 0.016456311879058678
+val/val_loss_mse_image_3: 0.013230532097319761
+val/val_loss_mse_image_4: 0.013930412785460552
+val/val_loss_mse_image_8: 0.04969875824948152
+val/val_loss_mse_image_11: 0.16289305686950684
+val/val_loss_mae_image_2: 0.09282848238945007
+val/val_loss_mae_image_3: 0.083964088310798
+val/val_loss_mae_image_4: 0.08709162349502246
+val/val_loss_mae_image_8: 0.17008617023626962
+val/val_loss_mae_image_11: 0.3064911663532257
+val/val_loss_nce_image_2: 5.031213045120239
+val/val_loss_nce_image_3: 4.972172101338704
+val/val_loss_nce_image_4: 4.87600040435791
+val/val_loss_nce_image_8: 4.886598507563273
+val/val_loss_nce_image_11: 5.217735211054484
+val/val_loss_rec: 0.5872526367505392
+val/val_loss_cyc: 0.000523994822287932
+>>> Epoch24 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch24 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 133.44500318254742
+train/lr: 0.00048356989113614414
+train/num_steps: 875
+train/cosine_sim_image_2: 0.5206803492137364
+train/cosine_sim_image_3: 0.5058082810470036
+train/cosine_sim_image_4: 0.4642261845724923
+train/cosine_sim_image_8: 0.4185626838888441
+train/cosine_sim_image_11: 0.7499616077968052
+train/loss_mse_image_2: 0.01671311988362244
+train/loss_mse_image_3: 0.013427523709833623
+train/loss_mse_image_4: 0.014036113609160695
+train/loss_mse_image_8: 0.1701037572962897
+train/loss_mse_image_11: 0.16351421517985207
+train/loss_mae_image_2: 0.09421649234635489
+train/loss_mae_image_3: 0.08522553103310722
+train/loss_mae_image_4: 0.08803858693156924
+train/loss_mae_image_8: 0.1701037572962897
+train/loss_mae_image_11: 0.3074461145060403
+train/loss_nce_image_2: 6.546919550214495
+train/loss_nce_image_3: 6.492262962886265
+train/loss_nce_image_4: 6.396640123639788
+train/loss_nce_image_8: 6.419658361162458
+train/loss_nce_image_11: 6.774747698647635
+train/loss_rec: 0.5900514381272453
+train/loss_cyc: 0.00771092800423503
+Evaluating...
+>>> Epoch24 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch24 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch24 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch24 | Eval3 | voxel: torch.Size([200, 8192])
+
+ 12%|████████████▋                                                                                        | 25/200 [10:37<1:15:39, 25.94s/it, epoch=24, lr=0.000484, loss=133]
+>>> Epoch24 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 124.44325764973958
+val/val_num_steps: 150
+val/val_cosine_sim_image_2: 0.5305057068665823
+val/val_cosine_sim_image_3: 0.518190731604894
+val/val_cosine_sim_image_4: 0.47818560898303986
+val/val_cosine_sim_image_8: 0.42611707250277203
+val/val_cosine_sim_image_11: 0.7513059775034586
+val/val_loss_mse_image_2: 0.016419558475414913
+val/val_loss_mse_image_3: 0.013156734251727661
+val/val_loss_mse_image_4: 0.013758729988088211
+val/val_loss_mse_image_8: 0.049069677790006004
+val/val_loss_mse_image_11: 0.16211359947919846
+val/val_loss_mae_image_2: 0.09261485437552135
+val/val_loss_mae_image_3: 0.08368188142776489
+val/val_loss_mae_image_4: 0.08662124847372372
+val/val_loss_mae_image_8: 0.16922296086947122
+val/val_loss_mae_image_11: 0.30585231880346936
+val/val_loss_nce_image_2: 4.947767814000447
+val/val_loss_nce_image_3: 4.884768803914388
+val/val_loss_nce_image_4: 4.77871576944987
+val/val_loss_nce_image_8: 4.803924481074016
+val/val_loss_nce_image_11: 5.203718026479085
+val/val_loss_rec: 0.5726754665374756
+val/val_loss_cyc: 0.0005300309324714666
+>>> Epoch25 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch25 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 133.08527374267578
+train/lr: 0.0004821277992875101
+train/num_steps: 910
+train/cosine_sim_image_2: 0.5210310901914325
+train/cosine_sim_image_3: 0.5055839138371604
+train/cosine_sim_image_4: 0.4640458413532802
+train/cosine_sim_image_8: 0.42083944848605565
+train/cosine_sim_image_11: 0.7506081240517752
+train/loss_mse_image_2: 0.016710548954350608
+train/loss_mse_image_3: 0.013437754501189504
+train/loss_mse_image_4: 0.014045876158135278
+train/loss_mse_image_8: 0.16990464968340738
+train/loss_mse_image_11: 0.1631120034626552
+train/loss_mae_image_2: 0.09414123445749283
+train/loss_mae_image_3: 0.08516745950494493
+train/loss_mae_image_4: 0.08798131346702576
+train/loss_mae_image_8: 0.16990464968340738
+train/loss_mae_image_11: 0.307093323128564
+train/loss_nce_image_2: 6.498627199445452
+train/loss_nce_image_3: 6.440634359632219
+train/loss_nce_image_4: 6.335795852116176
+train/loss_nce_image_8: 6.357922880990165
+train/loss_nce_image_11: 6.762835189274379
+train/loss_rec: 0.5893570372036525
+train/loss_cyc: 0.007362504582852125
+Evaluating...
+
+ 13%|█████████████▏                                                                                       | 26/200 [11:02<1:13:47, 25.44s/it, epoch=25, lr=0.000482, loss=133]
+>>> Epoch25 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch25 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch25 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch25 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch25 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 124.110045115153
+val/val_num_steps: 156
+val/val_cosine_sim_image_2: 0.5332124431927999
+val/val_cosine_sim_image_3: 0.520681748787562
+val/val_cosine_sim_image_4: 0.47989460825920105
+val/val_cosine_sim_image_8: 0.4279691129922867
+val/val_cosine_sim_image_11: 0.7519135673840841
+val/val_loss_mse_image_2: 0.0163542116060853
+val/val_loss_mse_image_3: 0.013111989479511976
+val/val_loss_mse_image_4: 0.01373283239081502
+val/val_loss_mse_image_8: 0.04896609112620354
+val/val_loss_mse_image_11: 0.1618145853281021
+val/val_loss_mae_image_2: 0.09247791270414989
+val/val_loss_mae_image_3: 0.08356959248582523
+val/val_loss_mae_image_4: 0.08653618643681209
+val/val_loss_mae_image_8: 0.16902228444814682
+val/val_loss_mae_image_11: 0.3055213739474614
+val/val_loss_nce_image_2: 4.90519364674886
+val/val_loss_nce_image_3: 4.841851234436035
+val/val_loss_nce_image_4: 4.729830741882324
+val/val_loss_nce_image_8: 4.764437039693196
+val/val_loss_nce_image_11: 5.18830132484436
+val/val_loss_rec: 0.569171299537023
+val/val_loss_cyc: 0.0005546529913165917
+>>> Epoch26 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch26 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 132.64828120640345
+train/lr: 0.0004806273963790931
+train/num_steps: 945
+train/cosine_sim_image_2: 0.5223292674337114
+train/cosine_sim_image_3: 0.506768273455756
+train/cosine_sim_image_4: 0.46579578263419014
+train/cosine_sim_image_8: 0.42426343389919824
+train/cosine_sim_image_11: 0.751520357813154
+train/loss_mse_image_2: 0.016679037202681813
+train/loss_mse_image_3: 0.013415373010294778
+train/loss_mse_image_4: 0.014014474116265774
+train/loss_mse_image_8: 0.16961099888597217
+train/loss_mse_image_11: 0.16258046967642648
+train/loss_mae_image_2: 0.09399103735174452
+train/loss_mae_image_3: 0.08502766894442694
+train/loss_mae_image_4: 0.08782083796603339
+train/loss_mae_image_8: 0.16961099888597217
+train/loss_mae_image_11: 0.3066351200853075
+train/loss_nce_image_2: 6.452664239065988
+train/loss_nce_image_3: 6.392345578329904
+train/loss_nce_image_4: 6.2806611742292136
+train/loss_nce_image_8: 6.295735345567976
+train/loss_nce_image_11: 6.74682536806379
+train/loss_rec: 0.579450523853302
+train/loss_cyc: 0.007147439170096602
+Evaluating...
+>>> Epoch26 | Eval0 | voxel: torch.Size([200, 8192])
+
+ 14%|█████████████▋                                                                                       | 27/200 [11:28<1:13:47, 25.59s/it, epoch=26, lr=0.000481, loss=133]
+>>> Epoch26 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch26 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch26 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch26 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 123.67018636067708
+val/val_num_steps: 162
+val/val_cosine_sim_image_2: 0.5353262623151144
+val/val_cosine_sim_image_3: 0.5224783619244894
+val/val_cosine_sim_image_4: 0.48315157492955524
+val/val_cosine_sim_image_8: 0.43193647762139636
+val/val_cosine_sim_image_11: 0.7528550326824188
+val/val_loss_mse_image_2: 0.01629930144796769
+val/val_loss_mse_image_3: 0.01307162611434857
+val/val_loss_mse_image_4: 0.013665512669831514
+val/val_loss_mse_image_8: 0.04876264867683252
+val/val_loss_mse_image_11: 0.16129211088021597
+val/val_loss_mae_image_2: 0.09236472596724828
+val/val_loss_mae_image_3: 0.08346853032708168
+val/val_loss_mae_image_4: 0.08637642736236255
+val/val_loss_mae_image_8: 0.16873658696810404
+val/val_loss_mae_image_11: 0.30512820680936176
+val/val_loss_nce_image_2: 4.858824332555135
+val/val_loss_nce_image_3: 4.7904525597890215
+val/val_loss_nce_image_4: 4.673593997955322
+val/val_loss_nce_image_8: 4.6997590859731035
+val/val_loss_nce_image_11: 5.175472577412923
+val/val_loss_rec: 0.5551282266775767
+val/val_loss_cyc: 0.0003890503382232661
+>>> Epoch27 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch27 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 132.36604766845704
+train/lr: 0.0004790690601293013
+train/num_steps: 980
+train/cosine_sim_image_2: 0.5232419490814209
+train/cosine_sim_image_3: 0.5075265049934388
+train/cosine_sim_image_4: 0.4668092880930219
+train/cosine_sim_image_8: 0.4263073853084019
+train/cosine_sim_image_11: 0.7520901850291661
+train/loss_mse_image_2: 0.016660085693001748
+train/loss_mse_image_3: 0.013402048658047403
+train/loss_mse_image_4: 0.01399619672447443
+train/loss_mse_image_8: 0.1694122748715537
+train/loss_mse_image_11: 0.16226156566824232
+train/loss_mae_image_2: 0.09389670022896358
+train/loss_mae_image_3: 0.08493053955691202
+train/loss_mae_image_4: 0.0877111377460616
+train/loss_mae_image_8: 0.1694122748715537
+train/loss_mae_image_11: 0.3063725863184248
+train/loss_nce_image_2: 6.42253360748291
+train/loss_nce_image_3: 6.360336017608643
+train/loss_nce_image_4: 6.244233635493687
+train/loss_nce_image_8: 6.258727482386997
+train/loss_nce_image_11: 6.73507364818028
+train/loss_rec: 0.5693125384194511
+train/loss_cyc: 0.006574631362621273
+
+ 14%|██████████████▏                                                                                      | 28/200 [11:52<1:12:26, 25.27s/it, epoch=27, lr=0.000479, loss=132]
+>>> Epoch27 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch27 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch27 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch27 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch27 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch27 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 123.39967219034831
+val/val_num_steps: 168
+val/val_cosine_sim_image_2: 0.5382090012232462
+val/val_cosine_sim_image_3: 0.5264606674512228
+val/val_cosine_sim_image_4: 0.4883092741171519
+val/val_cosine_sim_image_8: 0.43716738124688465
+val/val_cosine_sim_image_11: 0.7534935275713602
+val/val_loss_mse_image_2: 0.01622208921859662
+val/val_loss_mse_image_3: 0.012991207341353098
+val/val_loss_mse_image_4: 0.013569940192004045
+val/val_loss_mse_image_8: 0.04848500962058703
+val/val_loss_mse_image_11: 0.1609602669874827
+val/val_loss_mae_image_2: 0.09221529463926952
+val/val_loss_mae_image_3: 0.08329613879323006
+val/val_loss_mae_image_4: 0.08614649623632431
+val/val_loss_mae_image_8: 0.16832014918327332
+val/val_loss_mae_image_11: 0.3048301537831624
+val/val_loss_nce_image_2: 4.845707257588704
+val/val_loss_nce_image_3: 4.778670231501262
+val/val_loss_nce_image_4: 4.657278140385945
+val/val_loss_nce_image_8: 4.690378983815511
+val/val_loss_nce_image_11: 5.170054833094279
+val/val_loss_rec: 0.5534106095631918
+val/val_loss_cyc: 0.0004940047219861299
+>>> Epoch28 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch28 | Iter33 | voxel: torch.Size([1000, 8192])
+
+ 14%|██████████████▋                                                                                      | 29/200 [12:14<1:09:25, 24.36s/it, epoch=28, lr=0.000477, loss=132]
+train/loss: 132.20909794398716
+train/lr: 0.00047745318284095236
+train/num_steps: 1015
+train/cosine_sim_image_2: 0.5234872392245702
+train/cosine_sim_image_3: 0.5078033668654306
+train/cosine_sim_image_4: 0.46749749609402247
+train/cosine_sim_image_8: 0.42762389183044436
+train/cosine_sim_image_11: 0.7524363006864275
+train/loss_mse_image_2: 0.01665575248854501
+train/loss_mse_image_3: 0.01339811525706734
+train/loss_mse_image_4: 0.01398323228848832
+train/loss_mse_image_8: 0.16928001599652426
+train/loss_mse_image_11: 0.1620452025106975
+train/loss_mae_image_2: 0.09384295450789588
+train/loss_mae_image_3: 0.08487841678517205
+train/loss_mae_image_4: 0.08764439331633704
+train/loss_mae_image_8: 0.16928001599652426
+train/loss_mae_image_11: 0.30617812275886536
+train/loss_nce_image_2: 6.411264147077288
+train/loss_nce_image_3: 6.346077619280134
+train/loss_nce_image_4: 6.225536360059466
+train/loss_nce_image_8: 6.2362695285252165
+train/loss_nce_image_11: 6.727351570129395
+train/loss_rec: 0.568173108782087
+train/loss_cyc: 0.0063751958975834504
+Evaluating...
+>>> Epoch28 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch28 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch28 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch28 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch28 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch28 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 123.56698735555013
+val/val_num_steps: 174
+val/val_cosine_sim_image_2: 0.5287490487098694
+val/val_cosine_sim_image_3: 0.5157897671063741
+val/val_cosine_sim_image_4: 0.4782574077447255
+val/val_cosine_sim_image_8: 0.4310943881670634
+val/val_cosine_sim_image_11: 0.7531389792760214
+val/val_loss_mse_image_2: 0.01646254677325487
+val/val_loss_mse_image_3: 0.013200503618766865
+val/val_loss_mse_image_4: 0.013750712387263775
+val/val_loss_mse_image_8: 0.04880785010755062
+val/val_loss_mse_image_11: 0.1610968386133512
+val/val_loss_mae_image_2: 0.09252932667732239
+val/val_loss_mae_image_3: 0.08362069725990295
+val/val_loss_mae_image_4: 0.08647813896338145
+val/val_loss_mae_image_8: 0.16869277755419412
+val/val_loss_mae_image_11: 0.30495592951774597
+val/val_loss_nce_image_2: 4.830003976821899
+val/val_loss_nce_image_3: 4.763848225275676
+val/val_loss_nce_image_4: 4.6451849937438965
+val/val_loss_nce_image_8: 4.651767651240031
+val/val_loss_nce_image_11: 5.160601298014323
+val/val_loss_rec: 0.5556547343730927
+val/val_loss_cyc: 0.0003910388331860304
+>>> Epoch29 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch29 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 131.8541752406529
+train/lr: 0.000475780171302512
+train/num_steps: 1050
+train/cosine_sim_image_2: 0.5253488949366978
+train/cosine_sim_image_3: 0.5094880512782506
+train/cosine_sim_image_4: 0.4692669221333095
+train/cosine_sim_image_8: 0.4308439152581351
+train/cosine_sim_image_11: 0.7531508326530456
+train/loss_mse_image_2: 0.016602298351270812
+train/loss_mse_image_3: 0.013356641600174564
+train/loss_mse_image_4: 0.013943271924342427
+train/loss_mse_image_8: 0.16901995752538954
+train/loss_mse_image_11: 0.16169994728905815
+train/loss_mae_image_2: 0.09371683107955116
+train/loss_mae_image_3: 0.08475907168218068
+train/loss_mae_image_4: 0.08752313703298568
+train/loss_mae_image_8: 0.16901995752538954
+train/loss_mae_image_11: 0.30587503143719263
+train/loss_nce_image_2: 6.374423571995327
+train/loss_nce_image_3: 6.3044033595493865
+train/loss_nce_image_4: 6.172848497118268
+train/loss_nce_image_8: 6.18526269367763
+train/loss_nce_image_11: 6.7152337619236535
+train/loss_rec: 0.5649632505008153
+train/loss_cyc: 0.005696057488343545
+Evaluating...
+>>> Epoch29 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch29 | Eval1 | voxel: torch.Size([200, 8192])
+
+ 15%|███████████████▏                                                                                     | 30/200 [12:40<1:10:00, 24.71s/it, epoch=29, lr=0.000476, loss=132]
+>>> Epoch29 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch29 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch29 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 123.1646016438802
+val/val_num_steps: 180
+val/val_cosine_sim_image_2: 0.5353133380413055
+val/val_cosine_sim_image_3: 0.5215653479099274
+val/val_cosine_sim_image_4: 0.4833250939846039
+val/val_cosine_sim_image_8: 0.4362131307522456
+val/val_cosine_sim_image_11: 0.7540008624394735
+val/val_loss_mse_image_2: 0.01629832076529662
+val/val_loss_mse_image_3: 0.013088468617449204
+val/val_loss_mse_image_4: 0.01366097309316198
+val/val_loss_mse_image_8: 0.04852899288137754
+val/val_loss_mse_image_11: 0.160703515013059
+val/val_loss_mae_image_2: 0.09234409779310226
+val/val_loss_mae_image_3: 0.08346359183390935
+val/val_loss_mae_image_4: 0.0863061472773552
+val/val_loss_mae_image_8: 0.16829271366198859
+val/val_loss_mae_image_11: 0.30458752314249676
+val/val_loss_nce_image_2: 4.801972071329753
+val/val_loss_nce_image_3: 4.725718021392822
+val/val_loss_nce_image_4: 4.596882184346517
+val/val_loss_nce_image_8: 4.613236427307129
+val/val_loss_nce_image_11: 5.146719217300415
+val/val_loss_rec: 0.5521994332472483
+val/val_loss_cyc: 0.00044030406085463863
+>>> Epoch30 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch30 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 131.64099949428012
+train/lr: 0.0004740504466856883
+train/num_steps: 1085
+train/cosine_sim_image_2: 0.5257792098181588
+train/cosine_sim_image_3: 0.509611371585301
+train/cosine_sim_image_4: 0.469445470401219
+train/cosine_sim_image_8: 0.4325041532516479
+train/cosine_sim_image_11: 0.7535912803241185
+train/loss_mse_image_2: 0.01659170522221497
+train/loss_mse_image_3: 0.013354208905782018
+train/loss_mse_image_4: 0.013939263964337962
+train/loss_mse_image_8: 0.16888156490666525
+train/loss_mse_image_11: 0.16151892755712782
+train/loss_mae_image_2: 0.0936568979706083
+train/loss_mae_image_3: 0.0847114045705114
+train/loss_mae_image_4: 0.08747074263436454
+train/loss_mae_image_8: 0.16888156490666525
+train/loss_mae_image_11: 0.30575250812939236
+train/loss_nce_image_2: 6.349903869628906
+train/loss_nce_image_3: 6.274884428296771
+train/loss_nce_image_4: 6.135684776306152
+train/loss_nce_image_8: 6.142797878810337
+train/loss_nce_image_11: 6.704800810132708
+train/loss_rec: 0.5666129214423044
+train/loss_cyc: 0.005266512305076633
+
+ 15%|███████████████▏                                                                                     | 30/200 [13:09<1:10:00, 24.71s/it, epoch=30, lr=0.000474, loss=132]
+>>> Epoch30 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch30 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch30 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch30 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch30 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch30 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 122.9334004720052
+val/val_num_steps: 186
+val/val_cosine_sim_image_2: 0.5377120872338613
+val/val_cosine_sim_image_3: 0.5246922572453817
+val/val_cosine_sim_image_4: 0.48647549251715344
+val/val_cosine_sim_image_8: 0.439725399017334
+val/val_cosine_sim_image_11: 0.7544967730840048
+val/val_loss_mse_image_2: 0.01623413059860468
+val/val_loss_mse_image_3: 0.013024945898602406
+val/val_loss_mse_image_4: 0.013601236355801424
+val/val_loss_mse_image_8: 0.04834075520435969
+val/val_loss_mse_image_11: 0.16040273010730743
+val/val_loss_mae_image_2: 0.09222780540585518
+val/val_loss_mae_image_3: 0.08333055923382442
+val/val_loss_mae_image_4: 0.08615634590387344
+val/val_loss_mae_image_8: 0.16805087278286615
+val/val_loss_mae_image_11: 0.30436485012372333
+val/val_loss_nce_image_2: 4.789152383804321
+val/val_loss_nce_image_3: 4.711206038792928
+val/val_loss_nce_image_4: 4.573377291361491
+val/val_loss_nce_image_8: 4.595872322718303
+val/val_loss_nce_image_11: 5.141794443130493
+val/val_loss_rec: 0.5481072763601939
+val/val_loss_cyc: 0.00046306011305811506
+saving /media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_image_sketch_vitb32_infonce_234_8_11/last.pth
+
+ 16%|███████████████▋                                                                                     | 31/200 [13:35<1:35:26, 33.88s/it, epoch=30, lr=0.000474, loss=132]
+>>> Epoch31 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch31 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 131.4321302141462
+train/lr: 0.00047226444443940343
+train/num_steps: 1120
+train/cosine_sim_image_2: 0.5261015721729824
+train/cosine_sim_image_3: 0.509643428666251
+train/cosine_sim_image_4: 0.46951334476470946
+train/cosine_sim_image_8: 0.43374894601958136
+train/cosine_sim_image_11: 0.7539705191339765
+train/loss_mse_image_2: 0.01658394666654723
+train/loss_mse_image_3: 0.013353198846536024
+train/loss_mse_image_4: 0.013936506105320795
+train/loss_mse_image_8: 0.16873012781143187
+train/loss_mse_image_11: 0.16124038696289061
+train/loss_mae_image_2: 0.09361358880996704
+train/loss_mae_image_3: 0.084674343253885
+train/loss_mae_image_4: 0.08742562425988061
+train/loss_mae_image_8: 0.16873012781143187
+train/loss_mae_image_11: 0.3054979349885668
+train/loss_nce_image_2: 6.329121112823486
+train/loss_nce_image_3: 6.252271325247628
+train/loss_nce_image_4: 6.1083833013262065
+train/loss_nce_image_8: 6.1107688222612655
+train/loss_nce_image_11: 6.696633175441197
+train/loss_rec: 0.5589986494609288
+train/loss_cyc: 0.005194493063858577
+Evaluating...
+>>> Epoch31 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch31 | Eval1 | voxel: torch.Size([200, 8192])
+
+ 16%|████████████████▏                                                                                    | 32/200 [14:03<1:29:59, 32.14s/it, epoch=31, lr=0.000472, loss=131]
+>>> Epoch31 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch31 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch31 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 122.94248453776042
+val/val_num_steps: 192
+val/val_cosine_sim_image_2: 0.5381169319152832
+val/val_cosine_sim_image_3: 0.5234107772509257
+val/val_cosine_sim_image_4: 0.48292061189810437
+val/val_cosine_sim_image_8: 0.4386255443096161
+val/val_cosine_sim_image_11: 0.7545927067597707
+val/val_loss_mse_image_2: 0.016234613334139187
+val/val_loss_mse_image_3: 0.013057078390071789
+val/val_loss_mse_image_4: 0.013668516340355078
+val/val_loss_mse_image_8: 0.04839511215686798
+val/val_loss_mse_image_11: 0.1603739708662033
+val/val_loss_mae_image_2: 0.09225183849533398
+val/val_loss_mae_image_3: 0.08338948463400205
+val/val_loss_mae_image_4: 0.08627129221955936
+val/val_loss_mae_image_8: 0.16806564231713614
+val/val_loss_mae_image_11: 0.3042817960182826
+val/val_loss_nce_image_2: 4.80223027865092
+val/val_loss_nce_image_3: 4.714406092961629
+val/val_loss_nce_image_4: 4.566046158472697
+val/val_loss_nce_image_8: 4.578697125116984
+val/val_loss_nce_image_11: 5.1334013144175215
+val/val_loss_rec: 0.5482745369275411
+val/val_loss_cyc: 0.0004901224019704387
+>>> Epoch32 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch32 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 131.166478402274
+train/lr: 0.00047042261418017174
+train/num_steps: 1155
+train/cosine_sim_image_2: 0.5271540420395987
+train/cosine_sim_image_3: 0.510524240561894
+train/cosine_sim_image_4: 0.4705295145511627
+train/cosine_sim_image_8: 0.4360260350363595
+train/cosine_sim_image_11: 0.7545500465801784
+train/loss_mse_image_2: 0.016557866441352025
+train/loss_mse_image_3: 0.01333493199199438
+train/loss_mse_image_4: 0.013916012165801865
+train/loss_mse_image_8: 0.1685349532536098
+train/loss_mse_image_11: 0.1609315139906747
+train/loss_mae_image_2: 0.09354440484728133
+train/loss_mae_image_3: 0.0846074464065688
+train/loss_mae_image_4: 0.08734486997127533
+train/loss_mae_image_8: 0.1685349532536098
+train/loss_mae_image_11: 0.30523490480014254
+train/loss_nce_image_2: 6.301825782230922
+train/loss_nce_image_3: 6.221560587201799
+train/loss_nce_image_4: 6.070781803131103
+train/loss_nce_image_8: 6.070752688816616
+train/loss_nce_image_11: 6.686260536738804
+train/loss_rec: 0.5561387028012957
+train/loss_cyc: 0.0048695645561175685
+
+ 16%|████████████████▊                                                                                     | 33/200 [14:25<1:20:26, 28.90s/it, epoch=32, lr=0.00047, loss=131]
+>>> Epoch32 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch32 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch32 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch32 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch32 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch32 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 122.82726669311523
+val/val_num_steps: 198
+val/val_cosine_sim_image_2: 0.5333030819892883
+val/val_cosine_sim_image_3: 0.5177042583624522
+val/val_cosine_sim_image_4: 0.4780675917863846
+val/val_cosine_sim_image_8: 0.4364190349976222
+val/val_cosine_sim_image_11: 0.7545962035655975
+val/val_loss_mse_image_2: 0.016353749980529148
+val/val_loss_mse_image_3: 0.013162910317381224
+val/val_loss_mse_image_4: 0.013748279307037592
+val/val_loss_mse_image_8: 0.04851936548948288
+val/val_loss_mse_image_11: 0.1603517805536588
+val/val_loss_mae_image_2: 0.09241841981808345
+val/val_loss_mae_image_3: 0.08356224124630292
+val/val_loss_mae_image_4: 0.08643167465925217
+val/val_loss_mae_image_8: 0.1681914652387301
+val/val_loss_mae_image_11: 0.30428582429885864
+val/val_loss_nce_image_2: 4.760929187138875
+val/val_loss_nce_image_3: 4.6715413729349775
+val/val_loss_nce_image_4: 4.518410364786784
+val/val_loss_nce_image_8: 4.514234622319539
+val/val_loss_nce_image_11: 5.121272246042888
+val/val_loss_rec: 0.537849634885788
+val/val_loss_cyc: 0.0004573785311852892
+>>> Epoch33 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch33 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 130.9290969848633
+train/lr: 0.0004685254195789114
+train/num_steps: 1190
+train/cosine_sim_image_2: 0.5273233532905579
+train/cosine_sim_image_3: 0.5103504828044346
+train/cosine_sim_image_4: 0.47020865167890274
+train/cosine_sim_image_8: 0.437496645961489
+train/cosine_sim_image_11: 0.7550549643380301
+train/loss_mse_image_2: 0.016551615351012777
+train/loss_mse_image_3: 0.013336306544286865
+train/loss_mse_image_4: 0.013918605127504894
+train/loss_mse_image_8: 0.1683939371790205
+train/loss_mse_image_11: 0.1605919382401875
+train/loss_mae_image_2: 0.09352132933480399
+train/loss_mae_image_3: 0.08459550993783134
+train/loss_mae_image_4: 0.08733298139912742
+train/loss_mae_image_8: 0.1683939371790205
+train/loss_mae_image_11: 0.3049259730747768
+train/loss_nce_image_2: 6.277612618037632
+train/loss_nce_image_3: 6.193003300258091
+train/loss_nce_image_4: 6.034202998025076
+train/loss_nce_image_8: 6.027836213793074
+train/loss_nce_image_11: 6.675726236615862
+train/loss_rec: 0.553613805770874
+train/loss_cyc: 0.004839143303356001
+
+ 17%|█████████████████▏                                                                                   | 34/200 [14:49<1:15:58, 27.46s/it, epoch=33, lr=0.000469, loss=131]
+>>> Epoch33 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch33 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch33 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch33 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch33 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch33 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 122.92160034179688
+val/val_num_steps: 204
+val/val_cosine_sim_image_2: 0.5363802909851074
+val/val_cosine_sim_image_3: 0.5202621618906657
+val/val_cosine_sim_image_4: 0.4791681269804637
+val/val_cosine_sim_image_8: 0.43569836020469666
+val/val_cosine_sim_image_11: 0.7543530364831289
+val/val_loss_mse_image_2: 0.016277374078830082
+val/val_loss_mse_image_3: 0.01311459175000588
+val/val_loss_mse_image_4: 0.013727762581159672
+val/val_loss_mse_image_8: 0.04853799380362034
+val/val_loss_mse_image_11: 0.16047796358664831
+val/val_loss_mae_image_2: 0.09236316382884979
+val/val_loss_mae_image_3: 0.0835284950832526
+val/val_loss_mae_image_4: 0.08638262748718262
+val/val_loss_mae_image_8: 0.16830924898386002
+val/val_loss_mae_image_11: 0.3044660985469818
+val/val_loss_nce_image_2: 4.776762167612712
+val/val_loss_nce_image_3: 4.684683720270793
+val/val_loss_nce_image_4: 4.530803759892781
+val/val_loss_nce_image_8: 4.544434547424316
+val/val_loss_nce_image_11: 5.125850359598796
+val/val_loss_rec: 0.5400330622990926
+val/val_loss_cyc: 0.0004988433890199909
+>>> Epoch34 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch34 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 130.78227059500557
+train/lr: 0.0004665733382442175
+train/num_steps: 1225
+train/cosine_sim_image_2: 0.5275093010493688
+train/cosine_sim_image_3: 0.5101535260677338
+train/cosine_sim_image_4: 0.4701396209853036
+train/cosine_sim_image_8: 0.4383111298084259
+train/cosine_sim_image_11: 0.7553478036608015
+train/loss_mse_image_2: 0.016547015735081265
+train/loss_mse_image_3: 0.013340433394270284
+train/loss_mse_image_4: 0.013919493050447531
+train/loss_mse_image_8: 0.16830045538289207
+train/loss_mse_image_11: 0.16043793303625925
+train/loss_mae_image_2: 0.09350792041846684
+train/loss_mae_image_3: 0.08459563148873193
+train/loss_mae_image_4: 0.08732449497495379
+train/loss_mae_image_8: 0.16830045538289207
+train/loss_mae_image_11: 0.30478671193122864
+train/loss_nce_image_2: 6.256825419834682
+train/loss_nce_image_3: 6.1707382474626815
+train/loss_nce_image_4: 6.008301149095808
+train/loss_nce_image_8: 6.0031505312238425
+train/loss_nce_image_11: 6.669689205714635
+train/loss_rec: 0.5528416173798697
+train/loss_cyc: 0.004932523878025157
+
+ 18%|█████████████████▋                                                                                   | 35/200 [15:16<1:15:37, 27.50s/it, epoch=34, lr=0.000467, loss=131]
+>>> Epoch34 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch34 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch34 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch34 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch34 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch34 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 122.21655654907227
+val/val_num_steps: 210
+val/val_cosine_sim_image_2: 0.5338967442512512
+val/val_cosine_sim_image_3: 0.5193028648694357
+val/val_cosine_sim_image_4: 0.48170868555704754
+val/val_cosine_sim_image_8: 0.4429154147704442
+val/val_cosine_sim_image_11: 0.7560774286588033
+val/val_loss_mse_image_2: 0.016332526070376236
+val/val_loss_mse_image_3: 0.013131430838257074
+val/val_loss_mse_image_4: 0.013683748586724201
+val/val_loss_mse_image_8: 0.04815716234346231
+val/val_loss_mse_image_11: 0.159511369963487
+val/val_loss_mae_image_2: 0.09231043358643849
+val/val_loss_mae_image_3: 0.08345440030097961
+val/val_loss_mae_image_4: 0.08623128632704417
+val/val_loss_mae_image_8: 0.16768648475408554
+val/val_loss_mae_image_11: 0.30359718203544617
+val/val_loss_nce_image_2: 4.689552307128906
+val/val_loss_nce_image_3: 4.599426190058391
+val/val_loss_nce_image_4: 4.440160512924194
+val/val_loss_nce_image_8: 4.439733107884725
+val/val_loss_nce_image_11: 5.104684193929036
+val/val_loss_rec: 0.5329522689183553
+val/val_loss_cyc: 0.00044468480822009343
+>>> Epoch35 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch35 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 130.42086356026786
+train/lr: 0.0004645668616021268
+train/num_steps: 1260
+train/cosine_sim_image_2: 0.528329758984702
+train/cosine_sim_image_3: 0.5107286930084228
+train/cosine_sim_image_4: 0.4709038862160274
+train/cosine_sim_image_8: 0.44128948875835966
+train/cosine_sim_image_11: 0.7561102134840829
+train/loss_mse_image_2: 0.01652484302009855
+train/loss_mse_image_3: 0.01332642627613885
+train/loss_mse_image_4: 0.013902573420533111
+train/loss_mse_image_8: 0.16802779010363988
+train/loss_mse_image_11: 0.15998573005199432
+train/loss_mae_image_2: 0.09340602776833944
+train/loss_mae_image_3: 0.08449530260903494
+train/loss_mae_image_4: 0.08721588041101183
+train/loss_mae_image_8: 0.16802779010363988
+train/loss_mae_image_11: 0.30439746635300774
+train/loss_nce_image_2: 6.22360576902117
+train/loss_nce_image_3: 6.131641796657017
+train/loss_nce_image_4: 5.958214282989502
+train/loss_nce_image_8: 5.947026361737932
+train/loss_nce_image_11: 6.656716387612479
+train/loss_rec: 0.5472703763416835
+train/loss_cyc: 0.004294377019894975
+Evaluating...
+>>> Epoch35 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch35 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch35 | Eval2 | voxel: torch.Size([200, 8192])
+
+ 18%|█████████████████▋                                                                                   | 35/200 [15:43<1:15:37, 27.50s/it, epoch=35, lr=0.000465, loss=130]
+>>> Epoch35 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch35 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 121.90597534179688
+val/val_num_steps: 216
+val/val_cosine_sim_image_2: 0.537744402885437
+val/val_cosine_sim_image_3: 0.5234312017758688
+val/val_cosine_sim_image_4: 0.48552564283212024
+val/val_cosine_sim_image_8: 0.4464595168828964
+val/val_cosine_sim_image_11: 0.7566692531108856
+val/val_loss_mse_image_2: 0.016237521544098854
+val/val_loss_mse_image_3: 0.01305019250139594
+val/val_loss_mse_image_4: 0.013615128739426533
+val/val_loss_mse_image_8: 0.0479904313882192
+val/val_loss_mse_image_11: 0.15932159622510275
+val/val_loss_mae_image_2: 0.09217128405968349
+val/val_loss_mae_image_3: 0.08330044522881508
+val/val_loss_mae_image_4: 0.08608995750546455
+val/val_loss_mae_image_8: 0.16737457116444907
+val/val_loss_mae_image_11: 0.3033125549554825
+val/val_loss_nce_image_2: 4.669845342636108
+val/val_loss_nce_image_3: 4.574616114298503
+val/val_loss_nce_image_4: 4.40136702855428
+val/val_loss_nce_image_8: 4.39668345451355
+val/val_loss_nce_image_11: 5.0929469267527265
+val/val_loss_rec: 0.5237168371677399
+val/val_loss_cyc: 0.00043558632023632526
+saving /media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_image_sketch_vitb32_infonce_234_8_11/last.pth
+
+ 18%|██████████████████▏                                                                                  | 36/200 [16:13<1:39:20, 36.34s/it, epoch=35, lr=0.000465, loss=130]
+>>> Epoch36 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch36 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 130.18877367292131
+train/lr: 0.0004625064947724039
+train/num_steps: 1295
+train/cosine_sim_image_2: 0.5287929620061602
+train/cosine_sim_image_3: 0.5109831350190299
+train/cosine_sim_image_4: 0.4713516099112374
+train/cosine_sim_image_8: 0.4428506757531847
+train/cosine_sim_image_11: 0.7565482684544155
+train/loss_mse_image_2: 0.016512646792190416
+train/loss_mse_image_3: 0.013322018805359092
+train/loss_mse_image_4: 0.013896194472908973
+train/loss_mse_image_8: 0.16788406670093536
+train/loss_mse_image_11: 0.15975736294473922
+train/loss_mae_image_2: 0.09333946747439248
+train/loss_mae_image_3: 0.08444007230656488
+train/loss_mae_image_4: 0.08715388774871827
+train/loss_mae_image_8: 0.16788406670093536
+train/loss_mae_image_11: 0.30418940101351055
+train/loss_nce_image_2: 6.198008837018694
+train/loss_nce_image_3: 6.101921217782157
+train/loss_nce_image_4: 5.920959608895438
+train/loss_nce_image_8: 5.907466002873012
+train/loss_nce_image_11: 6.646787520817348
+train/loss_rec: 0.5434210351535252
+train/loss_cyc: 0.004187652907733407
+Evaluating...
+>>> Epoch36 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch36 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch36 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch36 | Eval3 | voxel: torch.Size([200, 8192])
+
+ 18%|██████████████████▋                                                                                  | 37/200 [16:37<1:28:43, 32.66s/it, epoch=36, lr=0.000463, loss=130]
+>>> Epoch36 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 122.48484166463216
+val/val_num_steps: 222
+val/val_cosine_sim_image_2: 0.5327093700567881
+val/val_cosine_sim_image_3: 0.5174219409624735
+val/val_cosine_sim_image_4: 0.4784439156452815
+val/val_cosine_sim_image_8: 0.440229336420695
+val/val_cosine_sim_image_11: 0.7554102738698324
+val/val_loss_mse_image_2: 0.016359555224577587
+val/val_loss_mse_image_3: 0.013163657082865635
+val/val_loss_mse_image_4: 0.013737996419270834
+val/val_loss_mse_image_8: 0.04830227978527546
+val/val_loss_mse_image_11: 0.15991039822498956
+val/val_loss_mae_image_2: 0.09236074984073639
+val/val_loss_mae_image_3: 0.08349435652295749
+val/val_loss_mae_image_4: 0.0863114558160305
+val/val_loss_mae_image_8: 0.1679491251707077
+val/val_loss_mae_image_11: 0.30397527913252514
+val/val_loss_nce_image_2: 4.724526246388753
+val/val_loss_nce_image_3: 4.631354808807373
+val/val_loss_nce_image_4: 4.466629107793172
+val/val_loss_nce_image_8: 4.468799432118733
+val/val_loss_nce_image_11: 5.108773469924927
+val/val_loss_rec: 0.5278222064177195
+val/val_loss_cyc: 0.0004542524062950785
+>>> Epoch37 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch37 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 130.0860360281808
+train/lr: 0.0004603927564413797
+train/num_steps: 1330
+train/cosine_sim_image_2: 0.528808970110757
+train/cosine_sim_image_3: 0.510836751120431
+train/cosine_sim_image_4: 0.47117740597043717
+train/cosine_sim_image_8: 0.44345946567399164
+train/cosine_sim_image_11: 0.7567900998251779
+train/loss_mse_image_2: 0.01651136502623558
+train/loss_mse_image_3: 0.013323826316211904
+train/loss_mse_image_4: 0.013898370361753872
+train/loss_mse_image_8: 0.16781655677727292
+train/loss_mse_image_11: 0.159611428635461
+train/loss_mae_image_2: 0.0933220910174506
+train/loss_mae_image_3: 0.08442690627915518
+train/loss_mae_image_4: 0.08713891484907695
+train/loss_mae_image_8: 0.16781655677727292
+train/loss_mae_image_11: 0.30406772664615084
+train/loss_nce_image_2: 6.186767646244594
+train/loss_nce_image_3: 6.088390241350447
+train/loss_nce_image_4: 5.904872608184815
+train/loss_nce_image_8: 5.8899343354361395
+train/loss_nce_image_11: 6.642097391401019
+train/loss_rec: 0.5452148165021624
+train/loss_cyc: 0.004481761796133858
+
+ 19%|███████████████████▍                                                                                  | 38/200 [17:00<1:19:54, 29.60s/it, epoch=37, lr=0.00046, loss=130]
+>>> Epoch37 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch37 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch37 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch37 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch37 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch37 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 121.87198003133138
+val/val_num_steps: 228
+val/val_cosine_sim_image_2: 0.5350899696350098
+val/val_cosine_sim_image_3: 0.5199308693408966
+val/val_cosine_sim_image_4: 0.48020463188489276
+val/val_cosine_sim_image_8: 0.4445176422595978
+val/val_cosine_sim_image_11: 0.7567340532938639
+val/val_loss_mse_image_2: 0.016306915941337746
+val/val_loss_mse_image_3: 0.013126003090292215
+val/val_loss_mse_image_4: 0.01371869413803021
+val/val_loss_mse_image_8: 0.048078120375672974
+val/val_loss_mse_image_11: 0.1591710795958837
+val/val_loss_mae_image_2: 0.09226227675875028
+val/val_loss_mae_image_3: 0.08342364678780238
+val/val_loss_mae_image_4: 0.08625669280687968
+val/val_loss_mae_image_8: 0.16749785840511322
+val/val_loss_mae_image_11: 0.30321045716603595
+val/val_loss_nce_image_2: 4.651416540145874
+val/val_loss_nce_image_3: 4.557374318440755
+val/val_loss_nce_image_4: 4.379224379857381
+val/val_loss_nce_image_8: 4.367902596791585
+val/val_loss_nce_image_11: 5.08080776532491
+val/val_loss_rec: 0.5296348333358765
+val/val_loss_cyc: 0.0004438635902867342
+>>> Epoch38 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch38 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 129.76773223876953
+train/lr: 0.00045822617873137546
+train/num_steps: 1365
+train/cosine_sim_image_2: 0.5296417798314775
+train/cosine_sim_image_3: 0.5115032741001674
+train/cosine_sim_image_4: 0.47216389264379227
+train/cosine_sim_image_8: 0.4458605936595372
+train/cosine_sim_image_11: 0.7574655396597726
+train/loss_mse_image_2: 0.01648480019399098
+train/loss_mse_image_3: 0.01330493800342083
+train/loss_mse_image_4: 0.013872897811233997
+train/loss_mse_image_8: 0.16754278923783983
+train/loss_mse_image_11: 0.15923303748880113
+train/loss_mae_image_2: 0.09323008230754308
+train/loss_mae_image_3: 0.08433785034077508
+train/loss_mae_image_4: 0.08703164692435945
+train/loss_mae_image_8: 0.16754278923783983
+train/loss_mae_image_11: 0.30375977669443405
+train/loss_nce_image_2: 6.157025350843157
+train/loss_nce_image_3: 6.05582001549857
+train/loss_nce_image_4: 5.864593355996268
+train/loss_nce_image_8: 5.841712379455567
+train/loss_nce_image_11: 6.629702935900007
+train/loss_rec: 0.5382883821214949
+train/loss_cyc: 0.004070699474375163
+
+ 20%|███████████████████▋                                                                                 | 39/200 [17:25<1:15:46, 28.24s/it, epoch=38, lr=0.000458, loss=130]
+>>> Epoch38 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch38 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch38 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch38 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch38 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch38 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 122.0753288269043
+val/val_num_steps: 234
+val/val_cosine_sim_image_2: 0.5308941503365835
+val/val_cosine_sim_image_3: 0.516069620847702
+val/val_cosine_sim_image_4: 0.4765091935793559
+val/val_cosine_sim_image_8: 0.4430816372235616
+val/val_cosine_sim_image_11: 0.7560075322786967
+val/val_loss_mse_image_2: 0.016420947387814522
+val/val_loss_mse_image_3: 0.013208060059696436
+val/val_loss_mse_image_4: 0.013790917738030354
+val/val_loss_mse_image_8: 0.048152862737576164
+val/val_loss_mse_image_11: 0.15952949722607931
+val/val_loss_mae_image_2: 0.09240594133734703
+val/val_loss_mae_image_3: 0.08354250093301137
+val/val_loss_mae_image_4: 0.08637652670343716
+val/val_loss_mae_image_8: 0.16762406627337137
+val/val_loss_mae_image_11: 0.303469642996788
+val/val_loss_nce_image_2: 4.658888181050618
+val/val_loss_nce_image_3: 4.565792242685954
+val/val_loss_nce_image_4: 4.389875968297322
+val/val_loss_nce_image_8: 4.406598409016927
+val/val_loss_nce_image_11: 5.0838712851206465
+val/val_loss_rec: 0.5177097618579865
+val/val_loss_cyc: 0.0005020568254015719
+>>> Epoch39 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch39 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 129.61428941999162
+train/lr: 0.0004560073070667433
+train/num_steps: 1400
+train/cosine_sim_image_2: 0.529718622139522
+train/cosine_sim_image_3: 0.5113958392824446
+train/cosine_sim_image_4: 0.47205101677349637
+train/cosine_sim_image_8: 0.44683027267456055
+train/cosine_sim_image_11: 0.757786066191537
+train/loss_mse_image_2: 0.016480609135968344
+train/loss_mse_image_3: 0.013305610604584217
+train/loss_mse_image_4: 0.013872020984334606
+train/loss_mse_image_8: 0.16744656222207205
+train/loss_mse_image_11: 0.15900806358882358
+train/loss_mae_image_2: 0.09319866193192346
+train/loss_mae_image_3: 0.08432130877460753
+train/loss_mae_image_4: 0.08701013326644898
+train/loss_mae_image_8: 0.16744656222207205
+train/loss_mae_image_11: 0.3035412243434361
+train/loss_nce_image_2: 6.141877937316894
+train/loss_nce_image_3: 6.038858168465751
+train/loss_nce_image_4: 5.842480564117432
+train/loss_nce_image_8: 5.8166444369724815
+train/loss_nce_image_11: 6.622595759800502
+train/loss_rec: 0.5381053958620344
+train/loss_cyc: 0.004113361332565546
+Evaluating...
+>>> Epoch39 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch39 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch39 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch39 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch39 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch39 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 121.57633463541667
+val/val_num_steps: 240
+val/val_cosine_sim_image_2: 0.5353297789891561
+val/val_cosine_sim_image_3: 0.5187505682309469
+val/val_cosine_sim_image_4: 0.4783670902252197
+val/val_cosine_sim_image_8: 0.44757742683092755
+val/val_cosine_sim_image_11: 0.7576735119024912
+val/val_loss_mse_image_2: 0.016302306515475113
+val/val_loss_mse_image_3: 0.013146608136594296
+val/val_loss_mse_image_4: 0.013743902401377758
+val/val_loss_mse_image_8: 0.0478924885392189
+val/val_loss_mse_image_11: 0.15876119087139764
+val/val_loss_mae_image_2: 0.09227626398205757
+val/val_loss_mae_image_3: 0.08343483755985896
+val/val_loss_mae_image_4: 0.08623727162679036
+val/val_loss_mae_image_8: 0.1671373794476191
+val/val_loss_mae_image_11: 0.3028329660495122
+val/val_loss_nce_image_2: 4.63618008295695
+val/val_loss_nce_image_3: 4.531203746795654
+val/val_loss_nce_image_4: 4.33433739344279
+val/val_loss_nce_image_8: 4.3107461134592695
+val/val_loss_nce_image_11: 5.063154061635335
+val/val_loss_rec: 0.5237097144126892
+
+ 20%|████████████████████▏                                                                                | 40/200 [17:53<1:15:17, 28.23s/it, epoch=39, lr=0.000456, loss=130]
+>>> Epoch40 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch40 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 129.3225106375558
+train/lr: 0.00045373670003655877
+train/num_steps: 1435
+train/cosine_sim_image_2: 0.5305575149399894
+train/cosine_sim_image_3: 0.5120863352503096
+train/cosine_sim_image_4: 0.4730178390230451
+train/cosine_sim_image_8: 0.4492669378008161
+train/cosine_sim_image_11: 0.7584256546837943
+train/loss_mse_image_2: 0.01645891847355025
+train/loss_mse_image_3: 0.013289296201297216
+train/loss_mse_image_4: 0.013851432635315826
+train/loss_mse_image_8: 0.1672093208347048
+train/loss_mse_image_11: 0.15863991124289376
+train/loss_mae_image_2: 0.09313520640134812
+train/loss_mae_image_3: 0.08425221272877284
+train/loss_mae_image_4: 0.08692495971918106
+train/loss_mae_image_8: 0.1672093208347048
+train/loss_mae_image_11: 0.3032259609018053
+train/loss_nce_image_2: 6.115484591892788
+train/loss_nce_image_3: 6.007989202226911
+train/loss_nce_image_4: 5.802622890472412
+train/loss_nce_image_8: 5.771391201019287
+train/loss_nce_image_11: 6.611158657073974
+train/loss_rec: 0.5337145447731018
+train/loss_cyc: 0.003743125105808888
+
+ 20%|████████████████████▏                                                                                | 40/200 [18:19<1:15:17, 28.23s/it, epoch=40, lr=0.000454, loss=129]
+>>> Epoch40 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch40 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch40 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch40 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch40 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch40 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 121.46188735961914
+val/val_num_steps: 246
+val/val_cosine_sim_image_2: 0.5338251292705536
+val/val_cosine_sim_image_3: 0.5169695218404134
+val/val_cosine_sim_image_4: 0.4774327476819356
+val/val_cosine_sim_image_8: 0.44867411255836487
+val/val_cosine_sim_image_11: 0.7577304641405741
+val/val_loss_mse_image_2: 0.01633023067067067
+val/val_loss_mse_image_3: 0.013170732495685419
+val/val_loss_mse_image_4: 0.013753587380051613
+val/val_loss_mse_image_8: 0.047847808028260864
+val/val_loss_mse_image_11: 0.1587559456626574
+val/val_loss_mae_image_2: 0.09227969124913216
+val/val_loss_mae_image_3: 0.08346359431743622
+val/val_loss_mae_image_4: 0.08627180630962054
+val/val_loss_mae_image_8: 0.16709107408920923
+val/val_loss_mae_image_11: 0.3028160482645035
+val/val_loss_nce_image_2: 4.603996992111206
+val/val_loss_nce_image_3: 4.496785879135132
+val/val_loss_nce_image_4: 4.302254756291707
+val/val_loss_nce_image_8: 4.304105758666992
+val/val_loss_nce_image_11: 5.061068534851074
+val/val_loss_rec: 0.515216608842214
+val/val_loss_cyc: 0.0004107287240913138
+
+ 20%|████████████████████▋                                                                                | 41/200 [18:33<1:24:24, 31.85s/it, epoch=40, lr=0.000454, loss=129]
+Not best - current_similarity: 1.740 @ epoch 40, best_similarity: 1.741 @ epoch 35
+>>> Epoch41 | Iter0 | voxel: torch.Size([1000, 8192])
+ 20%|████████████████████▋                                                                                | 41/200 [18:39<1:12:21, 27.30s/it, epoch=40, lr=0.000454, loss=129]
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 338, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 332, in main
+    trainer.train(local_rank)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_sketch.py", line 194, in train
+    self.train_epoch(epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_sketch.py", line 715, in train_epoch
+    self.train_step(voxel, image, subj_id, epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_sketch.py", line 226, in train_step
+    fmri_image_2, fmri_image_3, fmri_image_4, fmri_image_8, fmri_image_11, fmri_rec, loss_cyc = self.voxel2clip(
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/media/SSD_1_2T/xt/MindBridge/src/models.py", line 566, in forward
+    subj_list = x[1].tolist()  # (s,)
+KeyboardInterrupt
+>>> Epoch41 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch41 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch41 | Iter4 | voxel: torch.Size([1000, 8192])

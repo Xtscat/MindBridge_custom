@@ -1,0 +1,15 @@
+  0%|                                                                                                                                                 | 0/200 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 220, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 214, in main
+    trainer.train(local_rank)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img.py", line 158, in train
+    self.train_epoch(epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img.py", line 591, in train_epoch
+    self.train_step(voxel, image, subj_id, epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img.py", line 196, in train_step
+    _, feature_maps = self.clip_extractor.embed_image(image)
+ValueError: too many values to unpack (expected 2)
+MindBrige_image_only_mixco_loss starting with epoch 0 / 200
+>>> Epoch0 | Iter0 | voxel: torch.Size([400, 8192])

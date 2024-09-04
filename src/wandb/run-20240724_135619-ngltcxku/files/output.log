@@ -1,0 +1,21 @@
+MindBrige_image_vitb32_multilayer_23456 starting with epoch 0 / 200
+>>> Epoch0 | Iter0 | voxel: torch.Size([400, 8192])
+  0%|                                                                                                                                                 | 0/200 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 247, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 241, in main
+    trainer.train(local_rank)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img.py", line 202, in train
+    self.train_epoch(epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img.py", line 853, in train_epoch
+    self.train_step(voxel, image, subj_id, epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img.py", line 241, in train_step
+    fmri_image_fc, fmri_image_2, fmri_image_3, fmri_image_4, fmri_image_5, fmri_image_6, fmri_rec, loss_cyc = self.voxel2clip(
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/media/SSD_1_2T/xt/MindBridge/src/models.py", line 506, in forward
+    x, x_preview = self.translator(x)
+ValueError: too many values to unpack (expected 2)

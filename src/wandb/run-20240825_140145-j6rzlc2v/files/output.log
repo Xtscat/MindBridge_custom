@@ -1,0 +1,9 @@
+
+  0%|                                                                                                                                                 | 0/400 [00:00<?, ?it/s]
+MindBrige_image_GIT_ViT starting with epoch 0 / 400
+>>> Epoch0 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter5 | voxel: torch.Size([1000, 8192])

@@ -1,0 +1,108 @@
+
+  0%|                                                                                                                                                 | 0/400 [00:00<?, ?it/s]
+MindBrige_image_GIT_ViT_infonce_token starting with epoch 0 / 400
+>>> Epoch0 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 349.4739761352539
+train/lr: 0.0005090736650290693
+train/num_steps: 35
+train/cosine_sim_image: 0.034180276129128676
+train/loss_mse_image: 1.9369964293071202
+train/loss_mae_image: 1.0773407987185888
+train/loss_kl_image: 2913.8422467912947
+train/loss_nce_image: 6.875127574375697
+train/loss_rec: 0.6123633061136519
+train/loss_cyc: 1.0889219675745283
+Evaluating...
+>>> Epoch0 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval5 | voxel: torch.Size([200, 8192])
+val/val_loss: 65.8245366414388
+val/val_num_steps: 6
+val/val_cosine_sim_image: 0.1599183107415835
+val/val_loss_mse_image: 1.0322982668876648
+val/val_loss_mae_image: 0.7495789627234141
+val/val_loss_kl_image: 318.84697977701825
+val/val_loss_nce_image: 5.326701243718465
+val/val_loss_rec: 0.3752313256263733
+
+  0%|▎                                                                                                      | 1/400 [01:10<7:48:41, 70.48s/it, epoch=0, lr=0.000509, loss=349]
+>>> Epoch1 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter15 | voxel: torch.Size([1000, 8192])
+  0%|▎                                                                                                    | 1/400 [01:45<11:42:08, 105.59s/it, epoch=0, lr=0.000509, loss=349]
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 333, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 327, in main
+    trainer.train(local_rank)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_GIT.py", line 158, in train
+    self.train_epoch(epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_GIT.py", line 494, in train_epoch
+    for train_i, datas in enumerate(zip(*self.train_dls)):
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/accelerate/data_loader.py", line 464, in __iter__
+    next_batch = next(dataloader_iter)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 674, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/media/SSD_1_2T/xt/MindBridge/src/data.py", line 145, in __getitem__
+    items.append(self.vox_process(voxel))
+  File "/media/SSD_1_2T/xt/MindBridge/src/data.py", line 119, in vox_process
+    x = pool_voxels(x, self.pool_num, self.pool_type)
+  File "/media/SSD_1_2T/xt/MindBridge/src/data.py", line 164, in pool_voxels
+    voxels = voxels.float()
+KeyboardInterrupt

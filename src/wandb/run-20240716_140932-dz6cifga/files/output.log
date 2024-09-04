@@ -1,0 +1,118 @@
+
+  0%|                                                                                                                                   | 0/300 [00:00<?, ?it/s]
+MindBrige_text_only_mixco_loss starting with epoch 0 / 300
+>>> Epoch0 | Iter0 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter1 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter2 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter3 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter4 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter5 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter6 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter7 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter8 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter9 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter10 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter11 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter12 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter13 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter14 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter15 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter16 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter17 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter18 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter19 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter20 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter21 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter22 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter23 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter24 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter25 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter26 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter27 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter28 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter29 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter30 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter31 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter32 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter33 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter34 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter35 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter36 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter37 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter38 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter39 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter40 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter41 | voxel: torch.Size([800, 8192])
+>>> Epoch0 | Iter42 | voxel: torch.Size([636, 8192])
+train/loss: 56.48270833215048
+train/lr: 0.00015333903768588529
+train/num_steps: 43
+train/cosine_sim_text: 0.15587319128031216
+train/loss_nce_text: 6.839737958686296
+train/loss_mse_text: 2.8548659535116776e-05
+train/loss_mae_text: 0.003796008399276193
+train/loss_rec: 1.0783028519430826
+train/loss_cyc: 0.9099796435167623
+Evaluating...
+>>> Epoch0 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval1 | voxel: torch.Size([200, 8192])
+
+  0%|▎                                                                                     | 1/300 [02:15<11:13:18, 135.11s/it, epoch=0, lr=0.000153, loss=56.5]
+>>> Epoch0 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval5 | voxel: torch.Size([200, 8192])
+val/loss: 45.01204617818197
+val/num_steps: 6
+val/cosine_sim_text: 0.2553778539101283
+val/loss_nce_text: 5.205943822860718
+val/loss_mse_text: 2.5183377450351447e-05
+val/loss_mae_text: 0.0031620614075412354
+val/loss_rec: 0.4183552910884221
+  0%|▎                                                                                     | 1/300 [02:15<11:13:18, 135.11s/it, epoch=0, lr=0.000153, loss=56.5]Exception in thread Thread-14 (_pin_memory_loop):
+Traceback (most recent call last):
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/_utils/pin_memory.py", line 54, in _pin_memory_loop
+    do_one_step()
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/_utils/pin_memory.py", line 31, in do_one_step
+    r = in_queue.get(timeout=MP_STATUS_CHECK_INTERVAL)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/multiprocessing/reductions.py", line 495, in rebuild_storage_fd
+    fd = df.detach()
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/multiprocessing/resource_sharer.py", line 57, in detach
+    with _resource_sharer.get_connection(self._id) as conn:
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/multiprocessing/resource_sharer.py", line 86, in get_connection
+    c = Client(address, authkey=process.current_process().authkey)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/multiprocessing/connection.py", line 502, in Client
+    c = SocketClient(address)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/multiprocessing/connection.py", line 630, in SocketClient
+    s.connect(address)
+FileNotFoundError: [Errno 2] No such file or directory
+  0%|▎                                                                                     | 1/300 [02:22<11:51:37, 142.80s/it, epoch=0, lr=0.000153, loss=56.5]
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 195, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 189, in main
+    trainer.train(local_rank)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_text.py", line 160, in train
+    self.train_epoch(epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_text.py", line 624, in train_epoch
+    for train_i, datas in enumerate(zip(*self.train_dls)):
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/accelerate/data_loader.py", line 464, in __iter__
+    next_batch = next(dataloader_iter)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

@@ -1,0 +1,193 @@
+2024-08-12 16:18:40,223 INFO    StreamThr :3799931 [internal.py:wandb_internal():86] W&B internal server running at pid: 3799931, started at: 2024-08-12 16:18:40.223039
+2024-08-12 16:18:40,223 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: status
+2024-08-12 16:18:40,224 INFO    WriterThread:3799931 [datastore.py:open_for_write():87] open: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/run-ic3cw1cy.wandb
+2024-08-12 16:18:40,224 DEBUG   SenderThread:3799931 [sender.py:send():379] send: header
+2024-08-12 16:18:40,226 DEBUG   SenderThread:3799931 [sender.py:send():379] send: run
+2024-08-12 16:18:41,597 INFO    SenderThread:3799931 [dir_watcher.py:__init__():211] watching files in: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files
+2024-08-12 16:18:41,597 INFO    SenderThread:3799931 [sender.py:_start_run_threads():1124] run started: ic3cw1cy with start time 1723450720.223082
+2024-08-12 16:18:41,600 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: check_version
+2024-08-12 16:18:41,600 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: check_version
+2024-08-12 16:18:43,708 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: run_start
+2024-08-12 16:18:43,712 DEBUG   HandlerThread:3799931 [system_info.py:__init__():26] System info init
+2024-08-12 16:18:43,712 DEBUG   HandlerThread:3799931 [system_info.py:__init__():41] System info init done
+2024-08-12 16:18:43,712 INFO    HandlerThread:3799931 [system_monitor.py:start():194] Starting system monitor
+2024-08-12 16:18:43,712 INFO    SystemMonitor:3799931 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-08-12 16:18:43,712 INFO    HandlerThread:3799931 [system_monitor.py:probe():214] Collecting system info
+2024-08-12 16:18:43,712 INFO    SystemMonitor:3799931 [interfaces.py:start():190] Started cpu monitoring
+2024-08-12 16:18:43,713 INFO    SystemMonitor:3799931 [interfaces.py:start():190] Started disk monitoring
+2024-08-12 16:18:43,713 INFO    SystemMonitor:3799931 [interfaces.py:start():190] Started gpu monitoring
+2024-08-12 16:18:43,713 INFO    SystemMonitor:3799931 [interfaces.py:start():190] Started memory monitoring
+2024-08-12 16:18:43,713 INFO    SystemMonitor:3799931 [interfaces.py:start():190] Started network monitoring
+2024-08-12 16:18:43,727 DEBUG   HandlerThread:3799931 [system_info.py:probe():150] Probing system
+2024-08-12 16:18:43,728 DEBUG   HandlerThread:3799931 [system_info.py:_probe_git():135] Probing git
+2024-08-12 16:18:43,730 DEBUG   HandlerThread:3799931 [system_info.py:_probe_git():143] Probing git done
+2024-08-12 16:18:43,730 DEBUG   HandlerThread:3799931 [system_info.py:probe():198] Probing system done
+2024-08-12 16:18:43,730 DEBUG   HandlerThread:3799931 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-112-generic-x86_64-with-glibc2.35', 'python': '3.10.14', 'heartbeatAt': '2024-08-12T08:18:43.727764', 'startedAt': '2024-08-12T08:18:40.221362', 'docker': None, 'cuda': None, 'args': ('--wandb_project', 'MindBrige_image_vitb32_multilayer', '--trainer_select', 'trainer_fmri_img', '--model_name', 'MindBrige_image_vitb32_multilayer_234_2fclayer_only_mse', '--clip_variant', 'ViT-B/32', '--subj_list', '1', '2', '5', '7', '--num_epochs', '200', '--batch_size', '100', '--val_batch_size', '50', '--h_size', '2048', '--n_blocks', '4', '--pool_type', 'max', '--pool_num', '8192', '--clip_mult', '1', '--mse_mult', '1e5', '--mae_mult', '10', '--cos_mult', '1', '--rec_mult', '1', '--cyc_mult', '1', '--eval_interval', '1', '--ckpt_interval', '1', '--max_lr', '5e-4', '--num_workers', '2', '--nce_mult', '1', '--mixup_pct', '0.2'), 'state': 'running', 'program': '/media/SSD_1_2T/xt/MindBridge/src/main.py', 'codePathLocal': 'main.py', 'codePath': 'src/main.py', 'git': {'remote': 'https://github.com/littlepure2333/MindBridge.git', 'commit': 'caed23be881e8c298f8a81aa933213ba68258519'}, 'email': '1508957301@qq.com', 'root': '/media/SSD_1_2T/xt/MindBridge', 'host': 'fmri-System-Product-Name', 'username': 'fmri', 'executable': '/home/fmri/miniconda3/envs/xt/bin/python3.10', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 3311.9918749999997, 'min': 800.0, 'max': 4937.5}, 'cpu_freq_per_core': [{'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 5499.507, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 5498.907, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 5492.491, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 5492.835, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 4299.999, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}], 'disk': {'/': {'total': 467.8895797729492, 'used': 404.6352005004883}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}, {'name': 'NVIDIA GeForce RTX 4090 D', 'memory_total': 25757220864}], 'memory': {'total': 125.60403060913086}}
+2024-08-12 16:18:43,730 INFO    HandlerThread:3799931 [system_monitor.py:probe():224] Finished collecting system info
+2024-08-12 16:18:43,730 INFO    HandlerThread:3799931 [system_monitor.py:probe():227] Publishing system info
+2024-08-12 16:18:43,730 DEBUG   HandlerThread:3799931 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-08-12 16:18:44,598 INFO    Thread-12 :3799931 [dir_watcher.py:_on_file_created():271] file/dir created: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/conda-environment.yaml
+2024-08-12 16:18:44,946 DEBUG   HandlerThread:3799931 [system_info.py:_save_conda():222] Saving conda packages done
+2024-08-12 16:18:44,946 INFO    HandlerThread:3799931 [system_monitor.py:probe():229] Finished publishing system info
+2024-08-12 16:18:44,947 DEBUG   SenderThread:3799931 [sender.py:send():379] send: files
+2024-08-12 16:18:44,947 INFO    SenderThread:3799931 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-08-12 16:18:44,993 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: python_packages
+2024-08-12 16:18:44,993 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: python_packages
+2024-08-12 16:18:44,993 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: stop_status
+2024-08-12 16:18:44,994 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: internal_messages
+2024-08-12 16:18:44,994 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: stop_status
+2024-08-12 16:18:45,597 INFO    Thread-12 :3799931 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/conda-environment.yaml
+2024-08-12 16:18:45,604 INFO    Thread-12 :3799931 [dir_watcher.py:_on_file_created():271] file/dir created: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/requirements.txt
+2024-08-12 16:18:45,604 INFO    Thread-12 :3799931 [dir_watcher.py:_on_file_created():271] file/dir created: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/wandb-metadata.json
+2024-08-12 16:18:45,705 DEBUG   SenderThread:3799931 [sender.py:send():379] send: telemetry
+2024-08-12 16:18:45,705 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: status_report
+2024-08-12 16:18:46,308 DEBUG   SenderThread:3799931 [sender.py:send():379] send: exit
+2024-08-12 16:18:46,308 INFO    SenderThread:3799931 [sender.py:send_exit():586] handling exit code: 1
+2024-08-12 16:18:46,308 INFO    SenderThread:3799931 [sender.py:send_exit():588] handling runtime: 2
+2024-08-12 16:18:46,308 INFO    SenderThread:3799931 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-08-12 16:18:46,308 INFO    SenderThread:3799931 [sender.py:send_exit():594] send defer
+2024-08-12 16:18:46,309 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:46,309 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 0
+2024-08-12 16:18:46,309 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:46,309 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-08-12 16:18:46,309 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 1
+2024-08-12 16:18:46,309 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:46,309 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 1
+2024-08-12 16:18:46,309 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:46,309 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-08-12 16:18:46,309 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 2
+2024-08-12 16:18:46,309 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:46,309 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 2
+2024-08-12 16:18:46,309 INFO    HandlerThread:3799931 [system_monitor.py:finish():203] Stopping system monitor
+2024-08-12 16:18:46,309 DEBUG   SystemMonitor:3799931 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-08-12 16:18:46,309 DEBUG   SystemMonitor:3799931 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-08-12 16:18:46,309 DEBUG   SystemMonitor:3799931 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-08-12 16:18:46,309 INFO    HandlerThread:3799931 [interfaces.py:finish():202] Joined cpu monitor
+2024-08-12 16:18:46,309 INFO    HandlerThread:3799931 [interfaces.py:finish():202] Joined disk monitor
+2024-08-12 16:18:46,376 INFO    HandlerThread:3799931 [interfaces.py:finish():202] Joined gpu monitor
+2024-08-12 16:18:46,376 INFO    HandlerThread:3799931 [interfaces.py:finish():202] Joined memory monitor
+2024-08-12 16:18:46,376 INFO    HandlerThread:3799931 [interfaces.py:finish():202] Joined network monitor
+2024-08-12 16:18:46,376 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:46,376 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-08-12 16:18:46,376 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 3
+2024-08-12 16:18:46,377 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:46,377 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 3
+2024-08-12 16:18:46,377 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:46,377 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-08-12 16:18:46,377 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 4
+2024-08-12 16:18:46,377 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:46,377 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 4
+2024-08-12 16:18:46,377 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:46,377 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-08-12 16:18:46,377 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 5
+2024-08-12 16:18:46,377 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:46,377 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 5
+2024-08-12 16:18:46,377 DEBUG   SenderThread:3799931 [sender.py:send():379] send: summary
+2024-08-12 16:18:46,378 INFO    SenderThread:3799931 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-08-12 16:18:46,378 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:46,378 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-08-12 16:18:46,378 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 6
+2024-08-12 16:18:46,378 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:46,378 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 6
+2024-08-12 16:18:46,378 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:46,378 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-08-12 16:18:46,379 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: status_report
+2024-08-12 16:18:46,474 INFO    wandb-upload_0:3799931 [upload_job.py:push():131] Uploaded file /tmp/tmpme5f4jz2wandb/d1o0wear-wandb-metadata.json
+2024-08-12 16:18:46,598 INFO    Thread-12 :3799931 [dir_watcher.py:_on_file_created():271] file/dir created: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/output.log
+2024-08-12 16:18:46,598 INFO    Thread-12 :3799931 [dir_watcher.py:_on_file_created():271] file/dir created: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/wandb-summary.json
+2024-08-12 16:18:46,648 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 7
+2024-08-12 16:18:46,648 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:46,648 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 7
+2024-08-12 16:18:46,648 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:46,648 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-08-12 16:18:47,308 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-12 16:18:47,598 INFO    Thread-12 :3799931 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/config.yaml
+2024-08-12 16:18:47,710 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 8
+2024-08-12 16:18:47,711 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: poll_exit
+2024-08-12 16:18:47,711 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:47,711 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 8
+2024-08-12 16:18:47,711 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:47,711 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-08-12 16:18:47,711 INFO    SenderThread:3799931 [job_builder.py:build():318] Attempting to build job artifact
+2024-08-12 16:18:47,711 INFO    SenderThread:3799931 [job_builder.py:_get_source_type():455] is repo sourced job
+2024-08-12 16:18:47,721 INFO    SenderThread:3799931 [job_builder.py:build():431] adding wandb-job metadata file
+2024-08-12 16:18:47,730 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 9
+2024-08-12 16:18:47,730 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:47,730 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 9
+2024-08-12 16:18:47,730 DEBUG   SenderThread:3799931 [sender.py:send():379] send: artifact
+2024-08-12 16:18:48,308 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-12 16:18:48,598 INFO    Thread-12 :3799931 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/output.log
+2024-08-12 16:18:50,244 INFO    wandb-upload_1:3799931 [upload_job.py:push():89] Uploaded file /home/fmri/.local/share/wandb/artifacts/staging/tmpsk4esx4d
+2024-08-12 16:18:50,641 INFO    wandb-upload_0:3799931 [upload_job.py:push():89] Uploaded file /tmp/tmphk7tz386/wandb-job.json
+2024-08-12 16:18:52,805 INFO    SenderThread:3799931 [sender.py:send_artifact():1468] sent artifact job-https___github.com_littlepure2333_MindBridge.git_src_main.py - {'id': 'QXJ0aWZhY3Q6MTE0MzEzMTg1Nw==', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjMxNDY3ODg1Mw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTAyOTEyNTc3Mg==', 'versionIndex': 3}}}
+2024-08-12 16:18:52,805 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:52,805 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-08-12 16:18:52,805 INFO    SenderThread:3799931 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-08-12 16:18:52,805 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: status_report
+2024-08-12 16:18:53,310 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: keepalive
+2024-08-12 16:18:53,599 INFO    SenderThread:3799931 [dir_watcher.py:finish():388] scan: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files
+2024-08-12 16:18:53,599 INFO    SenderThread:3799931 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/output.log output.log
+2024-08-12 16:18:53,599 INFO    SenderThread:3799931 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/wandb-metadata.json wandb-metadata.json
+2024-08-12 16:18:53,599 INFO    SenderThread:3799931 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/conda-environment.yaml conda-environment.yaml
+2024-08-12 16:18:53,599 INFO    SenderThread:3799931 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/config.yaml config.yaml
+2024-08-12 16:18:53,599 INFO    SenderThread:3799931 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/wandb-summary.json wandb-summary.json
+2024-08-12 16:18:53,599 INFO    SenderThread:3799931 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/requirements.txt requirements.txt
+2024-08-12 16:18:53,599 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 10
+2024-08-12 16:18:53,599 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: poll_exit
+2024-08-12 16:18:53,599 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:53,600 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 10
+2024-08-12 16:18:53,601 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:53,602 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-08-12 16:18:53,603 INFO    SenderThread:3799931 [file_pusher.py:finish():172] shutting down file pusher
+2024-08-12 16:18:54,198 INFO    wandb-upload_2:3799931 [upload_job.py:push():131] Uploaded file /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/output.log
+2024-08-12 16:18:54,310 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-12 16:18:54,310 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: poll_exit
+2024-08-12 16:18:54,375 INFO    wandb-upload_3:3799931 [upload_job.py:push():131] Uploaded file /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/conda-environment.yaml
+2024-08-12 16:18:54,573 INFO    wandb-upload_0:3799931 [upload_job.py:push():131] Uploaded file /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/requirements.txt
+2024-08-12 16:18:55,040 INFO    wandb-upload_4:3799931 [upload_job.py:push():131] Uploaded file /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/wandb-summary.json
+2024-08-12 16:18:55,048 INFO    wandb-upload_1:3799931 [upload_job.py:push():131] Uploaded file /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/files/config.yaml
+2024-08-12 16:18:55,248 INFO    Thread-11 (_thread_body):3799931 [sender.py:transition_state():614] send defer: 11
+2024-08-12 16:18:55,248 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:55,248 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 11
+2024-08-12 16:18:55,249 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:55,249 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-08-12 16:18:55,249 INFO    SenderThread:3799931 [file_pusher.py:join():178] waiting for file pusher
+2024-08-12 16:18:55,249 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 12
+2024-08-12 16:18:55,249 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:55,249 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 12
+2024-08-12 16:18:55,249 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:55,249 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-08-12 16:18:55,249 INFO    SenderThread:3799931 [file_stream.py:finish():614] file stream finish called
+2024-08-12 16:18:55,310 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-12 16:18:55,536 INFO    SenderThread:3799931 [file_stream.py:finish():618] file stream finish is done
+2024-08-12 16:18:55,536 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 13
+2024-08-12 16:18:55,536 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: poll_exit
+2024-08-12 16:18:55,536 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:55,536 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 13
+2024-08-12 16:18:55,536 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:55,536 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-08-12 16:18:55,536 INFO    SenderThread:3799931 [sender.py:transition_state():614] send defer: 14
+2024-08-12 16:18:55,536 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: defer
+2024-08-12 16:18:55,536 INFO    HandlerThread:3799931 [handler.py:handle_request_defer():172] handle defer: 14
+2024-08-12 16:18:55,536 DEBUG   SenderThread:3799931 [sender.py:send():379] send: final
+2024-08-12 16:18:55,536 DEBUG   SenderThread:3799931 [sender.py:send():379] send: footer
+2024-08-12 16:18:55,536 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: defer
+2024-08-12 16:18:55,536 INFO    SenderThread:3799931 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-08-12 16:18:55,536 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-12 16:18:55,536 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: poll_exit
+2024-08-12 16:18:55,536 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-12 16:18:55,536 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: poll_exit
+2024-08-12 16:18:55,537 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: server_info
+2024-08-12 16:18:55,537 DEBUG   SenderThread:3799931 [sender.py:send_request():406] send_request: server_info
+2024-08-12 16:18:55,537 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: get_summary
+2024-08-12 16:18:55,537 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: sampled_history
+2024-08-12 16:18:55,537 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: internal_messages
+2024-08-12 16:18:55,799 INFO    MainThread:3799931 [wandb_run.py:_footer_history_summary_info():3936] rendering history
+2024-08-12 16:18:55,800 INFO    MainThread:3799931 [wandb_run.py:_footer_history_summary_info():3968] rendering summary
+2024-08-12 16:18:55,800 INFO    MainThread:3799931 [wandb_run.py:_footer_sync_info():3895] logging synced files
+2024-08-12 16:18:55,800 DEBUG   HandlerThread:3799931 [handler.py:handle_request():146] handle_request: shutdown
+2024-08-12 16:18:55,800 INFO    HandlerThread:3799931 [handler.py:finish():866] shutting down handler
+2024-08-12 16:18:56,537 INFO    WriterThread:3799931 [datastore.py:close():296] close: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240812_161840-ic3cw1cy/run-ic3cw1cy.wandb
+2024-08-12 16:18:56,799 INFO    SenderThread:3799931 [sender.py:finish():1546] shutting down sender
+2024-08-12 16:18:56,800 INFO    SenderThread:3799931 [file_pusher.py:finish():172] shutting down file pusher
+2024-08-12 16:18:56,800 INFO    SenderThread:3799931 [file_pusher.py:join():178] waiting for file pusher

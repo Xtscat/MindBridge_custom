@@ -1,0 +1,15 @@
+MindBrige_image_sketch_vitb32_infonce_2_8_11 starting with epoch 0 / 200
+>>> Epoch0 | Iter0 | voxel: torch.Size([1000, 8192])
+  0%|                                                                                                                                                 | 0/200 [00:02<?, ?it/s]
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 338, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 332, in main
+    trainer.train(local_rank)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_sketch.py", line 178, in train
+    self.train_epoch(epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_sketch.py", line 699, in train_epoch
+    self.train_step(voxel, image, subj_id, epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_sketch.py", line 233, in train_step
+    self.loss_mse_image_3_sum += loss_mse_image_3.item()
+AttributeError: 'Trainer_fmri_image_bridge' object has no attribute 'loss_mse_image_3_sum'

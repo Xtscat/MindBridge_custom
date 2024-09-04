@@ -1,0 +1,41 @@
+
+MindBrige_vae starting with epoch 0 / 500
+  0%|                                                                                                                                   | 0/500 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 196, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 190, in main
+    trainer.train(local_rank)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_vae.py", line 156, in train
+    self.train_epoch(epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_vae.py", line 459, in train_epoch
+    for train_i, datas in enumerate(zip(*self.train_dls)):
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/accelerate/data_loader.py", line 454, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/media/SSD_1_2T/xt/MindBridge/src/data.py", line 113, in __getitem__
+    items.append(self.vox_process(voxel))
+  File "/media/SSD_1_2T/xt/MindBridge/src/data.py", line 89, in vox_process
+    x = pool_voxels(x, self.pool_num, self.pool_type)
+  File "/media/SSD_1_2T/xt/MindBridge/src/data.py", line 133, in pool_voxels
+    voxels = nn.AdaptiveMaxPool1d(pool_num)(voxels)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/modules/pooling.py", line 1104, in forward
+    return F.adaptive_max_pool1d(input, self.output_size, self.return_indices)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/_jit_internal.py", line 497, in fn
+    return if_false(*args, **kwargs)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/functional.py", line 1131, in _adaptive_max_pool1d
+    return adaptive_max_pool1d_with_indices(input, output_size)[0]
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/functional.py", line 1123, in adaptive_max_pool1d_with_indices
+    return torch.adaptive_max_pool1d(input, output_size)
+KeyboardInterrupt

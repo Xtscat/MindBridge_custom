@@ -1,0 +1,295 @@
+2024-07-23 18:55:03,913 INFO    StreamThr :878922 [internal.py:wandb_internal():86] W&B internal server running at pid: 878922, started at: 2024-07-23 18:55:03.913239
+2024-07-23 18:55:03,914 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status
+2024-07-23 18:55:03,914 INFO    WriterThread:878922 [datastore.py:open_for_write():87] open: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/run-dawzxk6p.wandb
+2024-07-23 18:55:03,915 DEBUG   SenderThread:878922 [sender.py:send():379] send: header
+2024-07-23 18:55:03,991 DEBUG   SenderThread:878922 [sender.py:send():379] send: run
+2024-07-23 18:55:04,954 INFO    SenderThread:878922 [dir_watcher.py:__init__():211] watching files in: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files
+2024-07-23 18:55:04,960 INFO    SenderThread:878922 [sender.py:_start_run_threads():1124] run started: dawzxk6p with start time 1721732103.913283
+2024-07-23 18:55:04,960 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: check_version
+2024-07-23 18:55:04,960 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: check_version
+2024-07-23 18:55:05,199 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: run_start
+2024-07-23 18:55:05,204 DEBUG   HandlerThread:878922 [system_info.py:__init__():26] System info init
+2024-07-23 18:55:05,204 DEBUG   HandlerThread:878922 [system_info.py:__init__():41] System info init done
+2024-07-23 18:55:05,204 INFO    HandlerThread:878922 [system_monitor.py:start():194] Starting system monitor
+2024-07-23 18:55:05,205 INFO    SystemMonitor:878922 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-07-23 18:55:05,205 INFO    SystemMonitor:878922 [interfaces.py:start():190] Started cpu monitoring
+2024-07-23 18:55:05,205 INFO    HandlerThread:878922 [system_monitor.py:probe():214] Collecting system info
+2024-07-23 18:55:05,206 INFO    SystemMonitor:878922 [interfaces.py:start():190] Started disk monitoring
+2024-07-23 18:55:05,207 INFO    SystemMonitor:878922 [interfaces.py:start():190] Started gpu monitoring
+2024-07-23 18:55:05,207 INFO    SystemMonitor:878922 [interfaces.py:start():190] Started memory monitoring
+2024-07-23 18:55:05,207 INFO    SystemMonitor:878922 [interfaces.py:start():190] Started network monitoring
+2024-07-23 18:55:05,220 DEBUG   HandlerThread:878922 [system_info.py:probe():150] Probing system
+2024-07-23 18:55:05,221 DEBUG   HandlerThread:878922 [system_info.py:_probe_git():135] Probing git
+2024-07-23 18:55:05,224 DEBUG   HandlerThread:878922 [system_info.py:_probe_git():143] Probing git done
+2024-07-23 18:55:05,224 DEBUG   HandlerThread:878922 [system_info.py:probe():198] Probing system done
+2024-07-23 18:55:05,224 DEBUG   HandlerThread:878922 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-112-generic-x86_64-with-glibc2.35', 'python': '3.10.14', 'heartbeatAt': '2024-07-23T10:55:05.220878', 'startedAt': '2024-07-23T10:55:03.910871', 'docker': None, 'cuda': None, 'args': ('--wandb_project', 'MindBrige_image_only_mixco_loss', '--trainer_select', 'trainer_fmri_img', '--model_name', 'MindBrige_image_only_mixco_loss', '--clip_variant', 'ViT-B/32', '--subj_list', '1', '2', '5', '7', '--num_epochs', '150', '--batch_size', '100', '--val_batch_size', '50', '--h_size', '2048', '--n_blocks', '4', '--pool_type', 'max', '--pool_num', '8192', '--clip_mult', '1', '--mse_mult', '1e5', '--mae_mult', '10', '--cos_mult', '1', '--rec_mult', '1', '--cyc_mult', '1', '--eval_interval', '1', '--ckpt_interval', '1', '--max_lr', '5e-4', '--num_workers', '2', '--nce_mult', '1', '--mixup_pct', '0.2'), 'state': 'running', 'program': '/media/SSD_1_2T/xt/MindBridge/src/main.py', 'codePathLocal': 'main.py', 'codePath': 'src/main.py', 'git': {'remote': 'https://github.com/littlepure2333/MindBridge.git', 'commit': 'caed23be881e8c298f8a81aa933213ba68258519'}, 'email': '1508957301@qq.com', 'root': '/media/SSD_1_2T/xt/MindBridge', 'host': 'fmri-System-Product-Name', 'username': 'fmri', 'executable': '/home/fmri/miniconda3/envs/xt/bin/python3.10', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 3276.8080312499997, 'min': 800.0, 'max': 4937.5}, 'cpu_freq_per_core': [{'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 5635.715, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 5588.706, 'min': 800.0, 'max': 5800.0}, {'current': 3000.0, 'min': 800.0, 'max': 5800.0}, {'current': 5475.877, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 5500.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}, {'current': 3000.0, 'min': 800.0, 'max': 4300.0}], 'disk': {'/': {'total': 467.8895797729492, 'used': 370.28318786621094}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}, {'name': 'NVIDIA GeForce RTX 4090 D', 'memory_total': 25757220864}], 'memory': {'total': 125.60403060913086}}
+2024-07-23 18:55:05,224 INFO    HandlerThread:878922 [system_monitor.py:probe():224] Finished collecting system info
+2024-07-23 18:55:05,224 INFO    HandlerThread:878922 [system_monitor.py:probe():227] Publishing system info
+2024-07-23 18:55:05,224 DEBUG   HandlerThread:878922 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-07-23 18:55:05,954 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_created():271] file/dir created: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/conda-environment.yaml
+2024-07-23 18:55:06,390 DEBUG   HandlerThread:878922 [system_info.py:_save_conda():222] Saving conda packages done
+2024-07-23 18:55:06,391 INFO    HandlerThread:878922 [system_monitor.py:probe():229] Finished publishing system info
+2024-07-23 18:55:06,393 DEBUG   SenderThread:878922 [sender.py:send():379] send: files
+2024-07-23 18:55:06,393 INFO    SenderThread:878922 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-07-23 18:55:06,435 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: python_packages
+2024-07-23 18:55:06,435 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: stop_status
+2024-07-23 18:55:06,435 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: python_packages
+2024-07-23 18:55:06,436 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: stop_status
+2024-07-23 18:55:06,436 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: internal_messages
+2024-07-23 18:55:06,954 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/conda-environment.yaml
+2024-07-23 18:55:06,954 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_created():271] file/dir created: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-metadata.json
+2024-07-23 18:55:06,954 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_created():271] file/dir created: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/requirements.txt
+2024-07-23 18:55:07,055 DEBUG   SenderThread:878922 [sender.py:send():379] send: telemetry
+2024-07-23 18:55:07,488 INFO    wandb-upload_0:878922 [upload_job.py:push():131] Uploaded file /tmp/tmpze58w77nwandb/sjg4uwrp-wandb-metadata.json
+2024-07-23 18:55:07,954 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_created():271] file/dir created: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:08,970 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:55:09,955 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:11,956 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:13,956 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:14,071 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:55:15,957 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:17,957 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:19,155 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:55:19,958 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:20,407 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: partial_history
+2024-07-23 18:55:20,409 DEBUG   SenderThread:878922 [sender.py:send():379] send: history
+2024-07-23 18:55:20,409 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: summary_record
+2024-07-23 18:55:20,410 INFO    SenderThread:878922 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-07-23 18:55:20,958 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_created():271] file/dir created: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-summary.json
+2024-07-23 18:55:21,436 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: stop_status
+2024-07-23 18:55:21,436 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: internal_messages
+2024-07-23 18:55:21,436 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: stop_status
+2024-07-23 18:55:21,958 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:23,959 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:24,259 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:55:25,959 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:27,960 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:29,361 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:55:29,960 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:31,961 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:33,750 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: partial_history
+2024-07-23 18:55:33,751 DEBUG   SenderThread:878922 [sender.py:send():379] send: history
+2024-07-23 18:55:33,751 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: summary_record
+2024-07-23 18:55:33,751 INFO    SenderThread:878922 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-07-23 18:55:33,962 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-summary.json
+2024-07-23 18:55:33,962 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:34,416 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:55:34,962 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/config.yaml
+2024-07-23 18:55:35,962 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:36,437 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: stop_status
+2024-07-23 18:55:36,438 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: internal_messages
+2024-07-23 18:55:36,438 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: stop_status
+2024-07-23 18:55:37,963 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:39,816 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:55:39,964 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:41,964 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:43,965 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:44,916 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:55:45,965 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:47,191 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: partial_history
+2024-07-23 18:55:47,193 DEBUG   SenderThread:878922 [sender.py:send():379] send: history
+2024-07-23 18:55:47,193 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: summary_record
+2024-07-23 18:55:47,193 INFO    SenderThread:878922 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-07-23 18:55:47,965 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-summary.json
+2024-07-23 18:55:47,966 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:49,939 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:55:49,966 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:51,436 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: stop_status
+2024-07-23 18:55:51,436 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: stop_status
+2024-07-23 18:55:51,437 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: internal_messages
+2024-07-23 18:55:51,967 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:53,967 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:55,039 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:55:55,968 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:57,968 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:55:59,969 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:00,172 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:56:00,559 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: partial_history
+2024-07-23 18:56:00,560 DEBUG   SenderThread:878922 [sender.py:send():379] send: history
+2024-07-23 18:56:00,560 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: summary_record
+2024-07-23 18:56:00,561 INFO    SenderThread:878922 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-07-23 18:56:00,969 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-summary.json
+2024-07-23 18:56:01,969 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:03,970 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:05,207 DEBUG   SystemMonitor:878922 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-07-23 18:56:05,208 DEBUG   SenderThread:878922 [sender.py:send():379] send: stats
+2024-07-23 18:56:05,209 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:56:05,970 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:06,436 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: stop_status
+2024-07-23 18:56:06,437 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: internal_messages
+2024-07-23 18:56:06,437 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: stop_status
+2024-07-23 18:56:07,971 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:09,971 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:10,219 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:56:11,972 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:13,972 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:14,053 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: partial_history
+2024-07-23 18:56:14,063 DEBUG   SenderThread:878922 [sender.py:send():379] send: history
+2024-07-23 18:56:14,063 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: summary_record
+2024-07-23 18:56:14,064 INFO    SenderThread:878922 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-07-23 18:56:14,973 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-summary.json
+2024-07-23 18:56:15,331 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:56:15,973 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:17,973 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:19,974 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:20,438 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:56:21,436 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: stop_status
+2024-07-23 18:56:21,437 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: internal_messages
+2024-07-23 18:56:21,437 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: stop_status
+2024-07-23 18:56:21,974 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:23,975 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:25,527 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:56:25,975 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:27,527 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: partial_history
+2024-07-23 18:56:27,528 DEBUG   SenderThread:878922 [sender.py:send():379] send: history
+2024-07-23 18:56:27,528 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: summary_record
+2024-07-23 18:56:27,528 INFO    SenderThread:878922 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-07-23 18:56:27,976 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-summary.json
+2024-07-23 18:56:27,976 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:29,976 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:30,621 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:56:31,385 DEBUG   SenderThread:878922 [sender.py:send():379] send: exit
+2024-07-23 18:56:31,385 INFO    SenderThread:878922 [sender.py:send_exit():586] handling exit code: 255
+2024-07-23 18:56:31,385 INFO    SenderThread:878922 [sender.py:send_exit():588] handling runtime: 86
+2024-07-23 18:56:31,385 INFO    SenderThread:878922 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-07-23 18:56:31,385 INFO    SenderThread:878922 [sender.py:send_exit():594] send defer
+2024-07-23 18:56:31,385 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:31,386 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 0
+2024-07-23 18:56:31,386 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:31,386 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-07-23 18:56:31,386 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 1
+2024-07-23 18:56:31,386 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:31,386 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 1
+2024-07-23 18:56:31,386 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:31,386 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-07-23 18:56:31,386 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 2
+2024-07-23 18:56:31,386 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:31,386 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 2
+2024-07-23 18:56:31,386 INFO    HandlerThread:878922 [system_monitor.py:finish():203] Stopping system monitor
+2024-07-23 18:56:31,386 INFO    HandlerThread:878922 [interfaces.py:finish():202] Joined cpu monitor
+2024-07-23 18:56:31,387 DEBUG   SystemMonitor:878922 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-07-23 18:56:31,387 DEBUG   SystemMonitor:878922 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-07-23 18:56:31,387 INFO    HandlerThread:878922 [interfaces.py:finish():202] Joined disk monitor
+2024-07-23 18:56:31,447 INFO    HandlerThread:878922 [interfaces.py:finish():202] Joined gpu monitor
+2024-07-23 18:56:31,447 INFO    HandlerThread:878922 [interfaces.py:finish():202] Joined memory monitor
+2024-07-23 18:56:31,447 INFO    HandlerThread:878922 [interfaces.py:finish():202] Joined network monitor
+2024-07-23 18:56:31,447 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:31,447 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-07-23 18:56:31,447 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 3
+2024-07-23 18:56:31,448 DEBUG   SenderThread:878922 [sender.py:send():379] send: stats
+2024-07-23 18:56:31,448 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:31,448 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 3
+2024-07-23 18:56:31,448 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:31,448 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-07-23 18:56:31,448 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 4
+2024-07-23 18:56:31,448 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:31,448 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 4
+2024-07-23 18:56:31,449 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:31,449 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-07-23 18:56:31,449 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 5
+2024-07-23 18:56:31,449 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:31,449 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 5
+2024-07-23 18:56:31,449 DEBUG   SenderThread:878922 [sender.py:send():379] send: summary
+2024-07-23 18:56:31,449 INFO    SenderThread:878922 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-07-23 18:56:31,449 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:31,449 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-07-23 18:56:31,449 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 6
+2024-07-23 18:56:31,449 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:31,449 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 6
+2024-07-23 18:56:31,450 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:31,450 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-07-23 18:56:31,450 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 7
+2024-07-23 18:56:31,450 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: status_report
+2024-07-23 18:56:31,450 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:31,450 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 7
+2024-07-23 18:56:31,450 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:31,450 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-07-23 18:56:31,977 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-summary.json
+2024-07-23 18:56:31,977 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:32,334 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: poll_exit
+2024-07-23 18:56:33,977 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:35,144 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 8
+2024-07-23 18:56:35,144 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: poll_exit
+2024-07-23 18:56:35,144 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:35,144 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 8
+2024-07-23 18:56:35,144 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:35,144 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-07-23 18:56:35,144 INFO    SenderThread:878922 [job_builder.py:build():318] Attempting to build job artifact
+2024-07-23 18:56:35,144 INFO    SenderThread:878922 [job_builder.py:_get_source_type():455] is repo sourced job
+2024-07-23 18:56:35,153 INFO    SenderThread:878922 [job_builder.py:build():431] adding wandb-job metadata file
+2024-07-23 18:56:35,160 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 9
+2024-07-23 18:56:35,160 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:35,160 DEBUG   SenderThread:878922 [sender.py:send():379] send: artifact
+2024-07-23 18:56:35,160 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 9
+2024-07-23 18:56:35,334 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: poll_exit
+2024-07-23 18:56:35,978 INFO    Thread-12 :878922 [dir_watcher.py:_on_file_modified():288] file/dir modified: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:36,399 INFO    SenderThread:878922 [sender.py:send_artifact():1468] sent artifact job-https___github.com_littlepure2333_MindBridge.git_src_main.py - {'id': 'QXJ0aWZhY3Q6MTAxNjQ0NTcwNg==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjI5NDM5OTUyMg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTAxNjQ0NTcwNg==', 'versionIndex': 5}}}
+2024-07-23 18:56:36,399 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:36,399 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-07-23 18:56:36,399 INFO    SenderThread:878922 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-07-23 18:56:36,978 INFO    SenderThread:878922 [dir_watcher.py:finish():388] scan: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files
+2024-07-23 18:56:36,978 INFO    SenderThread:878922 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log output.log
+2024-07-23 18:56:36,978 INFO    SenderThread:878922 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-metadata.json wandb-metadata.json
+2024-07-23 18:56:36,979 INFO    SenderThread:878922 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/conda-environment.yaml conda-environment.yaml
+2024-07-23 18:56:36,979 INFO    SenderThread:878922 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/config.yaml config.yaml
+2024-07-23 18:56:36,980 INFO    SenderThread:878922 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-summary.json wandb-summary.json
+2024-07-23 18:56:36,981 INFO    SenderThread:878922 [dir_watcher.py:finish():402] scan save: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/requirements.txt requirements.txt
+2024-07-23 18:56:36,982 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 10
+2024-07-23 18:56:36,982 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: poll_exit
+2024-07-23 18:56:36,982 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:36,983 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 10
+2024-07-23 18:56:36,983 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:36,983 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-07-23 18:56:36,983 INFO    SenderThread:878922 [file_pusher.py:finish():172] shutting down file pusher
+2024-07-23 18:56:37,335 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: poll_exit
+2024-07-23 18:56:37,335 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: poll_exit
+2024-07-23 18:56:37,745 INFO    wandb-upload_0:878922 [upload_job.py:push():131] Uploaded file /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/output.log
+2024-07-23 18:56:37,935 INFO    wandb-upload_1:878922 [upload_job.py:push():131] Uploaded file /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/conda-environment.yaml
+2024-07-23 18:56:38,179 INFO    wandb-upload_2:878922 [upload_job.py:push():131] Uploaded file /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/config.yaml
+2024-07-23 18:56:38,216 INFO    wandb-upload_3:878922 [upload_job.py:push():131] Uploaded file /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/wandb-summary.json
+2024-07-23 18:56:38,241 INFO    wandb-upload_4:878922 [upload_job.py:push():131] Uploaded file /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/files/requirements.txt
+2024-07-23 18:56:38,336 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: poll_exit
+2024-07-23 18:56:38,336 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: poll_exit
+2024-07-23 18:56:38,441 INFO    Thread-11 (_thread_body):878922 [sender.py:transition_state():614] send defer: 11
+2024-07-23 18:56:38,441 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:38,442 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 11
+2024-07-23 18:56:38,442 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:38,442 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-07-23 18:56:38,442 INFO    SenderThread:878922 [file_pusher.py:join():178] waiting for file pusher
+2024-07-23 18:56:38,442 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 12
+2024-07-23 18:56:38,442 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:38,442 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 12
+2024-07-23 18:56:38,442 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:38,442 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-07-23 18:56:38,442 INFO    SenderThread:878922 [file_stream.py:finish():614] file stream finish called
+2024-07-23 18:56:38,699 INFO    SenderThread:878922 [file_stream.py:finish():618] file stream finish is done
+2024-07-23 18:56:38,699 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 13
+2024-07-23 18:56:38,699 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:38,699 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 13
+2024-07-23 18:56:38,699 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:38,699 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-07-23 18:56:38,699 INFO    SenderThread:878922 [sender.py:transition_state():614] send defer: 14
+2024-07-23 18:56:38,699 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: defer
+2024-07-23 18:56:38,699 INFO    HandlerThread:878922 [handler.py:handle_request_defer():172] handle defer: 14
+2024-07-23 18:56:38,700 DEBUG   SenderThread:878922 [sender.py:send():379] send: final
+2024-07-23 18:56:38,700 DEBUG   SenderThread:878922 [sender.py:send():379] send: footer
+2024-07-23 18:56:38,700 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: defer
+2024-07-23 18:56:38,700 INFO    SenderThread:878922 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-07-23 18:56:38,701 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: poll_exit
+2024-07-23 18:56:38,701 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: poll_exit
+2024-07-23 18:56:38,701 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: server_info
+2024-07-23 18:56:38,701 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: get_summary
+2024-07-23 18:56:38,702 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: sampled_history
+2024-07-23 18:56:38,702 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: poll_exit
+2024-07-23 18:56:38,702 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: internal_messages
+2024-07-23 18:56:38,702 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: poll_exit
+2024-07-23 18:56:38,702 DEBUG   SenderThread:878922 [sender.py:send_request():406] send_request: server_info
+2024-07-23 18:56:38,947 INFO    MainThread:878922 [wandb_run.py:_footer_history_summary_info():3936] rendering history
+2024-07-23 18:56:38,948 INFO    MainThread:878922 [wandb_run.py:_footer_history_summary_info():3968] rendering summary
+2024-07-23 18:56:38,954 INFO    MainThread:878922 [wandb_run.py:_footer_sync_info():3895] logging synced files
+2024-07-23 18:56:38,954 DEBUG   HandlerThread:878922 [handler.py:handle_request():146] handle_request: shutdown
+2024-07-23 18:56:38,954 INFO    HandlerThread:878922 [handler.py:finish():866] shutting down handler
+2024-07-23 18:56:39,702 INFO    WriterThread:878922 [datastore.py:close():296] close: /media/SSD_1_2T/xt/MindBridge/src/wandb/run-20240723_185503-dawzxk6p/run-dawzxk6p.wandb
+2024-07-23 18:56:39,947 INFO    SenderThread:878922 [sender.py:finish():1546] shutting down sender
+2024-07-23 18:56:39,948 INFO    SenderThread:878922 [file_pusher.py:finish():172] shutting down file pusher
+2024-07-23 18:56:39,948 INFO    SenderThread:878922 [file_pusher.py:join():178] waiting for file pusher

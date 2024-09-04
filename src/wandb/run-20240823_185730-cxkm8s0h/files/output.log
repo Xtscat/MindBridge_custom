@@ -1,0 +1,32 @@
+
+MindBrige_image_GIT_ViT_mse_mae starting with epoch 0 / 200
+  0%|                                                                                                                                                 | 0/200 [00:00<?, ?it/s]
+  0%|                                                                                                                                                 | 0/200 [00:04<?, ?it/s]
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 288, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 282, in main
+    trainer.train(local_rank)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_GIT.py", line 164, in train
+    self.train_epoch(epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_GIT.py", line 634, in train_epoch
+    self.train_step(voxel, image, subj_id, epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img_GIT.py", line 197, in train_step
+    git_feature_map = self.clip_extractor.embed_image_for_GIT(image)
+  File "/media/SSD_1_2T/xt/MindBridge/src/models.py", line 211, in embed_image_for_GIT
+    pixel_values = self.git_processor(images = image.to(self.device), return_tensors = "pt").pixel_values
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/transformers/models/git/processing_git.py", line 93, in __call__
+    image_features = self.image_processor(images, return_tensors=return_tensors, **image_processor_kwargs)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/transformers/image_processing_utils.py", line 41, in __call__
+    return self.preprocess(images, **kwargs)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/transformers/models/clip/image_processing_clip.py", line 323, in preprocess
+    images = [
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/transformers/models/clip/image_processing_clip.py", line 324, in <listcomp>
+    self.resize(image=image, size=size, resample=resample, input_data_format=input_data_format)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/transformers/models/clip/image_processing_clip.py", line 191, in resize
+    return resize(
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/transformers/image_transforms.py", line 335, in resize
+    resized_image = image.resize((width, height), resample=resample, reducing_gap=reducing_gap)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/PIL/Image.py", line 2328, in resize
+    return self._new(self.im.resize(size, resample, box))
+KeyboardInterrupt

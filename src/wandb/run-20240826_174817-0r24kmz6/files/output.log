@@ -1,0 +1,81 @@
+MindBrige_text_infonce starting with epoch 0 / 500
+>>> Epoch0 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter1 | voxel: torch.Size([1000, 8192])
+  0%|                                                                                                                                                 | 0/500 [00:00<?, ?it/s]
+>>> Epoch0 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter32 | voxel: torch.Size([1000, 8192])
+
+  0%|▏                                                                                                     | 1/500 [00:19<2:44:37, 19.79s/it, epoch=0, lr=0.000255, loss=14.3]
+>>> Epoch0 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 14.32933088030134
+train/lr: 0.00025453683251453466
+train/num_steps: 35
+train/cosine_sim_text: 0.2784458415383207
+train/loss_nce_text: 6.906493582044329
+train/loss_mse_text: 2.4403212124265598e-05
+train/loss_mae_text: 0.0036116362482841525
+train/loss_rec: 0.6699361000742231
+train/loss_cyc: 0.7009435841015407
+Evaluating...
+>>> Epoch0 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval5 | voxel: torch.Size([200, 8192])
+val/loss: 10.504206657409668
+val/num_steps: 6
+val/cosine_sim_text: 0.4881233771642049
+val/loss_nce_text: 5.36031707127889
+val/loss_mse_text: 1.7311844506669633e-05
+val/loss_mae_text: 0.003009551321156323
+val/loss_rec: 0.36029934883117676
+  0%|▏                                                                                                     | 1/500 [00:21<2:57:57, 21.40s/it, epoch=0, lr=0.000255, loss=14.3]
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 333, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 327, in main
+    trainer.train(local_rank)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_text.py", line 151, in train
+    self.train_epoch(epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_text.py", line 520, in train_epoch
+    self.train_step(voxel, captions, subj_id, epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_text.py", line 185, in train_step
+    fmri_text, fmri_rec, loss_cyc = self.voxel2clip((voxel, subj_id))
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/media/SSD_1_2T/xt/MindBridge/src/models.py", line 792, in forward
+    subj_list = x[1].tolist()  # (s,)
+KeyboardInterrupt
+>>> Epoch1 | Iter0 | voxel: torch.Size([1000, 8192])

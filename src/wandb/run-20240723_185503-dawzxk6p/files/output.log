@@ -1,0 +1,304 @@
+MindBrige_image_only_mixco_loss starting with epoch 0 / 150
+>>> Epoch0 | Iter0 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter1 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter2 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter3 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter4 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter5 | voxel: torch.Size([400, 8192])
+  0%|                                                                                                                                                 | 0/150 [00:00<?, ?it/s]
+>>> Epoch0 | Iter6 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter7 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter8 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter9 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter10 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter11 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter12 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter13 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter14 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter15 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter16 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter17 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter18 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter19 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter20 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter21 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter22 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter23 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter24 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter25 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter26 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter27 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter28 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter29 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter30 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter31 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter32 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter33 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter34 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter35 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter36 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter37 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter38 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter39 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter40 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter41 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter42 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter43 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter44 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter45 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter46 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter47 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter48 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter49 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter50 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter51 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter52 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter53 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter54 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter55 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter56 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter57 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter58 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter59 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter60 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter61 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter62 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter63 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter64 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter65 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter66 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter67 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter68 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter69 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter70 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter71 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter72 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter73 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter74 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter75 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter76 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter77 | voxel: torch.Size([400, 8192])
+
+  1%|▋                                                                                                       | 1/150 [00:13<34:41, 13.97s/it, epoch=0, lr=0.000258, loss=3.78]
+>>> Epoch0 | Iter79 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter80 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter81 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter82 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter83 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter84 | voxel: torch.Size([400, 8192])
+>>> Epoch0 | Iter85 | voxel: torch.Size([236, 8192])
+train/loss: 3.776228350262309
+train/lr: 0.00025779540458126563
+train/num_steps: 86
+train/cosine_sim_image: 0.37423040832157334
+train/loss_nce_image: 0.0
+train/loss_mse_image: 3.259216718169925e-05
+train/loss_mae_image: 0.0
+train/loss_cos_image: 0.0
+train/loss_rec: 0.0
+train/loss_cyc: 0.5170116232231606
+train/fwd_pct_correct: 0.0025581386871635914
+train/bwd_pct_correct: 0.0024418591056019068
+Evaluating...
+>>> Epoch0 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval5 | voxel: torch.Size([200, 8192])
+val/loss: 3.7222437063852944
+val/num_steps: 6
+val/cosine_sim_image: 0.5292756160100301
+val/loss_nce_image: 0.0
+val/loss_mse_image: 2.451689579174854e-05
+val/loss_mae_image: 0.0
+val/loss_cos_image: 0.0
+val/loss_rec: 1.2497679988543193
+val/loss_cyc: 0.020786119780192774
+val/fwd_pct_correct: 0.014166666194796562
+val/bwd_pct_correct: 0.004999999888241291
+>>> Epoch1 | Iter0 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter1 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter2 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter3 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter4 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter5 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter6 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter7 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter8 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter9 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter10 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter11 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter12 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter13 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter14 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter15 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter16 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter17 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter18 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter19 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter20 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter21 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter22 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter23 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter24 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter25 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter26 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter27 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter28 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter29 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter30 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter31 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter32 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter33 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter34 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter35 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter36 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter37 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter38 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter39 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter40 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter41 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter42 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter43 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter44 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter45 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter46 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter47 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter48 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter49 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter50 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter51 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter52 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter53 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter54 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter55 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter56 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter57 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter58 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter59 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter60 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter61 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter62 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter63 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter64 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter65 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter66 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter67 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter68 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter69 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter70 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter71 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter72 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter73 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter74 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter75 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter76 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter77 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter78 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter79 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter80 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter81 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter82 | voxel: torch.Size([400, 8192])
+
+  1%|█▍                                                                                                        | 2/150 [00:27<33:32, 13.60s/it, epoch=1, lr=0.0005, loss=2.56]
+>>> Epoch1 | Iter84 | voxel: torch.Size([400, 8192])
+>>> Epoch1 | Iter85 | voxel: torch.Size([236, 8192])
+train/loss: 2.557128592979076
+train/lr: 0.0005
+train/num_steps: 172
+train/cosine_sim_image: 0.531250115050826
+train/loss_nce_image: 0.0
+train/loss_mse_image: 2.4414057279923433e-05
+train/loss_mae_image: 0.0
+train/loss_cos_image: 0.0
+train/loss_rec: 0.0
+train/loss_cyc: 0.1157228779480901
+train/fwd_pct_correct: 0.0033341539092361927
+train/bwd_pct_correct: 0.002665548352524638
+Evaluating...
+>>> Epoch1 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval5 | voxel: torch.Size([200, 8192])
+val/loss: 4.606480121612549
+val/num_steps: 12
+val/cosine_sim_image: 0.5437307556470236
+val/loss_nce_image: 0.0
+val/loss_mse_image: 2.3764024263073225e-05
+val/loss_mae_image: 0.0
+val/loss_cos_image: 0.0
+val/loss_rec: 2.2214234272638955
+val/loss_cyc: 0.00865415739826858
+val/fwd_pct_correct: 0.018333332613110542
+val/bwd_pct_correct: 0.004999999888241291
+>>> Epoch2 | Iter0 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter1 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter2 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter3 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter4 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter5 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter6 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter7 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter8 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter9 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter10 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter11 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter12 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter13 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter14 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter0 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter33 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter33 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter66 | voxel: torch.Size([400, 8192])
+>>> Epoch2 | Iter66 | voxel: torch.Size([400, 8192])
+
+>>> Epoch2 | Eval0 | voxel: torch.Size([200, 8192]))
+>>> Epoch3 | Iter6 | voxel: torch.Size([400, 8192]))
+>>> Epoch3 | Iter21 | voxel: torch.Size([400, 8192])
+>>> Epoch3 | Iter35 | voxel: torch.Size([400, 8192])
+>>> Epoch3 | Iter50 | voxel: torch.Size([400, 8192])
+>>> Epoch3 | Iter64 | voxel: torch.Size([400, 8192])
+
+val/loss_rec: 2.64037291208903orch.Size([400, 8192])
+val/loss_rec: 2.64037291208903orch.Size([400, 8192])
+>>> Epoch4 | Iter11 | voxel: torch.Size([400, 8192])
+>>> Epoch4 | Iter25 | voxel: torch.Size([400, 8192])
+>>> Epoch4 | Iter38 | voxel: torch.Size([400, 8192])
+>>> Epoch4 | Iter54 | voxel: torch.Size([400, 8192])
+>>> Epoch4 | Iter69 | voxel: torch.Size([400, 8192])
+
+>>> Epoch4 | Iter84 | voxel: torch.Size([400, 8192])
+>>> Epoch5 | Iter0 | voxel: torch.Size([400, 8192]))
+>>> Epoch5 | Iter14 | voxel: torch.Size([400, 8192])
+>>> Epoch5 | Iter29 | voxel: torch.Size([400, 8192])
+>>> Epoch5 | Iter44 | voxel: torch.Size([400, 8192])
+>>> Epoch5 | Iter58 | voxel: torch.Size([400, 8192])
+>>> Epoch5 | Iter73 | voxel: torch.Size([400, 8192])
+
+>>> Epoch5 | Eval0 | voxel: torch.Size([200, 8192]))
+>>> Epoch6 | Iter4 | voxel: torch.Size([400, 8192]))
+  4%|████▏                                                                                                   | 6/150 [01:24<33:57, 14.15s/it, epoch=5, lr=0.000499, loss=2.36]
+Traceback (most recent call last):
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 220, in <module>
+    main()
+  File "/media/SSD_1_2T/xt/MindBridge/src/main.py", line 214, in main
+    trainer.train(local_rank)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img.py", line 158, in train
+    self.train_epoch(epoch)
+  File "/media/SSD_1_2T/xt/MindBridge/src/trainer_fmri_img.py", line 577, in train_epoch
+    for train_i, datas in enumerate(zip(*self.train_dls)):
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/accelerate/data_loader.py", line 463, in __iter__
+    current_batch = send_to_device(current_batch, self.device, non_blocking=self._non_blocking)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/accelerate/utils/operations.py", line 174, in send_to_device
+    return honor_type(
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/accelerate/utils/operations.py", line 81, in honor_type
+    return type(obj)(generator)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/accelerate/utils/operations.py", line 175, in <genexpr>
+    tensor, (send_to_device(t, device, non_blocking=non_blocking, skip_keys=skip_keys) for t in tensor)
+  File "/home/fmri/miniconda3/envs/xt/lib/python3.10/site-packages/accelerate/utils/operations.py", line 155, in send_to_device
+    return tensor.to(device, non_blocking=non_blocking)
+>>> Epoch6 | Iter18 | voxel: torch.Size([400, 8192])
+>>> Epoch6 | Iter18 | voxel: torch.Size([400, 8192])

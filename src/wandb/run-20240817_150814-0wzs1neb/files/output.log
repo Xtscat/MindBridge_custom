@@ -1,0 +1,202 @@
+MindBrige_text_only_mixco_loss_diffusers_vit starting with epoch 0 / 500
+>>> Epoch0 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter1 | voxel: torch.Size([1000, 8192])
+  0%|                                                                                                                                                 | 0/500 [00:00<?, ?it/s]
+>>> Epoch0 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch0 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 41.93524856567383
+train/lr: 0.00025453683251453466
+train/num_steps: 35
+train/cosine_sim_text: 0.5095957103118832
+train/loss_nce_text: 7.187399782453265
+train/loss_mse_text: 1.2439233770627262e-05
+train/loss_mae_text: 0.0024500364404437796
+train/loss_rec: 1.0348635043416705
+train/loss_cyc: 0.7812973580190113
+Evaluating...
+>>> Epoch0 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch0 | Eval3 | voxel: torch.Size([200, 8192])
+
+  0%|▏                                                                                                     | 1/500 [00:48<6:47:01, 48.94s/it, epoch=0, lr=0.000255, loss=41.9]
+>>> Epoch0 | Eval5 | voxel: torch.Size([200, 8192])
+val/loss: 26.438253084818523
+val/num_steps: 6
+val/cosine_sim_text: 0.7971410353978475
+val/loss_nce_text: 5.745712836583455
+val/loss_mse_text: 5.145570260841244e-06
+val/loss_mae_text: 0.0014041361088554065
+val/loss_rec: 0.3605724473794301
+val/loss_cyc: 0.030336821762224037
+>>> Epoch1 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch1 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 29.177573340279714
+train/lr: 0.0005
+train/num_steps: 70
+train/cosine_sim_text: 0.801941522530147
+train/loss_nce_text: 7.211461244310652
+train/loss_mse_text: 5.02380685897411e-06
+train/loss_mae_text: 0.0013357295355360423
+train/loss_rec: 0.7157352668898446
+train/loss_cyc: 0.17923969498702458
+Evaluating...
+>>> Epoch1 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval1 | voxel: torch.Size([200, 8192])
+
+  0%|▍                                                                                                       | 2/500 [01:37<6:45:04, 48.80s/it, epoch=1, lr=0.0005, loss=29.2]
+>>> Epoch1 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch1 | Eval5 | voxel: torch.Size([200, 8192])
+val/loss: 24.039573669433594
+val/num_steps: 12
+val/cosine_sim_text: 0.7852347095807394
+val/loss_nce_text: 5.316329638163249
+val/loss_mse_text: 5.447578284171565e-06
+val/loss_mae_text: 0.0012520091452946265
+val/loss_rec: 0.3164627452691396
+val/loss_cyc: 0.025602684977153938
+Not best - current_similarity: 0.785 @ epoch 1, best_similarity: 0.797 @ epoch 0
+>>> Epoch2 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter17 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter18 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter19 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter20 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter21 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter22 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter23 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter24 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter25 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter26 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter27 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter28 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter29 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter30 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter31 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter32 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter33 | voxel: torch.Size([1000, 8192])
+>>> Epoch2 | Iter34 | voxel: torch.Size([236, 8192])
+train/loss: 27.68501706804548
+train/lr: 0.0004999950274875398
+train/num_steps: 105
+train/cosine_sim_text: 0.7656756503241403
+train/loss_nce_text: 6.927101530347552
+train/loss_mse_text: 5.94369991761466e-06
+train/loss_mae_text: 0.0012426136693518078
+train/loss_rec: 0.6489766802106585
+train/loss_cyc: 0.16133028055940354
+
+  1%|▌                                                                                                       | 3/500 [02:26<6:43:58, 48.77s/it, epoch=2, lr=0.0005, loss=27.7]
+>>> Epoch2 | Eval0 | voxel: torch.Size([200, 8192])
+>>> Epoch2 | Eval1 | voxel: torch.Size([200, 8192])
+>>> Epoch2 | Eval2 | voxel: torch.Size([200, 8192])
+>>> Epoch2 | Eval3 | voxel: torch.Size([200, 8192])
+>>> Epoch2 | Eval4 | voxel: torch.Size([200, 8192])
+>>> Epoch2 | Eval5 | voxel: torch.Size([200, 8192])
+val/loss: 23.225610097249348
+val/num_steps: 18
+val/cosine_sim_text: 0.7701128025849661
+val/loss_nce_text: 5.126980384190877
+val/loss_mse_text: 5.831148655488505e-06
+val/loss_mae_text: 0.001206231148292621
+val/loss_rec: 0.2969787170489629
+val/loss_cyc: 0.02924435678869486
+Not best - current_similarity: 0.770 @ epoch 2, best_similarity: 0.797 @ epoch 0
+>>> Epoch3 | Iter0 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter1 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter2 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter3 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter4 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter5 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter6 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter7 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter8 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter9 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter10 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter11 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter12 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter13 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter14 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter15 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter16 | voxel: torch.Size([1000, 8192])
+>>> Epoch3 | Iter17 | voxel: torch.Size([1000, 8192])
