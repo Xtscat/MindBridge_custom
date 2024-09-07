@@ -283,7 +283,7 @@ def main():
             args = args, out_dim_image_feature_map = 50 * 768, out_dim_image_fc = 50 * 512, device = device
         )
         trainer = prepare_trainer_fmri_img_sketch(args, accelerator, voxel2clip, clip_extractor, device)
-        # trainer.prepare_wandb(local_rank, args)
+        trainer.prepare_wandb(local_rank, args)
         trainer.prepare_multi_gpu()
     elif args.trainer_select == "trainer_fmri_img_GIT":
         args.clip_variant = "GIT-ViT"
@@ -294,17 +294,17 @@ def main():
         # trainer.prepare_wandb(local_rank, args)
         trainer.prepare_multi_gpu()
 
-    # # Resume or Load ckpt
-    # if args.resume:
-    #     trainer.resume()
-    # elif args.load_from:
-    #     trainer.load()
-    # else:  # the ckpt folder should not contain any ckpt. If it contains something, which means you forget to change experiment name, and will cause overwrite.
-    #     file_count = len(os.listdir(trainer.outdir))
-    #     if file_count > 0:
-    #         raise RuntimeError(
-    #             "The folder is not empty, please check to avoid overwriting! \n {}\n".format(trainer.outdir)
-    #         )
+    # Resume or Load ckpt
+    if args.resume:
+        trainer.resume()
+    elif args.load_from:
+        trainer.load()
+    else:  # the ckpt folder should not contain any ckpt. If it contains something, which means you forget to change experiment name, and will cause overwrite.
+        file_count = len(os.listdir(trainer.outdir))
+        if file_count > 0:
+            raise RuntimeError(
+                "The folder is not empty, please check to avoid overwriting! \n {}\n".format(trainer.outdir)
+            )
 
     # Train or Adapt
     trainer.train(local_rank)

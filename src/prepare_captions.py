@@ -1,22 +1,15 @@
 import os
-from datetime import datetime
 
 import evaluate
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import torch
-import torch.nn as nn
-from PIL import Image
-from sentence_transformers import SentenceTransformer, util
-from torchvision.io import ImageReadMode, read_image
-from torchvision.transforms import v2
+from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 from transformers import AutoProcessor, AutoTokenizer, CLIPModel
 
 import data
 import utils
-from eval import cal_metrics
 from modeling_git import GitForCausalLMClipEmb
 from models import MindSingle_image_GIT
 from nsd_access import NSDAccess
@@ -199,7 +192,7 @@ def main(device):
 
         with torch.no_grad():
             # image_embeds = voxel2clip(voxel).reshape(1, -1, 1024) # for git-large
-            image_embeds = voxel2clip(voxel).reshape(1, -1, 768) # for git-base
+            image_embeds = voxel2clip(voxel).reshape(1, -1, 768)  # for git-base
 
             brain_generate_ids = git_model.generate(pixel_values = image_embeds, max_length = 50)
             brain_generated_caption = processor.batch_decode(brain_generate_ids, skip_special_tokens = True)

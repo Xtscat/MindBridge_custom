@@ -42,7 +42,10 @@ class Clipper(torch.nn.Module):
             """ to train fmri_img_sketch """
             from transformers import CLIPVisionModelWithProjection
             image_encoder = CLIPVisionModelWithProjection.from_pretrained(
-                "openai/clip-vit-base-patch32", cache_dir = "/media/SSD_1_2T/xt/weights/"
+                "openai/clip-vit-base-patch32",
+                cache_dir = "/media/SSD_1_2T/xt/weights/",
+                clearclip = False,
+                layer_start = 0
             ).eval()
             image_encoder = image_encoder.to(device)
             for param in image_encoder.parameters():
@@ -537,7 +540,7 @@ class MindSingle_image_sketch(nn.Module):
         self.head_image_4 = nn.Linear(h, out_dim_image_feature_map)
         self.head_image_5 = nn.Linear(h, out_dim_image_feature_map)
         self.head_image_6 = nn.Linear(h, out_dim_image_feature_map)
-        self.head_image_fc = nn.Linear(h, out_dim_image_fc)
+        self.head_image_7 = nn.Linear(h, out_dim_image_feature_map)
 
     # @torchsnooper.snoop()
     def forward(self, x):
@@ -549,10 +552,9 @@ class MindSingle_image_sketch(nn.Module):
         x_image_4 = self.head_image_4(x)
         x_image_5 = self.head_image_5(x)
         x_image_6 = self.head_image_6(x)
-        x_image_fc = self.head_image_fc(x)
+        x_image_7 = self.head_image_7(x)
 
-        # return x_image_fc, x_image_2, x_image_3, x_image_4
-        return x_image_fc, x_image_2, x_image_3, x_image_4, x_image_5, x_image_6
+        return x_image_2, x_image_3, x_image_4, x_image_5, x_image_6, x_image_7
 
 
 class MindBridge_image_sketch(MindSingle_image_sketch):
@@ -628,14 +630,6 @@ class MindBridge_image_sketch(MindSingle_image_sketch):
         x_image_4 = self.head_image_4(x)
         x_image_5 = self.head_image_5(x)
         x_image_6 = self.head_image_6(x)
-        x_image_fc = self.head_image_fc(x)
+        x_image_7 = self.head_image_7(x)
 
-        x_image_2 = x_image_2.reshape(len(x_image_2), -1)
-        x_image_3 = x_image_3.reshape(len(x_image_3), -1)
-        x_image_4 = x_image_4.reshape(len(x_image_4), -1)
-        x_image_5 = x_image_5.reshape(len(x_image_5), -1)
-        x_image_6 = x_image_6.reshape(len(x_image_6), -1)
-        x_image_fc = x_image_fc.reshape(len(x_image_fc), -1)
-
-        # return x_image_fc, x_image_2, x_image_3, x_image_4, x_rec, loss_cyc
-        return x_image_fc, x_image_2, x_image_3, x_image_4, x_image_5, x_image_6, x_rec, loss_cyc
+        return x_image_2, x_image_3, x_image_4, x_image_5, x_image_6, x_image_7, x_rec, loss_cyc

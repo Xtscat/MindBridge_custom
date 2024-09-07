@@ -1,11 +1,15 @@
 # 忽略所有的.class文件
 *.txt
 *.xlsx
+*.png
 
 # 忽略指定文件
 # config.ini
 
 # 忽略指定目录
+/assets
+/src/__pycache__
+/src/wandb
 /asstes
 /train_logs
 /.vscode
@@ -14,6 +18,7 @@
 
 # 忽略某个目录下的所有.txt文件
 # logs/*.txt
+src/*.png
 
 # 忽略某个目录及其子目录下的所有.xml文件
 # assets/**/*.xml

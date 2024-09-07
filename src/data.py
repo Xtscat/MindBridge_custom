@@ -202,7 +202,18 @@ def get_dataloader(
     return dataloader
 
 
-def get_dls(subject, data_path, batch_size, val_batch_size, num_workers, pool_type, pool_num, length, seed):
+def get_dls(
+    subject = None,
+    data_path = None,
+    batch_size = None,
+    val_batch_size = None,
+    extensions = None,
+    num_workers = None,
+    pool_type = None,
+    pool_num = None,
+    length = None,
+    seed = None
+):
     train_path = "{}/webdataset_avg_split/train/subj0{}".format(data_path, subject)
     val_path = "{}/webdataset_avg_split/val/subj0{}".format(data_path, subject)
 
@@ -210,7 +221,7 @@ def get_dls(subject, data_path, batch_size, val_batch_size, num_workers, pool_ty
 
     # extensions = ['nsdgeneral.npy', "subj", "emb.pt", "img_rec.pt"]  # data for train vae
     # extensions = ['nsdgeneral.npy', 'coco73k.npy', "subj"] # data for train fmri text
-    extensions = ['nsdgeneral.npy', 'jpg', "subj"]  # data for train fmri image sketch or GIT
+    # extensions = ['nsdgeneral.npy', 'jpg', "subj"]  # data for train fmri image sketch or GIT
 
     train_dl = get_dataloader(
         train_path,

@@ -1,12 +1,8 @@
 batch_size=250
 val_batch_size=50
 num_epochs=200
-mse_mult=2e7
-mae_mult=1e3
-# mse_mult=2e6
-# mae_mult=1e3
-# mse_mult=1e2
-# mae_mult=1e2
+mse_mult=1e7
+mae_mult=1e2
 info_nce_mult=1e0
 rec_mult=1
 cyc_mult=1
@@ -15,7 +11,7 @@ mixup_pct=0.2
 n_blocks=4
 h_size=2048
 trainer_select="trainer_fmri_img_sketch"
-model_name="MindBrige_image_sketch_vitb32_infonce_234_8_11_norm_largemse"
+model_name="MindBrige_image_sketch_vitb32_infonce_234567_norm"
 clip_variant="ViT-B/32"
 
 cd src/
