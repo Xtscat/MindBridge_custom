@@ -309,11 +309,6 @@ def reconstruction(
         if mem_efficient:
             voxel2clip_text.to('cpu')
 
-        # brain_clip_text_embeddings = clip_results[1]
-        # brain_clip_image_embeddings, brain_clip_text_embeddings = clip_results[: 2]
-        # brain_clip_image_embeddings = brain_clip_image_embeddings.reshape(B, -1, 768)
-        # brain_clip_text_embeddings = brain_clip_text_embeddings.reshape(B, -1, 768)
-
         brain_clip_text_embeddings = fmri_text
         brain_clip_image_embeddings = fmri_image
 

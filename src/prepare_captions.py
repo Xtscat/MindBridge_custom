@@ -216,13 +216,13 @@ def main(device):
             #         f"captions_from_image: {image_generate_caption} ==> captions_from_brain: {brain_generated_caption}"
             #     )
 
-        data = {
-            'captions_from_coco': captions_from_coco,
-            'captions_from_image': captions_from_image,
-            'captions_from_brain': captions_from_brain
-        }
-        df = pd.DataFrame(data)
-        df.to_excel('captions.xlsx')
+        # data = {
+        #     'captions_from_coco': captions_from_coco,
+        #     'captions_from_image': captions_from_image,
+        #     'captions_from_brain': captions_from_brain
+        # }
+        # df = pd.DataFrame(data)
+        # df.to_excel('captions.xlsx')
 
     # compute text metrics
     metrics_bleu = evaluate_captions(
@@ -257,10 +257,7 @@ if __name__ == "__main__":
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
     print("device:", device)
 
-    # args.model_name = "MindBrige_image_GIT_ViT_infonce_token"
-    args.model_name = "MindBrige_image_GIT_ViT_infonce_largemse"
-    # args.model_name = "MindBrige_image_GIT_ViT-softclip"
-    # args.model_name = "MindBrige_image_GIT_ViT-L_14_infonce"
+    args.model_name = "MindBrige_image_GIT_ViT_infonce"
     args.ckpt_from = "last"
     args.h_size = 2048
     args.n_blocks = 4

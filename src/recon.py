@@ -11,7 +11,7 @@ import data
 import utils
 from eval import cal_metrics
 from models import (Clipper, MindBridge_image, MindBridge_text,
-                    MindSingle_image, MindSingle_text, Voxel2vae)
+                    MindSingle_image, MindSingle_text)
 from nsd_access import NSDAccess
 from options import args
 
@@ -82,7 +82,7 @@ def prepare_VD(args, device):
     vd_pipe.vae.requires_grad_(False)
 
     vd_pipe.scheduler = UniPCMultistepScheduler.from_pretrained(
-        "shi-labs/versatile-diffusion", cache_dir = "/media/SSD_1_2T/xt/weights/", subfolder = "scheduler"
+        "shi-labs/versatile-diffusion", cache_dir = "/media/SSD_1_2T/xt/MindBridge/weights/", subfolder = "scheduler"
     )
 
     # Set weighting of Dual-Guidance
@@ -101,69 +101,12 @@ def prepare_VD(args, device):
     return vd_pipe
 
 
-def prepare_SD(args, device):
-    print('Creating controlnet stable diffusion reconstruction pipeline...')
-    from diffusers import StableDiffusionPipeline
-
-    from inference_pipe import fMRI2ImgDiffusionPipeline
-    try:
-        # sd_pipe = fMRI2ImgDiffusionPipeline.from_pretrained(args.diffusion_cache_dir)
-        sd_pipe = StableDiffusionPipeline.from_pretrained(args.diffusion_cache_dir)
-    except:
-        print("Downloading controlnet stable diffusion to", args.diffusion_cache_dir)
-        sd_pipe = StableDiffusionPipeline.from_pretrained(
-            "stabilityai/stable-diffusion-2-1",
-            torch_dtype = torch.float32,
-            variant = "fp16",
-            cache_dir = args.diffusion_cache_dir
-        )
-        # sd_pipe = fMRI2ImgDiffusionPipeline.from_pretrained(
-        #     "stabilityai/stable-diffusion-2-1",
-        #     torch_dtype = torch.float32,
-        #     variant = "fp16",
-        #     cache_dir = args.diffusion_cache_dir
-        # )
-
-    # sd_pipe.unet.eval().to(device)
-    # sd_pipe.vae.eval().to(device)
-    # sd_pipe.text_encoder.eval().to(device)
-    # sd_pipe.unet.requires_grad_(False)
-    # sd_pipe.vae.requires_grad_(False)
-    # sd_pipe.text_encoder.requires_grad_(False)
-    # sd_pipe.eval().to(device)
-    # sd_pipe.requires_grad_(False)
-    sd_pipe = sd_pipe.to(device)
-
-    return sd_pipe
-
-
-def prepare_SD(args, device):
-    print('Creating controlnet stable diffusion reconstruction pipeline...')
-    from diffusers import StableDiffusionPipeline
-
-    from inference_pipe import fMRI2ImgDiffusionPipeline
-    try:
-        # sd_pipe = fMRI2ImgDiffusionPipeline.from_pretrained(args.diffusion_cache_dir)
-        sd_pipe = StableDiffusionPipeline.from_pretrained(args.diffusion_cache_dir)
-    except:
-        print("Downloading controlnet stable diffusion to", args.diffusion_cache_dir)
-        sd_pipe = StableDiffusionPipeline.from_pretrained(
-            "stabilityai/stable-diffusion-2-1",
-            torch_dtype = torch.float32,
-            variant = "fp16",
-            cache_dir = args.diffusion_cache_dir
-        )
-    sd_pipe = sd_pipe.to(device)
-
-    return sd_pipe
-
-
 def prepare_CLIP(args, device):
     clip_sizes = {"RN50": 1024, "ViT-L/14": 768, "ViT-B/32": 512, "ViT-H-14": 1024}
     clip_size = clip_sizes[args.clip_variant]
-    out_dim_image = 257 * clip_size
-    out_dim_text = 77 * clip_size
-    clip_extractor = Clipper("ViT-L/14", hidden_state = True, norm_embs = True, device = device)
+    clip_extractor = Clipper(
+        "ViT-L/14", hidden_state = True, norm_embs = True, device = device, clearclip = True, layer_start = 23
+    )
 
     return clip_extractor
 
@@ -185,7 +128,7 @@ def prepare_voxel2clip(args, out_dim_image, out_dim_text, device, mode):
 
         outdir = "/media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_text_infonce/"
         # outdir = f'../train_logs/{args.model_name}'
-        ckpt_path = os.path.join(outdir, f'{args.ckpt_from}.pth')
+        ckpt_path = os.path.join(outdir, 'last.pth')
         print("ckpt_path", ckpt_path)
         checkpoint = torch.load(ckpt_path, map_location = 'cpu')
         print("EPOCH: ", checkpoint['epoch'])
@@ -207,9 +150,9 @@ def prepare_voxel2clip(args, out_dim_image, out_dim_text, device, mode):
         # only need to load Single-subject version of MindBridge
         voxel2clip = MindSingle_image(**voxel2clip_kwargs)
 
-        outdir = "/media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_img_infonce/"
+        outdir = "/media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_img_infonce_clearclilp/"
         # outdir = f'../train_logs/{args.model_name}'
-        ckpt_path = os.path.join(outdir, f'{args.ckpt_from}.pth')
+        ckpt_path = os.path.join(outdir, 'best.pth')
         print("ckpt_path", ckpt_path)
         checkpoint = torch.load(ckpt_path, map_location = 'cpu')
         print("EPOCH: ", checkpoint['epoch'])
@@ -253,9 +196,9 @@ def main(device):
 
     # load voxel2clip
     voxel2clip_text = prepare_voxel2clip(args, None, 77 * 768, device, mode = "text")
-    voxel2clip_image = prepare_voxel2clip(args, 257 * 768,None, device, mode = "image")
+    voxel2clip_image = prepare_voxel2clip(args, 257 * 768, None, device, mode = "image")
 
-    outdir = f'../train_logs/VD_text_img_infonce_guidance5_ratio0.5/'
+    outdir = f'../train_logs/VD_text_img_infonce_clearclip_guidance5_ratio0.5/'
     save_dir = os.path.join(outdir, f"recon_on_subj{args.subj_test}")
     os.makedirs(save_dir, exist_ok = True)
     print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))

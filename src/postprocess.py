@@ -1,45 +1,19 @@
+import io
 import os
-from datetime import datetime
 
-import numpy as np
+import cairosvg
+import pandas as pd
 import torch
 import torchvision.transforms as transforms
-from diffusers.utils import load_image
-from torchvision.io import write_png
+from PIL import Image
 from tqdm import tqdm
 
-import data
-import utils
-from models import Clipper, MindBridge, MindSingle, Voxel2vae
-from nsd_access import NSDAccess
 from options import args
 
 
-def prepare_data(args):
-    ## Load data
-    subj_num_voxels = {1: 15724, 2: 14278, 3: 15226, 4: 13153, 5: 13039, 6: 17907, 7: 12682, 8: 14386}
-    args.num_voxels = subj_num_voxels[args.subj_test]
-
-    test_path = "{}/webdataset_avg_split/test/subj0{}".format(args.data_path, args.subj_test)
-    test_dl = data.get_dataloader(
-        test_path,
-        batch_size = args.batch_size,
-        num_workers = args.num_workers,
-        seed = args.seed,
-        is_shuffle = False,
-        extensions = ['nsdgeneral.npy', "jpg", 'low_level.png', "subj", "caption.npy"],
-        pool_type = args.pool_type,
-        pool_num = args.pool_num,
-    )
-
-    return test_dl
-
-
 def prepare_sdct(args, device):
-    # !pip install opencv-python transformers accelerate
     from diffusers import (ControlNetModel,
                            StableDiffusionControlNetImg2ImgPipeline,
-                           StableDiffusionControlNetPipeline,
                            UniPCMultistepScheduler)
 
     controlnet = ControlNetModel.from_pretrained(
@@ -53,89 +27,151 @@ def prepare_sdct(args, device):
         torch_dtype = torch.float16,
         cache_dir = "/media/SSD_1_2T/xt/weights/"
     )
-    # pipe = StableDiffusionControlNetPipeline.from_pretrained(
-    #     "stabilityai/stable-diffusion-2-1",
-    #     controlnet = controlnet,
-    #     torch_dtype = torch.float16,
-    #     cache_dir = "/media/SSD_1_2T/xt/weights/"
-    # )
 
-    # speed up diffusion process with faster scheduler and memory optimization
     pipe.scheduler = UniPCMultistepScheduler.from_config(pipe.scheduler.config)
-    # pipe.enable_model_cpu_offload()
-    pipe.to(device)
+    pipe.enable_model_cpu_offload()
+    # pipe.to(device)
 
-    generator = torch.manual_seed(0)
+    generator = torch.manual_seed(42)
     return pipe, generator
 
 
-def main(device):
-    args.batch_size = 1
-    if args.subj_load is None:
-        args.subj_load = [args.subj_test]
+def sort_keys(s):
+    return int(s.split('/')[-1].split('_')[0])
 
-    test_dl = prepare_data(args)
-    num_test = len(test_dl)
 
+def prepare_captions(caption_path):
+    df = pd.read_excel(caption_path)
+    captions_from_brain = df['captions_from_brain'].tolist()
+    return captions_from_brain
+
+
+def prepare_img(img_folder_path):
+    all_files = [
+        os.path.join(img_folder_path, f)
+        for f in os.listdir(img_folder_path)
+        if os.path.isfile(os.path.join(img_folder_path, f))
+    ]
+    rec_pt_files = [f for f in all_files if f.endswith('rec.pt')]
+    rec_pt_files = sorted(rec_pt_files, key = sort_keys)
+
+    img_pt_files = [f for f in all_files if f.endswith('img.pt')]
+    img_pt_files = sorted(img_pt_files, key = sort_keys)
+    return rec_pt_files, img_pt_files
+
+
+def prepare_sketch(sketch_folder_path):
+    all_subjs = [os.path.join(sketch_folder_path, folder) for folder in os.listdir(sketch_folder_path)]
+    all_subjs = sorted(all_subjs)
+    for i, subj in enumerate(all_subjs):
+        subj = os.path.join(subj, "runs")
+        subj = os.path.join(subj, os.listdir(subj)[0])
+        if os.path.exists(os.path.join(subj, subj.split('/')[-1] + "_seed42_best.svg")):
+            subj = os.path.join(subj, subj.split('/')[-1] + "_seed42_best.svg")
+        elif os.path.exists(os.path.join(subj, subj.split('/')[-1] + "_seed42/svg_logs")):
+            subj = os.path.join(subj, subj.split('/')[-1] + "_seed42/svg_logs")
+            subj = os.path.join(subj, sorted(os.listdir(subj))[-1])
+        else:
+            raise ValueError(f"{subj}_svg does not exists")
+        all_subjs[i] = subj
+    return all_subjs
+
+
+def main(
+    postprocess_folder: str = None,
+    caption_path: str = None,
+    img_folder_path: str = None,
+    sketch_folder_path: str = None,
+    device: str = None
+):
     sdct_pipe, generator = prepare_sdct(args, device)
-    outdir = f'../train_logs/{args.model_name}_svg'
+    outdir = f'../train_logs/{postprocess_folder}_svg'
     save_dir = os.path.join(outdir, f"recon_on_subj{args.subj_test}")
     os.makedirs(save_dir, exist_ok = True)
-    print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
-    test_range = np.arange(num_test)
+    captions = prepare_captions(caption_path)
+    rec_imgs, coco_imgs = prepare_img(img_folder_path)
+    sketches = prepare_sketch(sketch_folder_path)
 
-    for val_i, (voxel, img, img_lowlevel, subj, caption) in enumerate(tqdm(test_dl, total = len(test_range))):
-        if val_i <= 1:
-            continue
-        if val_i > 2:
-            break
+    assert isinstance(captions, list) and isinstance(rec_imgs, list) and isinstance(coco_imgs, list) and isinstance(
+        sketches, list
+    ), "The type of captions and images and sketchs must be list"
+    assert len(captions) == len(rec_imgs) and len(captions) == len(coco_imgs) and len(captions) == len(
+        sketches
+    ), "The length of captions and images and sketchs must same"
 
-        img_vd_path = f"/media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_text_only_mixco_loss/recon_on_subj1/{val_i}_rec.pt"
-        print(img_vd_path)
+    for caption, rec_img, coco_img, sketch in zip(captions, rec_imgs, coco_imgs, sketches):
+        """ 
+            caption: a man cooking food in a kitchen.
+            img: /media/SSD_1_2T/xt/MindBridge/train_logs/VD_text_img_infonce_guidance5_ratio0.5/recon_on_subj1/0_rec.pt
+            sketch: /media/SSD_1_2T/xt/data/natural-scenes-dataset/results_sketches_subj1/sample000000349/runs/background_l2_sample000000349/background_l2_sample000000349_seed42_best.svg
+        """
+        print(sketch.split('/')[7])
+
+        save_dir = os.path.join("/media/SSD_1_2T/xt/MindBridge/train_logs/Postprocess", rec_img.split('/')[7])
+        save_dir = os.path.join(save_dir, sketch.split('/')[7])
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
+
+        # load img:
+        #     [3, 512, 512]
+        rec_img = torch.load(rec_img).squeeze(0).squeeze(0)
+        coco_img = torch.load(coco_img).squeeze(0).squeeze(0)
+
+        transform = transforms.ToPILImage()
+
+        vd_img_to_save = transform(rec_img)
+        vd_img_save_path = os.path.join(save_dir, "vd_img.png")
+        vd_img_to_save.save(vd_img_save_path)
+
+        coco_img_to_save = transform(coco_img)
+        coco_img_save_path = os.path.join(save_dir, "coco_img.png")
+        coco_img_to_save.save(coco_img_save_path)
+
+        # load svg and transfrom it to png with write background:
+        #     (224, 224)
+        sketch = cairosvg.svg2png(url = sketch, background_color = 'white', output_width = 512, output_height = 512)
+        sketch = Image.open(io.BytesIO(sketch))
+        sketch_save_path = os.path.join(save_dir, "sketch_img.png")
+        sketch.save(sketch_save_path)
+
+        # caption
         print(caption)
-        img_vd = torch.load(img_vd_path).squeeze(0)
+        caption = "a photo of natural scenes that: " + caption
+        caption_save_path = os.path.join(save_dir, "caption.txt")
+        with open(caption_save_path, "w", encoding = "utf-8") as f:
+            f.write(caption)
 
-        to_pil = transforms.ToPILImage()
-        img_vd_pil = to_pil(img_vd.squeeze(0))
-        img_vd_pil.save(f"img_vd.png")
-
-        img_lowlevel = load_image(img_lowlevel[0])
-        img_lowlevel.save(f"img_lowlevel.png")
-
-        voxel = torch.mean(voxel, axis = 1).float().to(device)
-        write_png(img.squeeze(0), "img_original.png")
-        img = img.to(device)
-
+        # postprocess
         with torch.no_grad():
-            images = sdct_pipe(
-                image = img_vd,
-                control_image = img_lowlevel,
-                strength = 1.0,
+            rec_imgs = sdct_pipe(
+                image = rec_img,
+                control_image = sketch,
+                strength = 3,
                 num_inference_steps = 50,
                 guidance_scale = 12,
                 num_images_per_prompt = 1,
                 generator = generator,
-                prompt = caption[0],
+                prompt = caption,
             ).images[0]
-            images.save(f"postprocessed_image.png")
-
-    print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    print("save path:", save_dir)
+            rec_imgs.save(f"postprocessed_img.png")
+        postprocess_img_path = os.path.join(save_dir, "postprocessed_img.png")
+        rec_imgs.save(postprocess_img_path)
 
 
 if __name__ == "__main__":
-    utils.seed_everything(seed = args.seed)
-    args.model_name = "MindBrige_text_only_mixco_loss_diffusers_vit_norm"
-    args.ckpt_from = "last"
-    args.h_size = 2048
-    args.n_blocks = 4
-    args.pool_type = "max"
-    args.subj_load = [1]
-    args.subj_test = 1
-    args.pool_num = 8192
-
     device = torch.device('cuda:{}'.format(args.gpu_id) if torch.cuda.is_available() else 'cpu')
     print("device:", device)
 
-    main(device)
+    postprocess_folder = "/media/SSD_1_2T/xt/train_logs/SDCT"
+    caption_path = "/media/SSD_1_2T/xt/MindBridge/captions.xlsx"
+    img_folder_path = "/media/SSD_1_2T/xt/MindBridge/train_logs/VD_text_img_infonce_guidance5_ratio0.5/recon_on_subj1"
+    sketch_folder_path = "/media/SSD_1_2T/xt/data/natural-scenes-dataset/results_sketches_subj1"
+
+    main(
+        postprocess_folder = postprocess_folder,
+        img_folder_path = img_folder_path,
+        caption_path = caption_path,
+        sketch_folder_path = sketch_folder_path,
+        device = device
+    )

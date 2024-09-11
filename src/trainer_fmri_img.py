@@ -161,8 +161,8 @@ class Trainer_fmri_image:
             # Main process
             if local_rank == 0:
                 # Uploading logs to wandb
-                # if self.args.wandb_log:
-                #     wandb.log(self.logs)
+                if self.args.wandb_log:
+                    wandb.log(self.logs)
                 # Save model
                 if epoch % self.args.ckpt_interval == 0 or epoch == self.args.num_epochs - 1:
                     self.save(epoch)
@@ -286,7 +286,7 @@ class Trainer_fmri_image:
         pass
 
     def save_ckpt(self, tag, epoch):
-        if epoch >= 50:
+        if epoch >= 20:
             ckpt_path = self.outdir + f"/{tag}.pth"
             print(f"saving {ckpt_path}", flush = True)
             unwrapped_model = self.accelerator.unwrap_model(self.voxel2clip)

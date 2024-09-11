@@ -57,6 +57,8 @@ parser.add_argument(
     choices = ["RN50", "RN101", "ViT-L/14", "ViT-B/32", "RN50x64", "GIT-ViT"],
     help = 'OpenAI clip variant',
 )
+parser.add_argument("--clearclip", type = bool, default = False, help = "Whether to use clearclip")
+parser.add_argument("--layer_start", type = int, default = 0, help = "Which layer to start clearclip")
 parser.add_argument(
     "--wandb_log", action = argparse.BooleanOptionalAction, default = True, help = "Whether to log to wandb",
 )
@@ -143,7 +145,7 @@ parser.add_argument(
 )
 parser.add_argument("--guidance_scale", type = float, default = 3.5, help = "Guidance scale for diffusion model.", )
 parser.add_argument(
-    "-num_inference_steps", type = int, default = 20, help = "Number of inference steps for diffusion model.",
+    "--num_inference_steps", type = int, default = 20, help = "Number of inference steps for diffusion model.",
 )
 parser.add_argument(
     "--recons_per_sample",

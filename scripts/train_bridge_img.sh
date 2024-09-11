@@ -1,7 +1,8 @@
 batch_size=100
 val_batch_size=50
 num_epochs=500
-mse_mult=2e6
+mse_mult=1e7
+# mse_mult=2e6
 mae_mult=1e3
 rec_mult=1
 nce_mult=1e0
@@ -10,7 +11,9 @@ cyc_mult=1
 max_lr=5e-4
 mixup_pct=0.2
 trainer_select="trainer_fmri_img"
-model_name="MindBrige_img_infonce"
+model_name="MindBrige_img_infonce_clearclilp"
+clearclip=True
+layer_start=23
 
 cd src/
 export NCCL_IB_DISABLE=1
@@ -26,5 +29,4 @@ main.py \
 --h_size 2048 --n_blocks 4 --pool_type max --pool_num 8192 \
 --mse_mult $mse_mult --mae_mult $mae_mult --rec_mult $rec_mult --cyc_mult $cyc_mult \
 --eval_interval 1 --ckpt_interval 5 \
---max_lr $max_lr --num_workers 1 --info_nce_mult $info_nce_mult --mixup_pct $mixup_pct
-
+--max_lr $max_lr --num_workers 1 --info_nce_mult $info_nce_mult --mixup_pct $mixup_pct --clearclip $clearclip --layer_start $layer_start

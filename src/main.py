@@ -62,7 +62,12 @@ def prepare_CLIP(args, device):
         print("WARNING: YOU WANT NORMED EMBEDDINGS FOR VERSATILE DIFFUSION!")
 
     clip_extractor = Clipper(
-        args.clip_variant, device = device, hidden_state = True, norm_embs = args.norm_embs
+        args.clip_variant,
+        clearclip = args.clearclip,
+        layer_start = args.layer_start,
+        device = device,
+        hidden_state = True,
+        norm_embs = args.norm_embs
     ).to(device)
 
     return clip_extractor
@@ -274,7 +279,7 @@ def main():
         args.clip_variant = "ViT-L/14"
         voxel2clip = prepare_voxel2clip_img(args, 257 * 768, None, device)
         trainer = prepare_trainer_fmri_img(args, accelerator, voxel2clip, clip_extractor, device)
-        # trainer.prepare_wandb(local_rank, args)
+        trainer.prepare_wandb(local_rank, args)
         trainer.prepare_multi_gpu()
     elif args.trainer_select == "trainer_fmri_img_sketch":
         args.clip_variant = "ViT-B/32"

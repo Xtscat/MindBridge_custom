@@ -10,7 +10,14 @@ from torchvision.transforms import v2
 
 class Clipper(torch.nn.Module):
     def __init__(
-        self, clip_variant, clamp_embs = False, norm_embs = False, hidden_state = False, device = torch.device('cpu')
+        self,
+        clip_variant,
+        clearclip = False,
+        layer_start = 0,
+        clamp_embs = False,
+        norm_embs = False,
+        hidden_state = False,
+        device = torch.device('cpu')
     ):
         super().__init__()
         assert clip_variant in ("ViT-L/14", "ViT-B/32", "GIT-ViT"), \
@@ -22,7 +29,10 @@ class Clipper(torch.nn.Module):
                                       CLIPTokenizer,
                                       CLIPVisionModelWithProjection)
             image_encoder = CLIPVisionModelWithProjection.from_pretrained(
-                "openai/clip-vit-large-patch14", cache_dir = "/media/SSD_1_2T/xt/weights/"
+                "openai/clip-vit-large-patch14",
+                cache_dir = "/media/SSD_1_2T/xt/weights/",
+                clearclip = clearclip,
+                layer_start = layer_start
             ).eval()
             image_encoder = image_encoder.to(device)
             for param in image_encoder.parameters():
@@ -427,7 +437,7 @@ class MindBridge_text(MindSingle_text):
 
 
 class MindSingle_image_GIT(nn.Module):
-    def __init__(self, in_dim = 15724, out_dim_image = 768, h = 4096, n_blocks = 4, subj_list = None, ):
+    def __init__(self, in_dim = 15724, out_dim_image_feature_map = 768, h = 4096, n_blocks = 4, subj_list = None, ):
 
         super().__init__()
 
@@ -441,7 +451,7 @@ class MindSingle_image_GIT(nn.Module):
         )
 
         self.translator = ResMLP(h, n_blocks)
-        self.head_image = nn.Linear(h, out_dim_image)
+        self.head_image = nn.Linear(h, out_dim_image_feature_map)
 
     # @torchsnooper.snoop()
     def forward(self, x):
@@ -454,12 +464,24 @@ class MindSingle_image_GIT(nn.Module):
 
 
 class MindBridge_image_GIT(MindSingle_image_GIT):
-    def __init__(self, in_dim = 15724, out_dim_image = 768, h = 4096, n_blocks = 4, subj_list = None, adapting = False):
+    def __init__(
+        self,
+        in_dim = 15724,
+        out_dim_image_feature_map = 768,
+        h = 4096,
+        n_blocks = 4,
+        subj_list = None,
+        adapting = False
+    ):
 
         assert len(subj_list) >= 2, "MindBridge requires at least 2 subjects"
 
         super().__init__(
-            in_dim = in_dim, out_dim_image = out_dim_image, h = h, n_blocks = n_blocks, subj_list = subj_list
+            in_dim = in_dim,
+            out_dim_image = out_dim_image_feature_map,
+            h = h,
+            n_blocks = n_blocks,
+            subj_list = subj_list
         )
 
         self.builder = nn.ModuleDict(

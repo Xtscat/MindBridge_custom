@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 import scipy as sp
 import torch
+from pytorch_fid import fid_score
+from pytorch_msssim import ms_ssim
 from torchvision import transforms
 from torchvision.models.feature_extraction import create_feature_extractor
 from tqdm import tqdm
@@ -56,7 +58,6 @@ def cal_metrics(results_path, device):
                 all_brain_recons.append(
                     torch.load(os.path.join(results_path, file.replace("_img.pt", "_rec.pt")), map_location = device)
                 )
-
     all_images = torch.vstack(all_images).float() / 255.0
     all_brain_recons = torch.vstack(all_brain_recons)
     all_images = all_images.to(device)
@@ -64,10 +65,9 @@ def cal_metrics(results_path, device):
 
     print("Images shape:", all_images.shape, "Images type:", all_images.dtype)
     print("Recons shape:", all_brain_recons.shape, "Recons type:", all_brain_recons.dtype)
-    print(torch.max(all_images), torch.max(all_brain_recons))
     print("Number:", number)
 
-    ### PixCorr
+    ### PixCorr # 21j
     preprocess = transforms.Compose([transforms.Resize(425, interpolation = transforms.InterpolationMode.BILINEAR), ])
 
     # Flatten images while keeping the batch dimension
@@ -90,7 +90,7 @@ def cal_metrics(results_path, device):
     del all_brain_recons_flattened
     torch.cuda.empty_cache()
 
-    ### SSIM
+    ### SSIM # 36j
     # see https://github.com/zijin-gu/meshconv-decoding/issues/3
     from skimage.color import rgb2gray
     from skimage.metrics import structural_similarity as ssim
@@ -102,24 +102,33 @@ def cal_metrics(results_path, device):
     recon_gray = rgb2gray(preprocess(all_brain_recons).permute((0, 2, 3, 1)).cpu())
     print("converted, now calculating ssim...")
 
-    ssim_score = []
+    ssim_score, msssim_score = [], []
     for im, rec in tqdm(zip(img_gray, recon_gray), total = len(all_images)):
         ssim_score.append(
             ssim(
                 rec,
                 im,
                 multichannel = True,
-                gaussian_weights = True,
+                gaussian_weights = False,
                 sigma = 1.5,
                 use_sample_covariance = False,
                 data_range = 1.0
             )
         )
+        msssim_score.append(
+            ms_ssim(
+                torch.from_numpy(rec).unsqueeze(0).unsqueeze(0),
+                torch.from_numpy(im).unsqueeze(0).unsqueeze(0),
+                data_range = 1.0
+            )
+        )
 
     ssim = np.mean(ssim_score)
-    print(ssim)
+    mssim = np.mean(msssim_score)
+    print(f"ssim: {ssim}")
+    print(f"ms_ssim: {mssim}")
 
-    #### AlexNet
+    #### AlexNet # 58j
     from torchvision.models import AlexNet_Weights, alexnet
     alex_weights = AlexNet_Weights.IMAGENET1K_V1
 
@@ -179,7 +188,7 @@ def cal_metrics(results_path, device):
     del inception_model
     torch.cuda.empty_cache()
 
-    #### CLIP
+    #### CLIP # 45j
     import clip
     clip_model, preprocess = clip.load("ViT-L/14", device = device)
 
@@ -226,7 +235,7 @@ def cal_metrics(results_path, device):
     del eff_model
     torch.cuda.empty_cache()
 
-    #### SwAV
+    #### SwAV # 34j
     swav_model = torch.hub.load('facebookresearch/swav:main', 'resnet50')
     swav_model = create_feature_extractor(swav_model, return_nodes = ['avgpool']).to(device)
     swav_model.eval().requires_grad_(False)
