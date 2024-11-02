@@ -71,10 +71,10 @@ def prepare_data(args):
     return test_dl
 
 
-def prepare_voxel2clip_img_GIT(args, out_dim_image_feature_map, out_dim_text, device):
+def prepare_voxel2clip_img_GIT(args, out_dim_image, out_dim_text, device):
     voxel2clip_kwargs = dict(
         in_dim = args.pool_num,
-        out_dim_image_feature_map = out_dim_image_feature_map,
+        out_dim_image = out_dim_image,
         h = args.h_size,
         n_blocks = args.n_blocks,
         subj_list = args.subj_load
@@ -170,18 +170,14 @@ def main(device):
         args.test_end = num_test
 
     # recon loop
+    subj_list = []
     captions_from_brain = []
     captions_from_coco = []
     captions_from_image = []
     for val_i, (voxel, img, img_lowlevel, coco, subj) in enumerate(tqdm(test_dl, total = len(test_range))):
         repeat_index = val_i % 3  # randomly choose the one in the repeated three
-        if val_i < args.test_start:
-            continue
-        if val_i >= args.test_end:
-            break
-        if (args.samples is not None) and (val_i not in args.samples):
-            continue
 
+        subj = img_lowlevel[0].split('/')[-1].split('.')[0]
         coco_ids = coco.squeeze().tolist()
         coco_ids = [coco_ids]
         current_prompts_list = [prompts_list[coco_id] for coco_id in coco_ids]
@@ -202,6 +198,7 @@ def main(device):
             image_generate_ids = git_model.generate(pixel_values = image_embedding, max_length = 50)
             image_generate_caption = processor.batch_decode(image_generate_ids, skip_special_tokens = True)
 
+            subj_list.append(subj)
             captions_from_brain += brain_generated_caption
             captions_from_coco += coco_captions
             captions_from_image += image_generate_caption
@@ -216,39 +213,40 @@ def main(device):
             #         f"captions_from_image: {image_generate_caption} ==> captions_from_brain: {brain_generated_caption}"
             #     )
 
-        # data = {
-        #     'captions_from_coco': captions_from_coco,
-        #     'captions_from_image': captions_from_image,
-        #     'captions_from_brain': captions_from_brain
-        # }
-        # df = pd.DataFrame(data)
-        # df.to_excel('captions.xlsx')
+        data = {
+            'subj': subj_list,
+            'captions_from_coco': captions_from_coco,
+            'captions_from_image': captions_from_image,
+            'captions_from_brain': captions_from_brain
+        }
+        df = pd.DataFrame(data)
+        df.to_excel('captions.xlsx')
 
-    # compute text metrics
-    metrics_bleu = evaluate_captions(
-        predictions = captions_from_brain, references = captions_from_image, evaluate_type = 'bleu'
-    )
-    metrics_meteor = evaluate_captions(
-        predictions = captions_from_brain, references = captions_from_image, evaluate_type = 'meteor'
-    )
-    metrics_sentence = evaluate_captions(
-        predictions = captions_from_brain, references = captions_from_image, evaluate_type = 'sentence'
-    )
-    metrics_clip = evaluate_captions(
-        predictions = captions_from_brain, references = captions_from_image, evaluate_type = 'clip'
-    )
-
-    data = {
-        "Metric": ["Bleu@1", "Bleu@4", "Meteor", "Sentence", "CLIP"],
-        "Value": [
-            metrics_bleu['bleu@1']['bleu'], metrics_bleu['bleu@4']['bleu'], metrics_meteor['meteor']['meteor'],
-            metrics_sentence, metrics_clip
-        ],
-    }
-    title = "brain captions and image captions"
-    print(title)
-    df = pd.DataFrame(data)
-    print(df.to_string(index = False))
+    # # compute text metrics
+    # metrics_bleu = evaluate_captions(
+    #     predictions = captions_from_brain, references = captions_from_image, evaluate_type = 'bleu'
+    # )
+    # metrics_meteor = evaluate_captions(
+    #     predictions = captions_from_brain, references = captions_from_image, evaluate_type = 'meteor'
+    # )
+    # metrics_sentence = evaluate_captions(
+    #     predictions = captions_from_brain, references = captions_from_image, evaluate_type = 'sentence'
+    # )
+    # metrics_clip = evaluate_captions(
+    #     predictions = captions_from_brain, references = captions_from_image, evaluate_type = 'clip'
+    # )
+    #
+    # data = {
+    #     "Metric": ["Bleu@1", "Bleu@4", "Meteor", "Sentence", "CLIP"],
+    #     "Value": [
+    #         metrics_bleu['bleu@1']['bleu'], metrics_bleu['bleu@4']['bleu'], metrics_meteor['meteor']['meteor'],
+    #         metrics_sentence, metrics_clip
+    #     ],
+    # }
+    # title = "brain captions and image captions"
+    # print(title)
+    # df = pd.DataFrame(data)
+    # print(df.to_string(index = False))
 
 
 if __name__ == "__main__":
@@ -257,7 +255,7 @@ if __name__ == "__main__":
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
     print("device:", device)
 
-    args.model_name = "MindBrige_image_GIT_ViT_infonce"
+    args.model_name = "MindBrige_image_GIT_ViT_msencecos_largencecos_2"
     args.ckpt_from = "last"
     args.h_size = 2048
     args.n_blocks = 4

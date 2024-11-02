@@ -1,8 +1,8 @@
 batch_size=100
 val_batch_size=50
 num_epochs=500
-mse_mult=1e7
-# mse_mult=2e6
+# mse_mult=1e7
+mse_mult=2e6
 mae_mult=1e3
 rec_mult=1
 nce_mult=1e0
@@ -11,7 +11,7 @@ cyc_mult=1
 max_lr=5e-4
 mixup_pct=0.2
 trainer_select="trainer_fmri_img"
-model_name="MindBrige_img_infonce_clearclilp"
+model_name="MindBrige_img_infonce_clearclip"
 clearclip=True
 layer_start=23
 
@@ -22,7 +22,7 @@ export NCCL_P2P_DISABLE=1
 export WANDB_API_KEY='cd2737b4c9369aee69cbbfdbad6813d2b53448d6'
 
 # CUDA_VISIBLE_DEVICES=4 python -W ignore \
-accelerate launch --num_processes 1 --gpu_ids 0 --main_process_port 29502 \
+accelerate launch --num_processes 1 --gpu_ids 1 --main_process_port 29502 \
 main.py \
 --wandb_project "MindBrige_img_infonce" --trainer_select $trainer_select --model_name $model_name \
 --subj_list 1 2 5 7 --num_epochs $num_epochs --batch_size $batch_size --val_batch_size $val_batch_size \

@@ -162,8 +162,8 @@ class Trainer_fmri_text:
             # Main process
             if local_rank == 0:
                 # Uploading logs to wandb
-                # if self.args.wandb_log:
-                #     wandb.log(self.logs)
+                if self.args.wandb_log:
+                    wandb.log(self.logs)
                 # Save model
                 if epoch % self.args.ckpt_interval == 0 or epoch == self.args.num_epochs - 1:
                     self.save(epoch)
@@ -181,12 +181,18 @@ class Trainer_fmri_text:
         self.optimizer.zero_grad()
 
         # get clip text embedding and fmri results
-        clip_text = self.clip_extractor.embed_text(captions).flatten(1)
+        # captions structure: [[caption1, caption2, .., caption5], [caption1, caption2, .., caption5], ...]
+        clip_text_list = self.clip_extractor.embed_text_for_diffusion(captions).reshape(-1, 5, 77, 768)
+        # clip_text_list = self.clip_extractor.embed_text(captions).reshape(-1, 5, 77, 768)
+        clip_text = clip_text_list.mean(dim = 1).flatten(1)
+
+        # clip_text = self.clip_extractor.embed_text(captions).flatten(1)
+
         fmri_text, fmri_rec, loss_cyc = self.voxel2clip((voxel, subj_id))
 
-        # norm clip_text and fmri_text
-        clip_text = nn.functional.normalize(clip_text, dim = -1)
-        fmri_text = nn.functional.normalize(fmri_text, dim = -1)
+        # # norm clip_text and fmri_text
+        # clip_text = nn.functional.normalize(clip_text, dim = -1)
+        # fmri_text = nn.functional.normalize(fmri_text, dim = -1)
 
         # text mse loss
         if self.args.mse_mult:
@@ -240,12 +246,13 @@ class Trainer_fmri_text:
         val_loss = 0.
         with torch.no_grad():
             # get clip text embedding and fmri results
-            clip_text = self.clip_extractor.embed_text(captions).flatten(1)
+            clip_text = self.clip_extractor.embed_text_for_diffusion(captions).flatten(1)
+            # clip_text = self.clip_extractor.embed_text(captions).flatten(1)
             fmri_text, fmri_rec, loss_cyc = self.voxel2clip((voxel, subj_id))
 
-            # norm clip_text and fmri_text
-            clip_text = nn.functional.normalize(clip_text, dim = -1)
-            fmri_text = nn.functional.normalize(fmri_text, dim = -1)
+            # # norm clip_text and fmri_text
+            # clip_text = nn.functional.normalize(clip_text, dim = -1)
+            # fmri_text = nn.functional.normalize(fmri_text, dim = -1)
 
             # text mse loss
             if self.args.mse_mult:
@@ -289,7 +296,7 @@ class Trainer_fmri_text:
         pass
 
     def save_ckpt(self, tag, epoch):
-        if epoch >= 50:
+        if epoch >= 5:
             ckpt_path = self.outdir + f"/{tag}.pth"
             print(f"saving {ckpt_path}", flush = True)
             unwrapped_model = self.accelerator.unwrap_model(self.voxel2clip)
@@ -495,6 +502,12 @@ class Trainer_fmri_text_bridge(Trainer_fmri_text):
             self.val_dls[i] = self.accelerator.prepare(val_dl)
 
     def train_epoch(self, epoch):
+        def process_sublist(sublist):
+            if len(sublist) < 5:
+                sublist.extend([sublist[-1]] * (5 - len(sublist)))
+                print("coco captino less than 5")
+            return sublist[: 5]
+
         # train loop
         for train_i, datas in enumerate(zip(*self.train_dls)):
             self.train_i = train_i
@@ -516,7 +529,8 @@ class Trainer_fmri_text_bridge(Trainer_fmri_text):
 
             coco_ids = coco.squeeze().tolist()
             current_prompts_list = [self.prompts_list[coco_id] for coco_id in coco_ids]
-            captions = [prompts[repeat_index]['caption'] for prompts in current_prompts_list]
+            # captions = [prompts[repeat_index]['caption'] for prompts in current_prompts_list]
+            captions = [item['caption'] for sublist in current_prompts_list for item in process_sublist(sublist)]
 
             print(">>> Epoch{} | Iter{} | voxel: {}".format(epoch, train_i, voxel.shape), flush = True)
             self.train_step(voxel, captions, subj_id, epoch)

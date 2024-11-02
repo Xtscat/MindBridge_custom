@@ -135,65 +135,79 @@ class Trainer_fmri_image:
             self.voxel2clip.train()
 
             # train loss
+            self.sims_image_5 = 0.
+            self.sims_image_6 = 0.
             self.sims_image_2 = 0.
             self.sims_image_3 = 0.
             self.sims_image_4 = 0.
-            self.sims_image_5 = 0.
-            self.sims_image_6 = 0.
-            self.sims_image_7 = 0.
+            self.sims_image_fc = 0.
 
+            self.loss_mse_image_5_sum = 0.
+            self.loss_mse_image_6_sum = 0.
             self.loss_mse_image_2_sum = 0.
             self.loss_mse_image_3_sum = 0.
             self.loss_mse_image_4_sum = 0.
-            self.loss_mse_image_5_sum = 0.
-            self.loss_mse_image_6_sum = 0.
-            self.loss_mse_image_7_sum = 0.
+            self.loss_mse_image_fc_sum = 0.
 
+            self.loss_mae_image_5_sum = 0.
+            self.loss_mae_image_6_sum = 0.
             self.loss_mae_image_2_sum = 0.
             self.loss_mae_image_3_sum = 0.
             self.loss_mae_image_4_sum = 0.
-            self.loss_mae_image_5_sum = 0.
-            self.loss_mae_image_6_sum = 0.
-            self.loss_mae_image_7_sum = 0.
+            self.loss_mae_image_fc_sum = 0.
 
-            self.loss_nce_image_2_sum = 0.
-            self.loss_nce_image_3_sum = 0.
-            self.loss_nce_image_4_sum = 0.
-            self.loss_nce_image_5_sum = 0.
-            self.loss_nce_image_6_sum = 0.
-            self.loss_nce_image_7_sum = 0.
+            # self.loss_nce_image_5_sum = 0.
+            # self.loss_nce_image_6_sum = 0.
+            # self.loss_nce_image_2_sum = 0.
+            # self.loss_nce_image_3_sum = 0.
+            # self.loss_nce_image_4_sum = 0.
+            # self.loss_nce_image_fc_sum = 0.
+
+            self.loss_cos_image_5_sum = 0.
+            self.loss_cos_image_6_sum = 0.
+            self.loss_cos_image_2_sum = 0.
+            self.loss_cos_image_3_sum = 0.
+            self.loss_cos_image_4_sum = 0.
+            self.loss_cos_image_fc_sum = 0.
 
             self.loss_rec_sum = 0.
             self.loss_cyc_sum = 0.
 
             # val loss
+            self.val_sims_image_5 = 0.
+            self.val_sims_image_6 = 0.
             self.val_sims_image_2 = 0.
             self.val_sims_image_3 = 0.
             self.val_sims_image_4 = 0.
-            self.val_sims_image_5 = 0.
-            self.val_sims_image_6 = 0.
-            self.val_sims_image_7 = 0.
+            self.val_sims_image_fc = 0.
 
+            self.val_loss_mse_image_5_sum = 0.
+            self.val_loss_mse_image_6_sum = 0.
             self.val_loss_mse_image_2_sum = 0.
             self.val_loss_mse_image_3_sum = 0.
             self.val_loss_mse_image_4_sum = 0.
-            self.val_loss_mse_image_5_sum = 0.
-            self.val_loss_mse_image_6_sum = 0.
-            self.val_loss_mse_image_7_sum = 0.
+            self.val_loss_mse_image_fc_sum = 0.
 
+            self.val_loss_mae_image_5_sum = 0.
+            self.val_loss_mae_image_6_sum = 0.
             self.val_loss_mae_image_2_sum = 0.
             self.val_loss_mae_image_3_sum = 0.
             self.val_loss_mae_image_4_sum = 0.
-            self.val_loss_mae_image_5_sum = 0.
-            self.val_loss_mae_image_6_sum = 0.
-            self.val_loss_mae_image_7_sum = 0.
+            self.val_loss_mae_image_fc_sum = 0.
 
-            self.val_loss_nce_image_2_sum = 0.
-            self.val_loss_nce_image_3_sum = 0.
-            self.val_loss_nce_image_4_sum = 0.
-            self.val_loss_nce_image_5_sum = 0.
-            self.val_loss_nce_image_6_sum = 0.
-            self.val_loss_nce_image_7_sum = 0.
+            # self.val_loss_nce_image_5_sum = 0.
+            # self.val_loss_nce_image_6_sum = 0.
+            # self.val_loss_nce_image_2_sum = 0.
+            # self.val_loss_nce_image_3_sum = 0.
+            # self.val_loss_nce_image_4_sum = 0.
+            # self.val_loss_nce_image_fc_sum = 0.
+
+            self.val_loss_cos_image_5_sum = 0.
+            self.val_loss_cos_image_6_sum = 0.
+            self.val_loss_cos_image_2_sum = 0.
+            self.val_loss_cos_image_3_sum = 0.
+            self.val_loss_cos_image_4_sum = 0.
+            self.val_loss_cos_image_fc_sum = 0.
 
             self.val_loss_rec_sum = 0.
             self.val_loss_cyc_sum = 0.
@@ -231,93 +245,113 @@ class Trainer_fmri_image:
         self.optimizer.zero_grad()
 
         clip_feature_fc, clip_feature_maps = self.clip_extractor.embed_image_with_hook(image)
-        fmri_image_2, fmri_image_3, fmri_image_4, fmri_image_5, fmri_image_6, fmri_image_7, fmri_rec, loss_cyc = self.voxel2clip(
+        fmri_image_fc, fmri_image_2, fmri_image_3, fmri_image_4, fmri_image_5, fmri_image_6, fmri_rec, loss_cyc = self.voxel2clip(
             self.input(voxel, subj_id)
         )
 
-        # flatten clip results
-        for i, feature_map in enumerate(clip_feature_maps):
-            clip_feature_maps[i] = feature_map.flatten(1)
-
-        # norm clip and fmri results
+        # flatten and norm clip and fmri results
+        fmri_image_fc = nn.functional.normalize(fmri_image_fc, dim = -1)
         fmri_image_2 = nn.functional.normalize(fmri_image_2, dim = -1)
         fmri_image_3 = nn.functional.normalize(fmri_image_3, dim = -1)
         fmri_image_4 = nn.functional.normalize(fmri_image_4, dim = -1)
         fmri_image_5 = nn.functional.normalize(fmri_image_5, dim = -1)
         fmri_image_6 = nn.functional.normalize(fmri_image_6, dim = -1)
-        fmri_image_7 = nn.functional.normalize(fmri_image_7, dim = -1)
 
+        clip_feature_fc = nn.functional.normalize(clip_feature_fc.flatten(1), dim = -1)
         for i, feature_map in enumerate(clip_feature_maps):
-            clip_feature_maps[i] = nn.functional.normalize(feature_map, dim = -1)
+            clip_feature_maps[i] = nn.functional.normalize(feature_map.flatten(1), dim = -1)
 
         # image mse loss
         if self.args.mse_mult:
-            loss_mse_image_2 = nn.MSELoss()(fmri_image_2, clip_feature_maps[1])
-            loss_mse_image_3 = nn.MSELoss()(fmri_image_3, clip_feature_maps[2])
-            loss_mse_image_4 = nn.MSELoss()(fmri_image_4, clip_feature_maps[3])
-            loss_mse_image_5 = nn.MSELoss()(fmri_image_5, clip_feature_maps[4])
-            loss_mse_image_6 = nn.MSELoss()(fmri_image_6, clip_feature_maps[5])
-            loss_mse_image_7 = nn.MSELoss()(fmri_image_7, clip_feature_maps[6])
+            loss_mse_image_fc = nn.MSELoss()(fmri_image_fc, clip_feature_fc)
+            loss_mse_image_2 = nn.MSELoss()(fmri_image_2, clip_feature_maps[2])
+            loss_mse_image_3 = nn.MSELoss()(fmri_image_3, clip_feature_maps[3])
+            loss_mse_image_4 = nn.MSELoss()(fmri_image_4, clip_feature_maps[4])
+            loss_mse_image_5 = nn.MSELoss()(fmri_image_5, clip_feature_maps[5])
+            loss_mse_image_6 = nn.MSELoss()(fmri_image_6, clip_feature_maps[6])
 
+            loss += self.args.mse_mult * loss_mse_image_fc
             loss += self.args.mse_mult * loss_mse_image_2
             loss += self.args.mse_mult * loss_mse_image_3
             loss += self.args.mse_mult * loss_mse_image_4
             loss += self.args.mse_mult * loss_mse_image_5
             loss += self.args.mse_mult * loss_mse_image_6
-            loss += self.args.mse_mult * loss_mse_image_7
 
+            self.loss_mse_image_fc_sum += loss_mse_image_fc.item()
             self.loss_mse_image_2_sum += loss_mse_image_2.item()
             self.loss_mse_image_3_sum += loss_mse_image_3.item()
             self.loss_mse_image_4_sum += loss_mse_image_4.item()
             self.loss_mse_image_5_sum += loss_mse_image_5.item()
             self.loss_mse_image_6_sum += loss_mse_image_6.item()
-            self.loss_mse_image_7_sum += loss_mse_image_7.item()
 
         # image mae loss
         if self.args.mae_mult:
-            loss_mae_image_2 = nn.L1Loss()(fmri_image_2, clip_feature_maps[1])
-            loss_mae_image_3 = nn.L1Loss()(fmri_image_3, clip_feature_maps[2])
-            loss_mae_image_4 = nn.L1Loss()(fmri_image_4, clip_feature_maps[3])
-            loss_mae_image_5 = nn.L1Loss()(fmri_image_5, clip_feature_maps[4])
-            loss_mae_image_6 = nn.L1Loss()(fmri_image_6, clip_feature_maps[5])
-            loss_mae_image_7 = nn.L1Loss()(fmri_image_7, clip_feature_maps[6])
+            loss_mae_image_fc = nn.L1Loss()(fmri_image_fc, clip_feature_fc)
+            loss_mae_image_2 = nn.L1Loss()(fmri_image_2, clip_feature_maps[2])
+            loss_mae_image_3 = nn.L1Loss()(fmri_image_3, clip_feature_maps[3])
+            loss_mae_image_4 = nn.L1Loss()(fmri_image_4, clip_feature_maps[4])
+            loss_mae_image_5 = nn.L1Loss()(fmri_image_5, clip_feature_maps[5])
+            loss_mae_image_6 = nn.L1Loss()(fmri_image_6, clip_feature_maps[6])
 
+            loss += self.args.mae_mult * loss_mae_image_fc
             loss += self.args.mae_mult * loss_mae_image_2
             loss += self.args.mae_mult * loss_mae_image_3
             loss += self.args.mae_mult * loss_mae_image_4
             loss += self.args.mae_mult * loss_mae_image_5
             loss += self.args.mae_mult * loss_mae_image_6
-            loss += self.args.mae_mult * loss_mae_image_7
 
+            self.loss_mae_image_fc_sum += loss_mae_image_fc.item()
             self.loss_mae_image_2_sum += loss_mae_image_2.item()
             self.loss_mae_image_3_sum += loss_mae_image_3.item()
             self.loss_mae_image_4_sum += loss_mae_image_4.item()
             self.loss_mae_image_5_sum += loss_mae_image_5.item()
             self.loss_mae_image_6_sum += loss_mae_image_6.item()
-            self.loss_mae_image_7_sum += loss_mae_image_7.item()
 
-        # image nce loss
-        if self.args.info_nce_mult:
-            loss_infonce_image_2 = utils.info_nce(fmri_image_2, clip_feature_maps[1], 0.1)
-            loss_infonce_image_3 = utils.info_nce(fmri_image_3, clip_feature_maps[2], 0.1)
-            loss_infonce_image_4 = utils.info_nce(fmri_image_4, clip_feature_maps[3], 0.1)
-            loss_infonce_image_5 = utils.info_nce(fmri_image_5, clip_feature_maps[4], 0.1)
-            loss_infonce_image_6 = utils.info_nce(fmri_image_6, clip_feature_maps[5], 0.1)
-            loss_infonce_image_7 = utils.info_nce(fmri_image_7, clip_feature_maps[6], 0.1)
+        # # image nce loss
+        # if self.args.info_nce_mult:
+        #     loss_infonce_image_fc = utils.info_nce(fmri_image_fc, clip_feature_fc, 0.3)
+        #     loss_infonce_image_2 = utils.info_nce(fmri_image_2, clip_feature_maps[2], 0.3)
+        #     loss_infonce_image_3 = utils.info_nce(fmri_image_3, clip_feature_maps[3], 0.3)
+        #     loss_infonce_image_4 = utils.info_nce(fmri_image_4, clip_feature_maps[4], 0.3)
+        #     loss_infonce_image_5 = utils.info_nce(fmri_image_5, clip_feature_maps[5], 0.3)
+        #     loss_infonce_image_6 = utils.info_nce(fmri_image_6, clip_feature_maps[6], 0.3)
+        #
+        #     loss += self.args.nce_mult * loss_infonce_image_fc
+        #     loss += self.args.nce_mult * loss_infonce_image_2
+        #     loss += self.args.nce_mult * loss_infonce_image_3
+        #     loss += self.args.nce_mult * loss_infonce_image_4
+        #     loss += self.args.nce_mult * loss_infonce_image_5
+        #     loss += self.args.nce_mult * loss_infonce_image_6
+        #
+        #     self.loss_nce_image_fc_sum += loss_infonce_image_fc.item()
+        #     self.loss_nce_image_2_sum += loss_infonce_image_2.item()
+        #     self.loss_nce_image_3_sum += loss_infonce_image_3.item()
+        #     self.loss_nce_image_4_sum += loss_infonce_image_4.item()
+        #     self.loss_nce_image_5_sum += loss_infonce_image_5.item()
+        #     self.loss_nce_image_6_sum += loss_infonce_image_6.item()
 
-            loss += self.args.nce_mult * loss_infonce_image_2
-            loss += self.args.nce_mult * loss_infonce_image_3
-            loss += self.args.nce_mult * loss_infonce_image_4
-            loss += self.args.nce_mult * loss_infonce_image_5
-            loss += self.args.nce_mult * loss_infonce_image_6
-            loss += self.args.nce_mult * loss_infonce_image_7
+        # image cos loss
+        if self.args.cos_mult:
+            loss_cos_image_fc = 1 - nn.functional.cosine_similarity(fmri_image_fc, clip_feature_fc).mean()
+            loss_cos_image_2 = 1 - nn.functional.cosine_similarity(fmri_image_2, clip_feature_maps[2]).mean()
+            loss_cos_image_3 = 1 - nn.functional.cosine_similarity(fmri_image_3, clip_feature_maps[3]).mean()
+            loss_cos_image_4 = 1 - nn.functional.cosine_similarity(fmri_image_4, clip_feature_maps[4]).mean()
+            loss_cos_image_5 = 1 - nn.functional.cosine_similarity(fmri_image_5, clip_feature_maps[5]).mean()
+            loss_cos_image_6 = 1 - nn.functional.cosine_similarity(fmri_image_6, clip_feature_maps[6]).mean()
 
-            self.loss_nce_image_2_sum += loss_infonce_image_2.item()
-            self.loss_nce_image_3_sum += loss_infonce_image_3.item()
-            self.loss_nce_image_4_sum += loss_infonce_image_4.item()
-            self.loss_nce_image_5_sum += loss_infonce_image_5.item()
-            self.loss_nce_image_6_sum += loss_infonce_image_6.item()
-            self.loss_nce_image_7_sum += loss_infonce_image_7.item()
+            loss += self.args.cos_mult * loss_cos_image_fc
+            loss += self.args.cos_mult * loss_cos_image_2
+            loss += self.args.cos_mult * loss_cos_image_3
+            loss += self.args.cos_mult * loss_cos_image_4
+            loss += self.args.cos_mult * loss_cos_image_5
+            loss += self.args.cos_mult * loss_cos_image_6
+
+            self.loss_cos_image_fc_sum += loss_cos_image_fc.item()
+            self.loss_cos_image_2_sum += loss_cos_image_2.item()
+            self.loss_cos_image_3_sum += loss_cos_image_3.item()
+            self.loss_cos_image_4_sum += loss_cos_image_4.item()
+            self.loss_cos_image_5_sum += loss_cos_image_5.item()
+            self.loss_cos_image_6_sum += loss_cos_image_6.item()
 
         # brain reconstruction loss
         if self.args.rec_mult:
@@ -332,7 +366,7 @@ class Trainer_fmri_image:
             loss += self.args.cyc_mult * loss_cyc
             self.loss_cyc_sum += loss_cyc.item()
 
-        utils.check_loss(loss)
+        # utils.check_loss(loss)
         self.accelerator.backward(loss)
         self.optimizer.step()
 
@@ -340,12 +374,12 @@ class Trainer_fmri_image:
         self.lrs.append(self.optimizer.param_groups[0]['lr'])
         self.lr_scheduler.step()
 
-        self.sims_image_2 += nn.functional.cosine_similarity(fmri_image_2, clip_feature_maps[1]).mean().item()
-        self.sims_image_3 += nn.functional.cosine_similarity(fmri_image_3, clip_feature_maps[2]).mean().item()
-        self.sims_image_4 += nn.functional.cosine_similarity(fmri_image_4, clip_feature_maps[3]).mean().item()
-        self.sims_image_5 += nn.functional.cosine_similarity(fmri_image_5, clip_feature_maps[4]).mean().item()
-        self.sims_image_6 += nn.functional.cosine_similarity(fmri_image_6, clip_feature_maps[5]).mean().item()
-        self.sims_image_7 += nn.functional.cosine_similarity(fmri_image_7, clip_feature_maps[6]).mean().item()
+        self.sims_image_fc += nn.functional.cosine_similarity(fmri_image_fc, clip_feature_fc).mean().item()
+        self.sims_image_2 += nn.functional.cosine_similarity(fmri_image_2, clip_feature_maps[2]).mean().item()
+        self.sims_image_3 += nn.functional.cosine_similarity(fmri_image_3, clip_feature_maps[3]).mean().item()
+        self.sims_image_4 += nn.functional.cosine_similarity(fmri_image_4, clip_feature_maps[4]).mean().item()
+        self.sims_image_5 += nn.functional.cosine_similarity(fmri_image_5, clip_feature_maps[5]).mean().item()
+        self.sims_image_6 += nn.functional.cosine_similarity(fmri_image_6, clip_feature_maps[6]).mean().item()
 
     @abstractmethod
     def eval_epoch(self, epoch):
@@ -355,93 +389,113 @@ class Trainer_fmri_image:
         val_loss = 0.
         with torch.no_grad():
             clip_feature_fc, clip_feature_maps = self.clip_extractor.embed_image_with_hook(image)
-            fmri_image_2, fmri_image_3, fmri_image_4, fmri_image_5, fmri_image_6, fmri_image_7, fmri_rec, loss_cyc = self.voxel2clip(
+            fmri_image_fc, fmri_image_2, fmri_image_3, fmri_image_4, fmri_image_5, fmri_image_6, fmri_rec, loss_cyc = self.voxel2clip(
                 self.input(voxel, subj_id)
             )
 
-            # flatten clip results
-            for i, feature_map in enumerate(clip_feature_maps):
-                clip_feature_maps[i] = feature_map.flatten(1)
-
             # norm clip and fmri results
+            fmri_image_fc = nn.functional.normalize(fmri_image_fc, dim = -1)
             fmri_image_2 = nn.functional.normalize(fmri_image_2, dim = -1)
             fmri_image_3 = nn.functional.normalize(fmri_image_3, dim = -1)
             fmri_image_4 = nn.functional.normalize(fmri_image_4, dim = -1)
             fmri_image_5 = nn.functional.normalize(fmri_image_5, dim = -1)
             fmri_image_6 = nn.functional.normalize(fmri_image_6, dim = -1)
-            fmri_image_7 = nn.functional.normalize(fmri_image_7, dim = -1)
 
+            clip_feature_fc = nn.functional.normalize(clip_feature_fc.flatten(1), dim = -1)
             for i, feature_map in enumerate(clip_feature_maps):
-                clip_feature_maps[i] = nn.functional.normalize(feature_map, dim = -1)
+                clip_feature_maps[i] = nn.functional.normalize(feature_map.flatten(1), dim = -1)
 
             # image mse loss
             if self.args.mse_mult:
-                val_loss_mse_image_2 = nn.MSELoss()(fmri_image_2, clip_feature_maps[1])
-                val_loss_mse_image_3 = nn.MSELoss()(fmri_image_3, clip_feature_maps[2])
-                val_loss_mse_image_4 = nn.MSELoss()(fmri_image_4, clip_feature_maps[3])
-                val_loss_mse_image_5 = nn.MSELoss()(fmri_image_5, clip_feature_maps[4])
-                val_loss_mse_image_6 = nn.MSELoss()(fmri_image_6, clip_feature_maps[5])
-                val_loss_mse_image_7 = nn.MSELoss()(fmri_image_7, clip_feature_maps[6])
+                val_loss_mse_image_fc = nn.MSELoss()(fmri_image_fc, clip_feature_fc)
+                val_loss_mse_image_2 = nn.MSELoss()(fmri_image_2, clip_feature_maps[2])
+                val_loss_mse_image_3 = nn.MSELoss()(fmri_image_3, clip_feature_maps[3])
+                val_loss_mse_image_4 = nn.MSELoss()(fmri_image_4, clip_feature_maps[4])
+                val_loss_mse_image_5 = nn.MSELoss()(fmri_image_5, clip_feature_maps[5])
+                val_loss_mse_image_6 = nn.MSELoss()(fmri_image_6, clip_feature_maps[6])
 
+                val_loss += self.args.mse_mult * val_loss_mse_image_fc
                 val_loss += self.args.mse_mult * val_loss_mse_image_2
                 val_loss += self.args.mse_mult * val_loss_mse_image_3
                 val_loss += self.args.mse_mult * val_loss_mse_image_4
                 val_loss += self.args.mse_mult * val_loss_mse_image_5
                 val_loss += self.args.mse_mult * val_loss_mse_image_6
-                val_loss += self.args.mse_mult * val_loss_mse_image_7
 
+                self.val_loss_mse_image_fc_sum += val_loss_mse_image_fc.item()
                 self.val_loss_mse_image_2_sum += val_loss_mse_image_2.item()
                 self.val_loss_mse_image_3_sum += val_loss_mse_image_3.item()
                 self.val_loss_mse_image_4_sum += val_loss_mse_image_4.item()
                 self.val_loss_mse_image_5_sum += val_loss_mse_image_5.item()
                 self.val_loss_mse_image_6_sum += val_loss_mse_image_6.item()
-                self.val_loss_mse_image_7_sum += val_loss_mse_image_7.item()
 
-            # image mae loss
+            # image mse loss
             if self.args.mae_mult:
-                val_loss_mae_image_2 = nn.L1Loss()(fmri_image_2, clip_feature_maps[1])
-                val_loss_mae_image_3 = nn.L1Loss()(fmri_image_3, clip_feature_maps[2])
-                val_loss_mae_image_4 = nn.L1Loss()(fmri_image_4, clip_feature_maps[3])
-                val_loss_mae_image_5 = nn.L1Loss()(fmri_image_5, clip_feature_maps[4])
-                val_loss_mae_image_6 = nn.L1Loss()(fmri_image_6, clip_feature_maps[5])
-                val_loss_mae_image_7 = nn.L1Loss()(fmri_image_7, clip_feature_maps[6])
+                val_loss_mae_image_fc = nn.L1Loss()(fmri_image_fc, clip_feature_fc)
+                val_loss_mae_image_2 = nn.L1Loss()(fmri_image_2, clip_feature_maps[2])
+                val_loss_mae_image_3 = nn.L1Loss()(fmri_image_3, clip_feature_maps[3])
+                val_loss_mae_image_4 = nn.L1Loss()(fmri_image_4, clip_feature_maps[4])
+                val_loss_mae_image_5 = nn.L1Loss()(fmri_image_5, clip_feature_maps[5])
+                val_loss_mae_image_6 = nn.L1Loss()(fmri_image_6, clip_feature_maps[6])
 
+                val_loss += self.args.mae_mult * val_loss_mae_image_fc
                 val_loss += self.args.mae_mult * val_loss_mae_image_2
                 val_loss += self.args.mae_mult * val_loss_mae_image_3
                 val_loss += self.args.mae_mult * val_loss_mae_image_4
                 val_loss += self.args.mae_mult * val_loss_mae_image_5
                 val_loss += self.args.mae_mult * val_loss_mae_image_6
-                val_loss += self.args.mae_mult * val_loss_mae_image_7
 
+                self.val_loss_mae_image_fc_sum += val_loss_mae_image_fc.item()
                 self.val_loss_mae_image_2_sum += val_loss_mae_image_2.item()
                 self.val_loss_mae_image_3_sum += val_loss_mae_image_3.item()
                 self.val_loss_mae_image_4_sum += val_loss_mae_image_4.item()
                 self.val_loss_mae_image_5_sum += val_loss_mae_image_5.item()
                 self.val_loss_mae_image_6_sum += val_loss_mae_image_6.item()
-                self.val_loss_mae_image_7_sum += val_loss_mae_image_7.item()
 
-            # image nce loss
-            if self.args.info_nce_mult:
-                val_loss_infonce_image_2 = utils.info_nce(fmri_image_2, clip_feature_maps[1], 0.1)
-                val_loss_infonce_image_3 = utils.info_nce(fmri_image_3, clip_feature_maps[2], 0.1)
-                val_loss_infonce_image_4 = utils.info_nce(fmri_image_4, clip_feature_maps[3], 0.1)
-                val_loss_infonce_image_5 = utils.info_nce(fmri_image_5, clip_feature_maps[4], 0.1)
-                val_loss_infonce_image_6 = utils.info_nce(fmri_image_6, clip_feature_maps[5], 0.1)
-                val_loss_infonce_image_7 = utils.info_nce(fmri_image_7, clip_feature_maps[6], 0.1)
+            # # image nce loss
+            # if self.args.info_nce_mult:
+            #     val_loss_infonce_image_fc = utils.info_nce(fmri_image_fc, clip_feature_fc)
+            #     val_loss_infonce_image_2 = utils.info_nce(fmri_image_2, clip_feature_maps[2], 0.3)
+            #     val_loss_infonce_image_3 = utils.info_nce(fmri_image_3, clip_feature_maps[3], 0.3)
+            #     val_loss_infonce_image_4 = utils.info_nce(fmri_image_4, clip_feature_maps[4], 0.3)
+            #     val_loss_infonce_image_5 = utils.info_nce(fmri_image_5, clip_feature_maps[5], 0.3)
+            #     val_loss_infonce_image_6 = utils.info_nce(fmri_image_6, clip_feature_maps[6], 0.3)
+            #
+            #     val_loss += self.args.nce_mult * val_loss_infonce_image_fc
+            #     val_loss += self.args.nce_mult * val_loss_infonce_image_5
+            #     val_loss += self.args.nce_mult * val_loss_infonce_image_6
+            #     val_loss += self.args.nce_mult * val_loss_infonce_image_2
+            #     val_loss += self.args.nce_mult * val_loss_infonce_image_3
+            #     val_loss += self.args.nce_mult * val_loss_infonce_image_4
+            #
+            #     self.val_loss_nce_image_fc_sum += val_loss_infonce_image_fc.item()
+            #     self.val_loss_nce_image_3_sum += val_loss_infonce_image_3.item()
+            #     self.val_loss_nce_image_4_sum += val_loss_infonce_image_4.item()
+            #     self.val_loss_nce_image_5_sum += val_loss_infonce_image_5.item()
+            #     self.val_loss_nce_image_6_sum += val_loss_infonce_image_6.item()
+            #     self.val_loss_nce_image_2_sum += val_loss_infonce_image_2.item()
 
-                val_loss += self.args.nce_mult * val_loss_infonce_image_2
-                val_loss += self.args.nce_mult * val_loss_infonce_image_3
-                val_loss += self.args.nce_mult * val_loss_infonce_image_4
-                val_loss += self.args.nce_mult * val_loss_infonce_image_5
-                val_loss += self.args.nce_mult * val_loss_infonce_image_6
-                val_loss += self.args.nce_mult * val_loss_infonce_image_7
+            # image cos loss
+            if self.args.cos_mult:
+                val_loss_cos_image_fc = 1 - nn.functional.cosine_similarity(fmri_image_fc, clip_feature_fc).mean()
+                val_loss_cos_image_2 = 1 - nn.functional.cosine_similarity(fmri_image_2, clip_feature_maps[2]).mean()
+                val_loss_cos_image_3 = 1 - nn.functional.cosine_similarity(fmri_image_3, clip_feature_maps[3]).mean()
+                val_loss_cos_image_4 = 1 - nn.functional.cosine_similarity(fmri_image_4, clip_feature_maps[4]).mean()
+                val_loss_cos_image_5 = 1 - nn.functional.cosine_similarity(fmri_image_5, clip_feature_maps[5]).mean()
+                val_loss_cos_image_6 = 1 - nn.functional.cosine_similarity(fmri_image_6, clip_feature_maps[6]).mean()
 
-                self.val_loss_nce_image_2_sum += val_loss_infonce_image_2.item()
-                self.val_loss_nce_image_3_sum += val_loss_infonce_image_3.item()
-                self.val_loss_nce_image_4_sum += val_loss_infonce_image_4.item()
-                self.val_loss_nce_image_5_sum += val_loss_infonce_image_5.item()
-                self.val_loss_nce_image_6_sum += val_loss_infonce_image_6.item()
-                self.val_loss_nce_image_7_sum += val_loss_infonce_image_7.item()
+                val_loss += self.args.cos_mult * val_loss_cos_image_fc
+                val_loss += self.args.cos_mult * val_loss_cos_image_2
+                val_loss += self.args.cos_mult * val_loss_cos_image_3
+                val_loss += self.args.cos_mult * val_loss_cos_image_4
+                val_loss += self.args.cos_mult * val_loss_cos_image_5
+                val_loss += self.args.cos_mult * val_loss_cos_image_6
+
+                self.val_loss_cos_image_fc_sum += val_loss_cos_image_fc.item()
+                self.val_loss_cos_image_2_sum += val_loss_cos_image_2.item()
+                self.val_loss_cos_image_3_sum += val_loss_cos_image_3.item()
+                self.val_loss_cos_image_4_sum += val_loss_cos_image_4.item()
+                self.val_loss_cos_image_5_sum += val_loss_cos_image_5.item()
+                self.val_loss_cos_image_6_sum += val_loss_cos_image_6.item()
 
             # brain reconstruction loss
             if self.args.rec_mult:
@@ -458,18 +512,18 @@ class Trainer_fmri_image:
 
             self.val_losses.append(val_loss.item())
 
-            self.val_sims_image_2 += nn.functional.cosine_similarity(fmri_image_2, clip_feature_maps[1]).mean().item()
-            self.val_sims_image_3 += nn.functional.cosine_similarity(fmri_image_3, clip_feature_maps[2]).mean().item()
-            self.val_sims_image_4 += nn.functional.cosine_similarity(fmri_image_4, clip_feature_maps[3]).mean().item()
-            self.val_sims_image_5 += nn.functional.cosine_similarity(fmri_image_5, clip_feature_maps[4]).mean().item()
-            self.val_sims_image_6 += nn.functional.cosine_similarity(fmri_image_6, clip_feature_maps[5]).mean().item()
-            self.val_sims_image_7 += nn.functional.cosine_similarity(fmri_image_7, clip_feature_maps[6]).mean().item()
+            self.val_sims_image_fc += nn.functional.cosine_similarity(fmri_image_fc, clip_feature_fc).mean().item()
+            self.val_sims_image_2 += nn.functional.cosine_similarity(fmri_image_2, clip_feature_maps[2]).mean().item()
+            self.val_sims_image_3 += nn.functional.cosine_similarity(fmri_image_3, clip_feature_maps[3]).mean().item()
+            self.val_sims_image_4 += nn.functional.cosine_similarity(fmri_image_4, clip_feature_maps[4]).mean().item()
+            self.val_sims_image_5 += nn.functional.cosine_similarity(fmri_image_5, clip_feature_maps[5]).mean().item()
+            self.val_sims_image_6 += nn.functional.cosine_similarity(fmri_image_6, clip_feature_maps[6]).mean().item()
 
     def vis(self, ):
         pass
 
     def save_ckpt(self, tag, epoch):
-        if epoch >= 30:
+        if epoch >= 10:
             ckpt_path = self.outdir + f"/{tag}.pth"
             print(f"saving {ckpt_path}", flush = True)
             unwrapped_model = self.accelerator.unwrap_model(self.voxel2clip)
@@ -494,7 +548,7 @@ class Trainer_fmri_image:
         # save best model
         current_sim = (
             self.val_sims_image_2 + self.val_sims_image_3 + self.val_sims_image_4 + self.val_sims_image_5 +
-            self.val_sims_image_6 + self.val_sims_image_7
+            self.val_sims_image_6 + self.val_sims_image_fc
         ) / (
             self.val_i + 1
         )
@@ -531,33 +585,40 @@ class Trainer_fmri_image:
             "train/lr": self.lrs[-1],
             "train/num_steps": len(self.losses),
             # cosin sims
+            "train/cosine_sim_image_fc": self.sims_image_fc / (self.train_i + 1),
             "train/cosine_sim_image_2": self.sims_image_2 / (self.train_i + 1),
             "train/cosine_sim_image_3": self.sims_image_3 / (self.train_i + 1),
             "train/cosine_sim_image_4": self.sims_image_4 / (self.train_i + 1),
             "train/cosine_sim_image_5": self.sims_image_5 / (self.train_i + 1),
             "train/cosine_sim_image_6": self.sims_image_6 / (self.train_i + 1),
-            "train/cosine_sim_image_7": self.sims_image_7 / (self.train_i + 1),
             # mse loss
+            "train/loss_mse_image_fc": self.loss_mse_image_fc_sum / (self.train_i + 1),
             "train/loss_mse_image_2": self.loss_mse_image_2_sum / (self.train_i + 1),
             "train/loss_mse_image_3": self.loss_mse_image_3_sum / (self.train_i + 1),
             "train/loss_mse_image_4": self.loss_mse_image_4_sum / (self.train_i + 1),
-            "train/loss_mse_image_5": self.loss_mae_image_5_sum / (self.train_i + 1),
+            "train/loss_mse_image_5": self.loss_mse_image_5_sum / (self.train_i + 1),
             "train/loss_mse_image_6": self.loss_mse_image_6_sum / (self.train_i + 1),
-            "train/loss_mse_image_7": self.loss_mse_image_7_sum / (self.train_i + 1),
             # mae loss
+            "train/loss_mae_image_fc": self.loss_mae_image_fc_sum / (self.train_i + 1),
             "train/loss_mae_image_2": self.loss_mae_image_2_sum / (self.train_i + 1),
             "train/loss_mae_image_3": self.loss_mae_image_3_sum / (self.train_i + 1),
             "train/loss_mae_image_4": self.loss_mae_image_4_sum / (self.train_i + 1),
             "train/loss_mae_image_5": self.loss_mae_image_5_sum / (self.train_i + 1),
             "train/loss_mae_image_6": self.loss_mae_image_6_sum / (self.train_i + 1),
-            "train/loss_mae_image_7": self.loss_mae_image_7_sum / (self.train_i + 1),
             # nce loss
-            "train/loss_nce_image_2": self.loss_nce_image_2_sum / (self.train_i + 1),
-            "train/loss_nce_image_3": self.loss_nce_image_3_sum / (self.train_i + 1),
-            "train/loss_nce_image_4": self.loss_nce_image_4_sum / (self.train_i + 1),
-            "train/loss_nce_image_5": self.loss_nce_image_5_sum / (self.train_i + 1),
-            "train/loss_nce_image_6": self.loss_nce_image_6_sum / (self.train_i + 1),
-            "train/loss_nce_image_7": self.loss_nce_image_7_sum / (self.train_i + 1),
+            # "train/loss_nce_image_fc": self.loss_nce_image_fc_sum / (self.train_i + 1),
+            # "train/loss_nce_image_2": self.loss_nce_image_2_sum / (self.train_i + 1),
+            # "train/loss_nce_image_3": self.loss_nce_image_3_sum / (self.train_i + 1),
+            # "train/loss_nce_image_4": self.loss_nce_image_4_sum / (self.train_i + 1),
+            # "train/loss_nce_image_5": self.loss_nce_image_5_sum / (self.train_i + 1),
+            # "train/loss_nce_image_6": self.loss_nce_image_6_sum / (self.train_i + 1),
+            # cos loss
+            "train/loss_cos_image_fc": self.loss_cos_image_fc_sum / (self.train_i + 1),
+            "train/loss_cos_image_2": self.loss_cos_image_2_sum / (self.train_i + 1),
+            "train/loss_cos_image_3": self.loss_cos_image_3_sum / (self.train_i + 1),
+            "train/loss_cos_image_4": self.loss_cos_image_4_sum / (self.train_i + 1),
+            "train/loss_cos_image_5": self.loss_cos_image_5_sum / (self.train_i + 1),
+            "train/loss_cos_image_6": self.loss_cos_image_6_sum / (self.train_i + 1),
             # rec and cyc loss
             "train/loss_rec": self.loss_rec_sum / (self.train_i + 1),
             "train/loss_cyc": self.loss_cyc_sum / (self.train_i + 1),
@@ -566,33 +627,40 @@ class Trainer_fmri_image:
         print(f"train/lr: {self.lrs[-1]}")
         print(f"train/num_steps: {len(self.losses)}")
 
+        print(f"train/cosine_sim_image_fc: {self.sims_image_fc / (self.train_i + 1)}")
         print(f"train/cosine_sim_image_2: {self.sims_image_2 / (self.train_i + 1)}")
         print(f"train/cosine_sim_image_3: {self.sims_image_3 / (self.train_i + 1)}")
         print(f"train/cosine_sim_image_4: {self.sims_image_4 / (self.train_i + 1)}")
         print(f"train/cosine_sim_image_5: {self.sims_image_5 / (self.train_i + 1)}")
         print(f"train/cosine_sim_image_6: {self.sims_image_6 / (self.train_i + 1)}")
-        print(f"train/cosine_sim_image_7: {self.sims_image_7 / (self.train_i + 1)}")
 
+        print(f"train/loss_mse_image_fc: {self.loss_mse_image_fc_sum / (self.train_i + 1)}")
         print(f"train/loss_mse_image_2: {self.loss_mse_image_2_sum / (self.train_i + 1)}")
         print(f"train/loss_mse_image_3: {self.loss_mse_image_3_sum / (self.train_i + 1)}")
         print(f"train/loss_mse_image_4: {self.loss_mse_image_4_sum / (self.train_i + 1)}")
-        print(f"train/loss_mse_image_5: {self.loss_mae_image_5_sum / (self.train_i + 1)}")
+        print(f"train/loss_mse_image_5: {self.loss_mse_image_5_sum / (self.train_i + 1)}")
         print(f"train/loss_mse_image_6: {self.loss_mse_image_6_sum / (self.train_i + 1)}")
-        print(f"train/loss_mse_image_7: {self.loss_mse_image_7_sum / (self.train_i + 1)}")
 
+        print(f"train/loss_mae_image_fc: {self.loss_mae_image_fc_sum / (self.train_i + 1)}")
         print(f"train/loss_mae_image_2: {self.loss_mae_image_2_sum / (self.train_i + 1)}")
         print(f"train/loss_mae_image_3: {self.loss_mae_image_3_sum / (self.train_i + 1)}")
         print(f"train/loss_mae_image_4: {self.loss_mae_image_4_sum / (self.train_i + 1)}")
         print(f"train/loss_mae_image_5: {self.loss_mae_image_5_sum / (self.train_i + 1)}")
         print(f"train/loss_mae_image_6: {self.loss_mae_image_6_sum / (self.train_i + 1)}")
-        print(f"train/loss_mae_image_7: {self.loss_mae_image_7_sum / (self.train_i + 1)}")
 
-        print(f"train/loss_nce_image_2: {self.loss_nce_image_2_sum / (self.train_i + 1)}")
-        print(f"train/loss_nce_image_3: {self.loss_nce_image_3_sum / (self.train_i + 1)}")
-        print(f"train/loss_nce_image_4: {self.loss_nce_image_4_sum / (self.train_i + 1)}")
-        print(f"train/loss_nce_image_5: {self.loss_nce_image_5_sum / (self.train_i + 1)}")
-        print(f"train/loss_nce_image_6: {self.loss_nce_image_6_sum / (self.train_i + 1)}")
-        print(f"train/loss_nce_image_7: {self.loss_nce_image_7_sum / (self.train_i + 1)}")
+        # print(f"train/loss_nce_image_fc: {self.loss_nce_image_fc_sum / (self.train_i + 1)}")
+        # print(f"train/loss_nce_image_2: {self.loss_nce_image_2_sum / (self.train_i + 1)}")
+        # print(f"train/loss_nce_image_3: {self.loss_nce_image_3_sum / (self.train_i + 1)}")
+        # print(f"train/loss_nce_image_4: {self.loss_nce_image_4_sum / (self.train_i + 1)}")
+        # print(f"train/loss_nce_image_5: {self.loss_nce_image_5_sum / (self.train_i + 1)}")
+        # print(f"train/loss_nce_image_6: {self.loss_nce_image_6_sum / (self.train_i + 1)}")
+
+        print(f"train/loss_cos_image_fc: {self.loss_cos_image_fc_sum / (self.train_i + 1)}")
+        print(f"train/loss_cos_image_2: {self.loss_cos_image_2_sum / (self.train_i + 1)}")
+        print(f"train/loss_cos_image_3: {self.loss_cos_image_3_sum / (self.train_i + 1)}")
+        print(f"train/loss_cos_image_4: {self.loss_cos_image_4_sum / (self.train_i + 1)}")
+        print(f"train/loss_cos_image_5: {self.loss_cos_image_5_sum / (self.train_i + 1)}")
+        print(f"train/loss_cos_image_6: {self.loss_cos_image_6_sum / (self.train_i + 1)}")
 
         print(f"train/loss_rec: {self.loss_rec_sum / (self.train_i + 1)}")
         print(f"train/loss_cyc: {self.loss_cyc_sum / (self.train_i + 1)}")
@@ -603,33 +671,40 @@ class Trainer_fmri_image:
                 "val/val_loss": np.mean(self.val_losses[-(self.val_i + 1):]),
                 "val/val_num_steps": len(self.val_losses),
                 # val cosin sims
+                "val/val_cosine_sim_image_fc": self.val_sims_image_fc / (self.val_i + 1),
                 "val/val_cosine_sim_image_2": self.val_sims_image_2 / (self.val_i + 1),
                 "val/val_cosine_sim_image_3": self.val_sims_image_3 / (self.val_i + 1),
                 "val/val_cosine_sim_image_4": self.val_sims_image_4 / (self.val_i + 1),
                 "val/val_cosine_sim_image_5": self.val_sims_image_5 / (self.val_i + 1),
                 "val/val_cosine_sim_image_6": self.val_sims_image_6 / (self.val_i + 1),
-                "val/val_cosine_sim_image_7": self.val_sims_image_7 / (self.val_i + 1),
                 # val mse loss
+                "val/val_loss_mse_image_fc": self.val_loss_mse_image_fc_sum / (self.val_i + 1),
                 "val/val_loss_mse_image_2": self.val_loss_mse_image_2_sum / (self.val_i + 1),
                 "val/val_loss_mse_image_3": self.val_loss_mse_image_3_sum / (self.val_i + 1),
                 "val/val_loss_mse_image_4": self.val_loss_mse_image_4_sum / (self.val_i + 1),
                 "val/val_loss_mse_image_5": self.val_loss_mse_image_5_sum / (self.val_i + 1),
                 "val/val_loss_mse_image_6": self.val_loss_mse_image_6_sum / (self.val_i + 1),
-                "val/val_loss_mse_image_7": self.val_loss_mse_image_7_sum / (self.val_i + 1),
                 # val mae loss
+                "val/val_loss_mae_image_fc": self.val_loss_mae_image_fc_sum / (self.val_i + 1),
                 "val/val_loss_mae_image_2": self.val_loss_mae_image_2_sum / (self.val_i + 1),
                 "val/val_loss_mae_image_3": self.val_loss_mae_image_3_sum / (self.val_i + 1),
                 "val/val_loss_mae_image_4": self.val_loss_mae_image_4_sum / (self.val_i + 1),
                 "val/val_loss_mae_image_5": self.val_loss_mae_image_5_sum / (self.val_i + 1),
                 "val/val_loss_mae_image_6": self.val_loss_mae_image_6_sum / (self.val_i + 1),
-                "val/val_loss_mae_image_7": self.val_loss_mae_image_7_sum / (self.val_i + 1),
                 # nce loss
-                "val/val_loss_nce_image_2": self.val_loss_nce_image_2_sum / (self.val_i + 1),
-                "val/val_loss_nce_image_3": self.val_loss_nce_image_3_sum / (self.val_i + 1),
-                "val/val_loss_nce_image_4": self.val_loss_nce_image_4_sum / (self.val_i + 1),
-                "val/val_loss_nce_image_5": self.val_loss_nce_image_5_sum / (self.val_i + 1),
-                "val/val_loss_nce_image_6": self.val_loss_nce_image_6_sum / (self.val_i + 1),
-                "val/val_loss_nce_image_7": self.val_loss_nce_image_7_sum / (self.val_i + 1),
+                # "val/val_loss_nce_image_fc": self.val_loss_nce_image_fc_sum / (self.val_i + 1),
+                # "val/val_loss_nce_image_2": self.val_loss_nce_image_2_sum / (self.val_i + 1),
+                # "val/val_loss_nce_image_3": self.val_loss_nce_image_3_sum / (self.val_i + 1),
+                # "val/val_loss_nce_image_4": self.val_loss_nce_image_4_sum / (self.val_i + 1),
+                # "val/val_loss_nce_image_5": self.val_loss_nce_image_5_sum / (self.val_i + 1),
+                # "val/val_loss_nce_image_6": self.val_loss_nce_image_6_sum / (self.val_i + 1),
+                # cos loss
+                "val/val_loss_cos_image_fc": self.val_loss_cos_image_fc_sum / (self.val_i + 1),
+                "val/val_loss_cos_image_2": self.val_loss_cos_image_2_sum / (self.val_i + 1),
+                "val/val_loss_cos_image_3": self.val_loss_cos_image_3_sum / (self.val_i + 1),
+                "val/val_loss_cos_image_4": self.val_loss_cos_image_4_sum / (self.val_i + 1),
+                "val/val_loss_cos_image_5": self.val_loss_cos_image_5_sum / (self.val_i + 1),
+                "val/val_loss_cos_image_6": self.val_loss_cos_image_6_sum / (self.val_i + 1),
                 # val rec and cyc loss
                 "val/val_loss_rec": self.val_loss_rec_sum / (self.val_i + 1),
                 "val/val_loss_cyc": self.val_loss_cyc_sum / (self.val_i + 1),
@@ -638,33 +713,40 @@ class Trainer_fmri_image:
         print(f"val/val_loss: {np.mean(self.val_losses[-(self.val_i + 1):])}")
         print(f"val/val_num_steps: {len(self.val_losses)}")
 
+        print(f"val/val_cosine_sim_image_fc: {self.val_sims_image_fc / (self.val_i + 1)}")
         print(f"val/val_cosine_sim_image_2: {self.val_sims_image_2 / (self.val_i + 1)}")
         print(f"val/val_cosine_sim_image_3: {self.val_sims_image_3 / (self.val_i + 1)}")
         print(f"val/val_cosine_sim_image_4: {self.val_sims_image_4 / (self.val_i + 1)}")
         print(f"val/val_cosine_sim_image_5: {self.val_sims_image_5 / (self.val_i + 1)}")
         print(f"val/val_cosine_sim_image_6: {self.val_sims_image_6 / (self.val_i + 1)}")
-        print(f"val/val_cosine_sim_image_7: {self.val_sims_image_7 / (self.val_i + 1)}")
 
+        print(f"val/val_loss_mse_image_fc: {self.val_loss_mse_image_fc_sum / (self.val_i + 1)}")
         print(f"val/val_loss_mse_image_2: {self.val_loss_mse_image_2_sum / (self.val_i + 1)}")
         print(f"val/val_loss_mse_image_3: {self.val_loss_mse_image_3_sum / (self.val_i + 1)}")
         print(f"val/val_loss_mse_image_4: {self.val_loss_mse_image_4_sum / (self.val_i + 1)}")
         print(f"val/val_loss_mse_image_5: {self.val_loss_mse_image_5_sum / (self.val_i + 1)}")
         print(f"val/val_loss_mse_image_6: {self.val_loss_mse_image_6_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_mse_image_7: {self.val_loss_mse_image_7_sum / (self.val_i + 1)}")
 
+        print(f"val/val_loss_mae_image_fc: {self.val_loss_mae_image_fc_sum / (self.val_i + 1)}")
         print(f"val/val_loss_mae_image_2: {self.val_loss_mae_image_2_sum / (self.val_i + 1)}")
         print(f"val/val_loss_mae_image_3: {self.val_loss_mae_image_3_sum / (self.val_i + 1)}")
         print(f"val/val_loss_mae_image_4: {self.val_loss_mae_image_4_sum / (self.val_i + 1)}")
         print(f"val/val_loss_mae_image_5: {self.val_loss_mae_image_5_sum / (self.val_i + 1)}")
         print(f"val/val_loss_mae_image_6: {self.val_loss_mae_image_6_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_mae_image_7: {self.val_loss_mae_image_7_sum / (self.val_i + 1)}")
 
-        print(f"val/val_loss_nce_image_2: {self.val_loss_nce_image_2_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_nce_image_3: {self.val_loss_nce_image_3_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_nce_image_4: {self.val_loss_nce_image_4_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_nce_image_5: {self.val_loss_nce_image_5_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_nce_image_6: {self.val_loss_nce_image_6_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_nce_image_7: {self.val_loss_nce_image_7_sum / (self.val_i + 1)}")
+        # print(f"val/val_loss_nce_image_fc: {self.val_loss_nce_image_fc_sum / (self.val_i + 1)}")
+        # print(f"val/val_loss_nce_image_2: {self.val_loss_nce_image_2_sum / (self.val_i + 1)}")
+        # print(f"val/val_loss_nce_image_3: {self.val_loss_nce_image_3_sum / (self.val_i + 1)}")
+        # print(f"val/val_loss_nce_image_4: {self.val_loss_nce_image_4_sum / (self.val_i + 1)}")
+        # print(f"val/val_loss_nce_image_5: {self.val_loss_nce_image_5_sum / (self.val_i + 1)}")
+        # print(f"val/val_loss_nce_image_6: {self.val_loss_nce_image_6_sum / (self.val_i + 1)}")
+
+        print(f"val/val_loss_cos_image_fc: {self.val_loss_cos_image_fc_sum / (self.val_i + 1)}")
+        print(f"val/val_loss_cos_image_2: {self.val_loss_cos_image_2_sum / (self.val_i + 1)}")
+        print(f"val/val_loss_cos_image_3: {self.val_loss_cos_image_3_sum / (self.val_i + 1)}")
+        print(f"val/val_loss_cos_image_4: {self.val_loss_cos_image_4_sum / (self.val_i + 1)}")
+        print(f"val/val_loss_cos_image_5: {self.val_loss_cos_image_5_sum / (self.val_i + 1)}")
+        print(f"val/val_loss_cos_image_6: {self.val_loss_cos_image_6_sum / (self.val_i + 1)}")
 
         print(f"val/val_loss_rec: {self.val_loss_rec_sum / (self.val_i + 1)}")
         print(f"val/val_loss_cyc: {self.val_loss_cyc_sum / (self.val_i + 1)}")

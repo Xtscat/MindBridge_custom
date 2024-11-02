@@ -6,9 +6,11 @@ from accelerate import Accelerator
 
 import utils
 from models import (Clipper, MindBridge_image, MindBridge_image_GIT,
-                    MindBridge_image_sketch, MindBridge_text, MindSingle_image,
-                    MindSingle_image_GIT, MindSingle_image_sketch,
-                    MindSingle_text)
+                    MindBridge_image_multilayer, MindBridge_image_sketch,
+                    MindBridge_image_sketch_single_layer, MindBridge_text,
+                    MindSingle_image, MindSingle_image_GIT,
+                    MindSingle_image_multilayer, MindSingle_image_sketch,
+                    MindSingle_image_sketch_single_layer, MindSingle_text)
 from nsd_access import NSDAccess
 from options import args
 
@@ -44,7 +46,7 @@ def config_multi_gpu():
 
 def prepare_coco(args):
     # Preload coco captions
-    nsda = NSDAccess(args.data_path)
+    nsda = NSDAccess(args.data_path)  # /media/SSD_1_2T/xt/data/natural-scenes-dataset
     coco_73k = list(range(0, 73000))
     prompts_list = nsda.read_image_coco_info(coco_73k, info_type = 'captions')
     print(type(prompts_list))
@@ -55,7 +57,7 @@ def prepare_coco(args):
     return prompts_list
 
 
-def prepare_CLIP(args, device):
+def prepare_CLIP(args, device, img_multilayer = False):
     print("Using hidden layer CLIP space")
 
     if not args.norm_embs:
@@ -67,7 +69,8 @@ def prepare_CLIP(args, device):
         layer_start = args.layer_start,
         device = device,
         hidden_state = True,
-        norm_embs = args.norm_embs
+        norm_embs = args.norm_embs,
+        img_multilayer = img_multilayer
     ).to(device)
 
     return clip_extractor
@@ -125,6 +128,33 @@ def prepare_voxel2clip_img(args, out_dim_image, out_dim_text, device):
     return voxel2clip
 
 
+def prepare_voxel2clip_img_multilayer(args, out_dim_image, out_dim_text, device):
+    # Prepare voxel2clip
+    if args.adapting:
+        args.subj_list = args.subj_source + [args.subj_target]
+
+    voxel2clip_kwargs = dict(
+        in_dim = args.pool_num,
+        out_dim_image = out_dim_image,
+        h = args.h_size,
+        n_blocks = args.n_blocks,
+        subj_list = args.subj_list,
+        adapting = args.adapting,
+        n_clip_features = 23 - 16 + 1
+    )
+    if len(args.subj_list) == 1:  # Single subject does not need "brain builder"
+        voxel2clip_kwargs.pop("adapting")  # Single subject does not need "adapting"
+        voxel2clip = MindSingle_image_multilayer(**voxel2clip_kwargs).to(device)
+    else:
+        voxel2clip = MindBridge_image_multilayer(**voxel2clip_kwargs).to(device)
+
+    print("voxel2clip loaded.")
+    print("params of voxel2clip:")
+    utils.count_params(voxel2clip)
+
+    return voxel2clip
+
+
 def prepare_voxel2clip_img_sketch(args, out_dim_image_feature_map, out_dim_image_fc, device):
     # Prepare voxel2clip
     if args.adapting:
@@ -142,8 +172,10 @@ def prepare_voxel2clip_img_sketch(args, out_dim_image_feature_map, out_dim_image
     if len(args.subj_list) == 1:  # Single subject does not need "brain builder"
         voxel2clip_kwargs.pop("adapting")  # Single subject does not need "adapting"
         voxel2clip = MindSingle_image_sketch(**voxel2clip_kwargs).to(device)
+        # voxel2clip = MindSingle_image_sketch_single_layer(**voxel2clip_kwargs).to(device)
     else:
         voxel2clip = MindBridge_image_sketch(**voxel2clip_kwargs).to(device)
+        # voxel2clip = MindBridge_image_sketch_single_layer(**voxel2clip_kwargs).to(device)
 
     print("voxel2clip loaded.")
     print("params of voxel2clip:")
@@ -196,6 +228,36 @@ def prepare_trainer_fmri_img(args, accelerator, voxel2clip, clip_extractor, devi
     from trainer_fmri_img import (Trainer_fmri_image, Trainer_fmri_image_adapt,
                                   Trainer_fmri_image_bridge,
                                   Trainer_fmri_image_single)
+    if args.adapting:
+        trainer = Trainer_fmri_image_adapt(args, accelerator, voxel2clip, clip_extractor, device)
+    elif len(args.subj_list) == 1:
+        trainer = Trainer_fmri_image_single(args, accelerator, voxel2clip, clip_extractor, device)
+    else:
+        trainer = Trainer_fmri_image_bridge(args, accelerator, voxel2clip, clip_extractor, device)
+
+    return trainer
+
+
+def prepare_trainer_fmri_img_multilayer(args, accelerator, voxel2clip, clip_extractor, device):
+    from trainer_fmri_img_multilayer import (Trainer_fmri_image,
+                                             Trainer_fmri_image_adapt,
+                                             Trainer_fmri_image_bridge,
+                                             Trainer_fmri_image_single)
+    if args.adapting:
+        trainer = Trainer_fmri_image_adapt(args, accelerator, voxel2clip, clip_extractor, device)
+    elif len(args.subj_list) == 1:
+        trainer = Trainer_fmri_image_single(args, accelerator, voxel2clip, clip_extractor, device)
+    else:
+        trainer = Trainer_fmri_image_bridge(args, accelerator, voxel2clip, clip_extractor, device)
+
+    return trainer
+
+
+def prepare_trainer_fmri_img_diva(args, accelerator, voxel2clip, clip_extractor, device):
+    from trainer_fmri_img_diva import (Trainer_fmri_image,
+                                       Trainer_fmri_image_adapt,
+                                       Trainer_fmri_image_bridge,
+                                       Trainer_fmri_image_single)
     if args.adapting:
         trainer = Trainer_fmri_image_adapt(args, accelerator, voxel2clip, clip_extractor, device)
     elif len(args.subj_list) == 1:
@@ -268,20 +330,35 @@ def main():
     # Init Trainer
     if args.trainer_select == "trainer_fmri_text":
         prompts_list = prepare_coco(args)
-        clip_extractor = prepare_CLIP(args, device)
         args.clip_variant = "ViT-L/14"
+        clip_extractor = prepare_CLIP(args, device)
         voxel2clip = prepare_voxel2clip_text(args, None, 77 * 768, device)
         trainer = prepare_trainer_fmri_text(args, accelerator, voxel2clip, clip_extractor, prompts_list, device)
-        # trainer.prepare_wandb(local_rank, args)
+        trainer.prepare_wandb(local_rank, args)
         trainer.prepare_multi_gpu()
     elif args.trainer_select == "trainer_fmri_img":
-        clip_extractor = prepare_CLIP(args, device)
         args.clip_variant = "ViT-L/14"
+        clip_extractor = prepare_CLIP(args, device)
         voxel2clip = prepare_voxel2clip_img(args, 257 * 768, None, device)
         trainer = prepare_trainer_fmri_img(args, accelerator, voxel2clip, clip_extractor, device)
         trainer.prepare_wandb(local_rank, args)
         trainer.prepare_multi_gpu()
+    elif args.trainer_select == "trainer_fmri_img_multilayer":
+        args.clip_variant = "ViT-L/14"
+        clip_extractor = prepare_CLIP(args, device, img_multilayer = True)
+        voxel2clip = prepare_voxel2clip_img(args, 257 * 768, None, device)
+        trainer = prepare_trainer_fmri_img_multilayer(args, accelerator, voxel2clip, clip_extractor, device)
+        trainer.prepare_wandb(local_rank, args)
+        trainer.prepare_multi_gpu()
+    elif args.trainer_select == "trainer_fmri_img_diva":
+        args.clip_variant = "DIVA"
+        clip_extractor = prepare_CLIP(args, device)
+        voxel2clip = prepare_voxel2clip_img(args, 77 * 768, None, device)
+        trainer = prepare_trainer_fmri_img_diva(args, accelerator, voxel2clip, clip_extractor, device)
+        # trainer.prepare_wandb(local_rank, args)
+        trainer.prepare_multi_gpu()
     elif args.trainer_select == "trainer_fmri_img_sketch":
+        # args.clip_variant = "ViT-B/16"
         args.clip_variant = "ViT-B/32"
         clip_extractor = prepare_CLIP(args, device)
         voxel2clip = prepare_voxel2clip_img_sketch(
@@ -296,7 +373,7 @@ def main():
         # voxel2clip = prepare_voxel2clip_img_GIT(args, 257 * 1024, None, device) # for git-large
         voxel2clip = prepare_voxel2clip_img_GIT(args, 197 * 768, None, device)  # for git-base
         trainer = prepare_trainer_fmri_img_GIT(args, accelerator, voxel2clip, clip_extractor, device)
-        # trainer.prepare_wandb(local_rank, args)
+        trainer.prepare_wandb(local_rank, args)
         trainer.prepare_multi_gpu()
 
     # Resume or Load ckpt

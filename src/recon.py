@@ -11,7 +11,8 @@ import data
 import utils
 from eval import cal_metrics
 from models import (Clipper, MindBridge_image, MindBridge_text,
-                    MindSingle_image, MindSingle_text)
+                    MindSingle_image, MindSingle_image_sketch_single_layer,
+                    MindSingle_text)
 from nsd_access import NSDAccess
 from options import args
 
@@ -66,7 +67,8 @@ def prepare_data(args):
 def prepare_VD(args, device):
     print('Creating versatile diffusion reconstruction pipeline...')
     from diffusers import (UniPCMultistepScheduler,
-                           VersatileDiffusionDualGuidedPipeline)
+                           VersatileDiffusionDualGuidedPipeline,
+                           VersatileDiffusionPipeline)
     from diffusers.models import DualTransformer2DModel
     try:
         vd_pipe = VersatileDiffusionDualGuidedPipeline.from_pretrained("/media/SSD_1_2T/xt/weights/")
@@ -105,7 +107,7 @@ def prepare_CLIP(args, device):
     clip_sizes = {"RN50": 1024, "ViT-L/14": 768, "ViT-B/32": 512, "ViT-H-14": 1024}
     clip_size = clip_sizes[args.clip_variant]
     clip_extractor = Clipper(
-        "ViT-L/14", hidden_state = True, norm_embs = True, device = device, clearclip = True, layer_start = 23
+        "ViT-L/14", hidden_state = True, norm_embs = True, device = device, clearclip = False, layer_start = 23
     )
 
     return clip_extractor
@@ -126,9 +128,9 @@ def prepare_voxel2clip(args, out_dim_image, out_dim_text, device, mode):
         # only need to load Single-subject version of MindBridge
         voxel2clip = MindSingle_text(**voxel2clip_kwargs)
 
-        outdir = "/media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_text_infonce/"
+        outdir = "/media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_text_infonce_multicoco/"
         # outdir = f'../train_logs/{args.model_name}'
-        ckpt_path = os.path.join(outdir, 'last.pth')
+        ckpt_path = os.path.join(outdir, 'best.pth')
         print("ckpt_path", ckpt_path)
         checkpoint = torch.load(ckpt_path, map_location = 'cpu')
         print("EPOCH: ", checkpoint['epoch'])
@@ -150,9 +152,10 @@ def prepare_voxel2clip(args, out_dim_image, out_dim_text, device, mode):
         # only need to load Single-subject version of MindBridge
         voxel2clip = MindSingle_image(**voxel2clip_kwargs)
 
-        outdir = "/media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_img_infonce_clearclilp/"
+        # outdir = "/media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_img_infonce/"
+        outdir = "/media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_img_multilayer_16_23/"
         # outdir = f'../train_logs/{args.model_name}'
-        ckpt_path = os.path.join(outdir, 'best.pth')
+        ckpt_path = os.path.join(outdir, 'last.pth')
         print("ckpt_path", ckpt_path)
         checkpoint = torch.load(ckpt_path, map_location = 'cpu')
         print("EPOCH: ", checkpoint['epoch'])
@@ -162,6 +165,33 @@ def prepare_voxel2clip(args, out_dim_image, out_dim_text, device, mode):
         voxel2clip.requires_grad_(False)
         voxel2clip.eval().to(device)
 
+    return voxel2clip
+
+
+def prepare_low_voxel2clip(args):
+    voxel2clip_kwargs = dict(
+        in_dim = 8192,
+        out_dim_image_feature_map = 50 * 768,
+        out_dim_image_fc = None,
+        h = 2048,
+        n_blocks = 4,
+        subj_list = args.subj_list,
+    )
+
+    # only need to load Single-subject version of MindBridge
+    voxel2clip = MindSingle_image_sketch_single_layer(**voxel2clip_kwargs)
+
+    outdir = "/media/SSD_1_2T/xt/MindBridge/train_logs/MindBrige_image_sketch_4_msemaecos_aug/"
+    # outdir = f'../train_logs/{args.model_name}'
+    ckpt_path = os.path.join(outdir, 'best.pth')
+    print("ckpt_path", ckpt_path)
+    checkpoint = torch.load(ckpt_path, map_location = 'cpu')
+    print("EPOCH: ", checkpoint['epoch'])
+    state_dict = checkpoint['model_state_dict']
+
+    voxel2clip.load_state_dict(state_dict, strict = False)
+    voxel2clip.requires_grad_(False)
+    voxel2clip.eval().to(device)
     return voxel2clip
 
 
@@ -197,8 +227,9 @@ def main(device):
     # load voxel2clip
     voxel2clip_text = prepare_voxel2clip(args, None, 77 * 768, device, mode = "text")
     voxel2clip_image = prepare_voxel2clip(args, 257 * 768, None, device, mode = "image")
+    # voxel2clip_low_image = prepare_low_voxel2clip(args)
 
-    outdir = f'../train_logs/VD_text_img_infonce_clearclip_guidance5_ratio0.5/'
+    outdir = f'../train_logs/VD_text_img_multicoco_multilayer_16_23/'
     save_dir = os.path.join(outdir, f"recon_on_subj{args.subj_test}")
     os.makedirs(save_dir, exist_ok = True)
     print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
@@ -226,6 +257,9 @@ def main(device):
             break
         if (args.samples is not None) and (val_i not in args.samples):
             continue
+
+        # if val_i <= 413:
+        #     continue
 
         voxel = torch.mean(voxel, axis = 1).float().to(device)
         img = img.to(device)
@@ -257,6 +291,7 @@ def main(device):
                     voxel,
                     voxel2clip_text,
                     voxel2clip_image,
+                    # voxel2clip_low_image,
                     clip_extractor,
                     unet,
                     vae,

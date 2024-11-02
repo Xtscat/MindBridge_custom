@@ -152,7 +152,7 @@ class NSDDataset(Dataset):
                 items.append(self._load_caption(byte_data))
             elif ext == "wholebrain_3d.npy":
                 brain3d = self._load_npy(sample[ext])
-                items.append(self.aug_process(brain3d, ))
+                items.append(self.aug_process(brain3d))
             elif ext == "emb.pt":
                 items.append(self._load_pt(sample[ext]))
             elif ext == "img_rec.pt":

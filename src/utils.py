@@ -118,6 +118,38 @@ def soft_cont_loss(student_preds, teacher_preds, teacher_aug_preds, temp = 0.125
     return loss
 
 
+def mixup_criterion(criterion, fmri_embedding, targets_a, targets_b, lam):
+    return lam * criterion(fmri_embedding, targets_a) + (1-lam) * criterion(fmri_embedding, targets_b)
+
+
+def mixup_data(fmri, image, alpha = 1.0, beta = 1.0):
+    if alpha > 0 and beta > 0:
+        lam = np.random.beta(alpha, beta)
+    else:
+        lam = 1
+    batch_size = fmri.shape[0]
+    index = torch.randperm(batch_size)
+    mixed_fmri = lam*fmri + (1-lam) * fmri[index]
+    mixed_image = lam*image + (1-lam) * image[index]
+
+    return mixed_fmri, image, mixed_image, lam
+
+
+def mixup_nce(fmri_embedding, clip_embedding, mixed_clip_embedding, lam, temp):
+    batch_size, embedding_size = fmri_embedding.shape
+    info_nce = InfoNCE(temperature = temp)
+
+    negative_keys = clip_embedding[torch.randperm(batch_size)]
+    mixed_negative_keys = mixed_clip_embedding[torch.randperm(batch_size)]
+
+    loss = info_nce(query = fmri_embedding, positive_key = clip_embedding, negative_keys = negative_keys)
+    mixed_loss = info_nce(
+        query = fmri_embedding, positive_key = mixed_clip_embedding, negative_keys = mixed_negative_keys
+    )
+    loss = lam*loss + (1-lam) * mixed_loss
+    return loss
+
+
 def mixco(voxels, beta = 0.15, s_thresh = 0.5):
     perm = torch.randperm(voxels.shape[0])
     voxels_shuffle = voxels[perm].to(voxels.device, dtype = voxels.dtype)
@@ -199,14 +231,6 @@ def contrastive_loss(preds, targs, margin = 1.0):
     return loss
 
 
-def KL_loss(preds, targs, reduction = 'mean'):
-    preds = nn.functional.log_softmax(preds, dim = -1)
-    targs = nn.functional.softmax(targs, dim = -1)
-    kl_loss = nn.functional.kl_div(preds, targs, reduction = reduction)
-
-    return kl_loss
-
-
 def soft_clip_loss(preds, targs, temp = 0.005, eps = 1e-10):
     clip_clip = (targs @ targs.T) / temp + eps
     check_loss(clip_clip, "clip_clip")
@@ -258,6 +282,7 @@ def reconstruction(
     voxel,
     voxel2clip_text,
     voxel2clip_image,
+    # voxel2clip_low_image,
     clip_extractor,
     unet,
     vae,
@@ -305,14 +330,17 @@ def reconstruction(
     if voxel2clip_text and voxel2clip_image is not None:
         fmri_text = voxel2clip_text(voxel).reshape(B, -1, 768)
         fmri_image = voxel2clip_image(voxel).reshape(B, -1, 768)
+        # fmri_low_image = voxel2clip_low_image(voxel).reshape(B, -1, 768)
 
         if mem_efficient:
             voxel2clip_text.to('cpu')
 
         brain_clip_text_embeddings = fmri_text
         brain_clip_image_embeddings = fmri_image
+        # brain_clip_low_image_embeddings = fmri_low_image
 
         brain_clip_image_embeddings = brain_clip_image_embeddings.repeat(recons_per_sample, 1, 1)
+        # brain_clip_low_image_embeddings = brain_clip_low_image_embeddings.repeat(recons_per_sample, 1, 1)
         brain_clip_text_embeddings = brain_clip_text_embeddings.repeat(recons_per_sample, 1, 1)
 
     if recons_per_sample > 0:
@@ -320,9 +348,15 @@ def reconstruction(
             brain_clip_image_embeddings[samp] = brain_clip_image_embeddings[samp] / (
                 brain_clip_image_embeddings[samp, 0].norm(dim = -1).reshape(-1, 1, 1) + 1e-6
             )
+            # brain_clip_low_image_embeddings[samp] = brain_clip_low_image_embeddings[samp] / (
+            #     brain_clip_low_image_embeddings[samp, 0].norm(dim = -1).reshape(-1, 1, 1) + 1e-6
+            # )
             brain_clip_text_embeddings[samp] = brain_clip_text_embeddings[samp] / (
                 brain_clip_text_embeddings[samp, 0].norm(dim = -1).reshape(-1, 1, 1) + 1e-6
             )
+        # input_embedding = torch.cat(
+        #     (brain_clip_image_embeddings, brain_clip_low_image_embeddings), dim = 1
+        # )  #.repeat(recons_per_sample, 1, 1)
         input_embedding = brain_clip_image_embeddings  #.repeat(recons_per_sample, 1, 1)
         if verbose: print("input_embedding", input_embedding.shape)
 

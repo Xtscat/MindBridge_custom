@@ -10,8 +10,11 @@
 /assets
 /src/__pycache__
 /src/wandb
+/src/test_files
+/src/.locks
 /asstes
 /train_logs
+/.locks
 /.vscode
 /.git
 /weights

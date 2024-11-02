@@ -17,8 +17,8 @@ import wandb
 torch.backends.cuda.matmul.allow_tf32 = True
 
 
-class Trainer_fmri_vae:
-    def __init__(self, args, accelerator, voxel2vae, vae_extractor, device) -> None:
+class Trainer:
+    def __init__(self, args, accelerator, clip_extractor, clip_layer_fusion, device) -> None:
         # train logs path
         self.outdir = os.path.abspath(f'../train_logs/{args.model_name}')
         if not os.path.exists(self.outdir):
@@ -26,8 +26,8 @@ class Trainer_fmri_vae:
 
         self.args = args
         self.accelerator = accelerator
-        self.voxel2vae = voxel2vae
-        self.vae_extractor = vae_extractor
+        self.clip_extractor = clip_extractor
+        self.clip_layer_fusion = clip_layer_fusion
         self.device = device
         self.num_devices = max(torch.cuda.device_count(), 1)
         self.epoch_start = 0
@@ -40,16 +40,6 @@ class Trainer_fmri_vae:
     @abstractmethod
     def prepare_dataloader(self):
         pass
-
-    def print_cuda_memory_usage(self):
-        t = torch.cuda.get_device_properties(0).total_memory / (1024**3)  # GB
-        r = torch.cuda.memory_reserved(0) / (1024**3)  # GB
-        a = torch.cuda.memory_allocated(0) / (1024**3)  # GB
-        f = r - a  # free inside reserved
-        print(f"Total memory: {t:.2f} GB")
-        print(f"Reserved memory: {r:.2f} GB")
-        print(f"Allocated memory: {a:.2f} GB")
-        print(f"Free inside reserved memory: {f:.2f} GB")
 
     def prepare_optimizer(self, ):
         # Prepare optimizer
@@ -185,96 +175,35 @@ class Trainer_fmri_vae:
         pass
 
     # def train_step(self, voxel, image, subj_id, epoch):
-    def train_step(self, voxel, subj_id, embedding, rec_img, epoch):
-        """
-            embedding: [batch_size*n_subj, 4, 64, 64]
-            rec_img:   [batch_size*n_subj, 3, 512, 512]
-        """
+    def train_step(self, img, epoch):
         loss = 0.
         self.optimizer.zero_grad()
+        featuremaps = self.clip_extractor.embed_image_with_hook(img)
+        featuremaps = featuremaps[16 :]
 
-        vae_embedding = embedding
+        class_token, class_token_hat, featuremaps = self.clip_layer_fusion(featuremaps)
 
-        results = self.voxel2vae(self.input(voxel, subj_id))
+        pass
 
-        vae_embedding_pred = results[0].half()
-        vae_image_pred = self.vae_extractor.decode_image(vae_embedding_pred)
-
-        loss_mse_embedding = F.mse_loss(vae_embedding_pred, vae_embedding)
-        loss_mae_image = F.l1_loss(rec_img, vae_image_pred)
-        loss_ms_ssim_image = utils.ms_ssim_loss(vae_image_pred, rec_img)
-
-        loss_rec = F.mse_loss(voxel, results[1])
-
-        loss += self.args.ssim_mult * loss_ms_ssim_image
-        loss += self.args.mae_mult * loss_mae_image
-        loss += self.args.mse_mult * loss_mse_embedding
-        loss += self.args.rec_mult * loss_rec
-        loss += self.args.cyc_mult * results[2]
-
-        utils.check_loss(loss)
-
-        self.loss_mse_embedding_sum += loss_mse_embedding.item()
-        self.loss_mae_image_sum += loss_mae_image.item()
-        self.loss_rec_sum += loss_rec.item()
-        self.loss_cyc_sum += results[2].item()
-        self.loss_ms_ssim_image_sum += loss_ms_ssim_image.item()
-
-        self.accelerator.backward(loss)
-        self.optimizer.step()
-
-        self.losses.append(loss.item())
-        self.lrs.append(self.optimizer.param_groups[0]['lr'])
-        self.lr_scheduler.step()
-
-        self.sims_embedding += nn.functional.cosine_similarity(vae_embedding, vae_embedding_pred).mean().item()
-
-        self.sims_image += utils.ms_ssim_val(rec_img, vae_image_pred).item()
+        # self.accelerator.backward(loss)
+        # self.optimizer.step()
+        #
+        # self.losses.append(loss.item())
+        # self.lrs.append(self.optimizer.param_groups[0]['lr'])
+        # self.lr_scheduler.step()
+        #
+        # self.sims_embedding += nn.functional.cosine_similarity(vae_embedding, vae_embedding_pred).mean().item()
+        #
+        # self.sims_image += utils.ms_ssim_val(rec_img, vae_image_pred).item()
 
     @abstractmethod
     def eval_epoch(self, epoch):
         pass
 
-    def eval_step(self, voxel, subj_id, embedding, rec_img, epoch):
+    def eval_step(self, img, epoch):
         val_loss = 0.
         with torch.no_grad():
-            vae_embedding = embedding
-
-            results = self.voxel2vae(self.input(voxel, subj_id))
-
-            vae_embedding_pred = results[0].half()
-            vae_image_pred = self.vae_extractor.decode_image(vae_embedding_pred)
-
-            val_loss_mse_embedding = F.mse_loss(vae_embedding_pred, vae_embedding)
-            val_loss_mae_image = F.l1_loss(rec_img, vae_image_pred)
-            val_loss_ms_ssim_image = utils.ms_ssim_loss(vae_image_pred, rec_img)
-
-            val_loss_rec = F.mse_loss(voxel, results[1])
-
-            val_loss += self.args.ssim_mult * val_loss_ms_ssim_image
-            val_loss += self.args.mae_mult * val_loss_mae_image
-            val_loss += self.args.mse_mult * val_loss_mse_embedding
-            val_loss += self.args.rec_mult * val_loss_rec
-            val_loss += self.args.cyc_mult * results[2]
-
-            utils.check_loss(val_loss)
-
-            if epoch >= 10:
-                select_img_idx = random.sample(range(vae_image_pred.shape[0]), 20)
-                for j, idx in enumerate(select_img_idx):
-                    img = vae_image_pred[idx].to('cpu')
-                    image = transforms.functional.to_pil_image(img)
-                    image.save(f"{j}_th.png")
-
-            self.val_loss_mse_embedding_sum += val_loss_mse_embedding.item()
-            self.val_loss_mae_image_sum += val_loss_mae_image.item()
-            self.val_loss_rec_sum += val_loss_rec.item()
-            self.val_loss_cyc_sum += results[2].item()
-            self.val_loss_ms_ssim_image_sum += val_loss_ms_ssim_image.item()
-
-            self.val_losses.append(val_loss.item())
-            self.val_sims_embedding += nn.functional.cosine_similarity(vae_embedding, vae_embedding_pred).mean().item()
-            self.val_sims_image += utils.ms_ssim_val(rec_img, vae_image_pred).item()
+            pass
 
     def save_ckpt(self, tag, epoch):
         if epoch >= 10:
@@ -377,9 +306,9 @@ class Trainer_fmri_vae:
         print(f"val/loss_mse_embedding: {self.val_loss_mse_embedding_sum / (self.val_i + 1)}")
 
 
-class Trainer_fmri_vae_single(Trainer_fmri_vae):
-    def __init__(self, args, accelerator, voxel2vae, vae_extractor, device) -> None:
-        super().__init__(args, accelerator, voxel2vae, vae_extractor, device)
+class Trainer_clip_layer_fusion(Trainer):
+    def __init__(self, args, accelerator, voxel2vae, clip_extractor, device) -> None:
+        super().__init__(args, accelerator, voxel2vae, clip_extractor, device)
 
     def prepare_dataloader(self):
         # Prepare data and dataloader
@@ -410,14 +339,11 @@ class Trainer_fmri_vae_single(Trainer_fmri_vae):
         # train loop
         for train_i, data_i in enumerate(self.train_dl):
             self.train_i = train_i
-            repeat_index = train_i % 3  # randomly choose the one in the repeated three
 
-            voxel, image, _, subj_id = data_i
-            voxel = voxel[:, repeat_index, ...].float()
-            subj_id = subj_id[[0], ...]
+            _, image, _, _ = data_i
 
-            print(">>> Epoch{} | Iter{} | voxel: {}".format(epoch, train_i, voxel.shape), flush = True)
-            self.train_step(voxel, image, subj_id, epoch)
+            print(">>> Epoch{} | Iter{}".format(epoch, train_i), flush = True)
+            self.train_step(image, epoch)
 
     def eval_epoch(self, epoch):
         print("evaluating...")
@@ -425,108 +351,7 @@ class Trainer_fmri_vae_single(Trainer_fmri_vae):
 
         for val_i, data_i in enumerate(self.val_dl):
             self.val_i = val_i
-            repeat_index = val_i % 3  # randomly choose the one in the repeated three
-            voxel, image, _, subj_id = data_i
-            voxel = voxel[:, repeat_index, ...].float()
-            # voxel = torch.mean(voxel, axis = 1)
-            subj_id = subj_id[[0], ...]
+            _, image, _, _ = data_i
 
-            print(">>> Epoch{} | Eval{} | voxel: {}".format(epoch, val_i, voxel.shape), flush = True)
-            self.eval_step(voxel, image, subj_id, epoch)
-
-
-class Trainer_fmri_vae_bridge(Trainer_fmri_vae):
-    def __init__(self, args, accelerator, voxel2vae, vae_extractor, device) -> None:
-        super().__init__(args, accelerator, voxel2vae, vae_extractor, device)
-
-    def prepare_dataloader(self):
-        # Prepare data and dataloader
-        print("Preparing data and dataloader...")
-        self.train_dls = []  # tarin_dls contains all subjects separately
-        self.val_dls = []  # tarin_dls contains all subjects separately
-
-        for subj in self.args.subj_list:
-            train_dl, val_dl = data.get_dls(
-                subject = subj,
-                data_path = self.args.data_path,
-                batch_size = self.args.batch_size,
-                val_batch_size = self.args.val_batch_size,
-                num_workers = self.args.num_workers,
-                pool_type = self.args.pool_type,
-                pool_num = self.args.pool_num,
-                length = self.args.length,
-                seed = self.args.seed,
-            )
-            self.train_dls.append(train_dl)
-            self.val_dls.append(val_dl)
-
-        self.num_batches = len(self.train_dls[0])
-
-    def prepare_multi_gpu(self):
-        self.voxel2vae, self.optimizer, self.lr_scheduler, _ = self.accelerator.prepare(
-            self.voxel2vae, self.optimizer, self.lr_scheduler, self.train_dls[0]
-        )
-
-        for i, dls in enumerate(zip(self.train_dls, self.val_dls)):
-            train_dl, val_dl = dls
-            self.train_dls[i] = self.accelerator.prepare(train_dl)
-            self.val_dls[i] = self.accelerator.prepare(val_dl)
-
-    def train_epoch(self, epoch):
-        # train loop
-        for train_i, datas in enumerate(zip(*self.train_dls)):
-            self.train_i = train_i
-            repeat_index = train_i % 3  # randomly choose the one in the repeated three
-
-            # ensemble data from multiple subjects
-            voxel_list, subj_id_list, embedding_list, rec_img_list = [], [], [], []
-            # voxel_list, image_list, subj_id_list, embedding_list, rec_img_list = [], [], [], [], []
-            # for voxel, image, _, subj_id in datas:
-            for voxel, subj_id, embedding, rec_img in datas:
-                # for voxel, image, _, subj_id, embedding, rec_img in datas:
-                voxel_list.append(voxel[:, repeat_index, ...])
-                # image_list.append(image)
-                subj_id_list.append(subj_id[[0], ...])
-                embedding_list.append(embedding)
-                rec_img_list.append(rec_img)
-
-            voxel = torch.cat(voxel_list, dim = 0)
-            # image = torch.cat(image_list, dim = 0)
-            subj_id = torch.cat(subj_id_list, dim = 0)
-            embedding = torch.cat(embedding_list, dim = 0)
-            rec_img = torch.cat(rec_img_list, dim = 0)
-
-            print(">>> Epoch{} | Iter{} | voxel: {}".format(epoch, train_i, voxel.shape), flush = True)
-            self.train_step(voxel, subj_id, embedding, rec_img, epoch)
-            # self.train_step(voxel, image, subj_id, embedding, rec_img, epoch)
-
-    def eval_epoch(self, epoch):
-        print("Evaluating...")
-        self.voxel2vae.eval()
-        for val_i, datas in enumerate(zip(*self.val_dls)):
-            self.val_i = val_i
-            repeat_index = val_i % 3  # randomly choose the one in the repeated three
-
-            # ensemble data from multiple subjects
-            # voxel_list, image_list, subj_id_list = [], [], []
-            # voxel_list, image_list, subj_id_list, embedding_list, rec_img_list = [], [], [], [], []
-            voxel_list, subj_id_list, embedding_list, rec_img_list = [], [], [], []
-            # for voxel, image, _, subj_id in datas:
-            for voxel, subj_id, embedding, rec_img in datas:
-                # voxel_list.append(torch.mean(voxel, axis = 1))
-                # voxel = voxel[:, repeat_index, ...].float()
-                voxel_list.append(voxel[:, repeat_index, ...])
-                # image_list.append(image)
-                subj_id_list.append(subj_id[[0], ...])
-                embedding_list.append(embedding)
-                rec_img_list.append(rec_img)
-
-            voxel = torch.cat(voxel_list, dim = 0)
-            # image = torch.cat(image_list, dim = 0)
-            subj_id = torch.cat(subj_id_list, dim = 0)
-            embedding = torch.cat(embedding_list, dim = 0)
-            rec_img = torch.cat(rec_img_list, dim = 0)
-
-            print(">>> Epoch{} | Eval{} | voxel: {}".format(epoch, val_i, voxel.shape), flush = True)
-            self.eval_step(voxel, subj_id, embedding, rec_img, epoch)
-            # self.eval_step(voxel, image, subj_id, embedding, rec_img, epoch)
+            print(">>> Epoch{} | Eval{}".format(epoch, val_i), flush = True)
+            self.eval_step(image, epoch)

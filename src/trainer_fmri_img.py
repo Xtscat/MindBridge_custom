@@ -161,8 +161,8 @@ class Trainer_fmri_image:
             # Main process
             if local_rank == 0:
                 # Uploading logs to wandb
-                if self.args.wandb_log:
-                    wandb.log(self.logs)
+                # if self.args.wandb_log:
+                #     wandb.log(self.logs)
                 # Save model
                 if epoch % self.args.ckpt_interval == 0 or epoch == self.args.num_epochs - 1:
                     self.save(epoch)

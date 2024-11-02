@@ -8,6 +8,7 @@ import torch.nn as nn
 from tqdm import tqdm
 
 import data
+# Custom models and functions #
 import utils
 import wandb
 
@@ -32,6 +33,7 @@ class Trainer_fmri_image:
         self.prepare_dataloader()
         self.prepare_optimizer()
         self.prepare_scheduler()
+        # self.prepare_multi_gpu()
 
     @abstractmethod
     def prepare_dataloader(self):
@@ -41,13 +43,9 @@ class Trainer_fmri_image:
         # Prepare optimizer
         no_decay = ['bias', 'Norm', 'temperature']
         opt_grouped_parameters = [
-            # {
-            #     'params': [p for n, p in self.voxel2clip.named_parameters() if not any(nd in n for nd in no_decay)],
-            #     'weight_decay': 1e-2
-            # },
             {
                 'params': [p for n, p in self.voxel2clip.named_parameters() if not any(nd in n for nd in no_decay)],
-                'weight_decay': 5e-2
+                'weight_decay': 1e-2
             }, {
                 'params': [p for n, p in self.voxel2clip.named_parameters() if any(nd in n for nd in no_decay)],
                 'weight_decay': 0.0
@@ -73,14 +71,10 @@ class Trainer_fmri_image:
                 self.optimizer,
                 max_lr = self.args.max_lr,
                 total_steps = total_steps,
-                final_div_factor = 20,
+                final_div_factor = 100,
                 last_epoch = -1,
                 pct_start = 2 / self.args.num_epochs,
             )
-        # elif self.args.lr_scheduler_type == 'plateau':
-        #     self.lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        #         self.optimizer, mode = 'min', factor = 0.5, patience = 3
-        #     )
 
     def prepare_wandb(self, local_rank, args):
         ## Weights and Biases
@@ -138,7 +132,6 @@ class Trainer_fmri_image:
             self.sims_image = 0.
             self.loss_mse_image_sum = 0.
             self.loss_mae_image_sum = 0.
-            self.loss_cos_image_sum = 0.
             self.loss_nce_image_sum = 0.
 
             self.loss_rec_sum = 0.
@@ -148,7 +141,6 @@ class Trainer_fmri_image:
             self.val_sims_image = 0.
             self.val_loss_mse_image_sum = 0.
             self.val_loss_mae_image_sum = 0.
-            self.val_loss_cos_image_sum = 0.
             self.val_loss_nce_image_sum = 0.
 
             self.val_loss_rec_sum = 0.
@@ -176,7 +168,7 @@ class Trainer_fmri_image:
                     self.save(epoch)
 
             # wait for other GPUs to catch up if needed
-            self.accelerator.wait_for_everyone()
+            # self.accelerator.wait_for_everyone()
 
     @abstractmethod
     def train_epoch(self, epoch):
@@ -186,30 +178,34 @@ class Trainer_fmri_image:
         loss = 0.
         self.optimizer.zero_grad()
 
-        git_feature_map = self.clip_extractor.embed_image_for_GIT(image).flatten(1)
-        fmri_image, fmri_rec, loss_cyc = self.voxel2clip(self.input(voxel, subj_id))
+        # get clip image embedding and fmri results
+        _, featuremaps = self.clip_extractor.embed_image_with_hook(image)
+        featuremaps = [featuremaps[16], featuremaps[-1]]
+        featuremaps = torch.stack(featuremaps)
+        clip_image = torch.mean(featuremaps, dim = 0).flatten(1)
+        fmri_image, fmri_rec, loss_cyc = self.voxel2clip((voxel, subj_id))
+
+        # norm clip_image and fmri_image
+        clip_image = nn.functional.normalize(clip_image, dim = -1)
+        fmri_image = nn.functional.normalize(fmri_image, dim = -1)
 
         # image mse loss
         if self.args.mse_mult:
-            loss_mse_image = nn.MSELoss()(fmri_image, git_feature_map)
+            loss_mse_image = nn.MSELoss()(fmri_image, clip_image)
+            utils.check_loss(loss_mse_image, "loss_mse_image")
             loss += self.args.mse_mult * loss_mse_image
             self.loss_mse_image_sum += loss_mse_image.item()
 
-        # # image mae loss
-        # if self.args.mae_mult:
-        #     loss_mae_image = nn.L1Loss()(fmri_image, git_feature_map)
-        #     loss += self.args.mae_mult * loss_mae_image
-        #     self.loss_mae_image_sum += loss_mae_image.item()
-
-        # image cos loss
-        if self.args.cos_mult:
-            loss_cos_image = 1 - nn.functional.cosine_similarity(fmri_image, git_feature_map).mean()
-            loss += self.args.cos_mult * loss_cos_image
-            self.loss_cos_image_sum += loss_cos_image.item()
+        # image mae loss
+        if self.args.mae_mult:
+            loss_mae_image = nn.L1Loss()(fmri_image, clip_image)
+            utils.check_loss(loss_mae_image, "loss_mae_image")
+            loss += self.args.mae_mult * loss_mae_image
+            self.loss_mae_image_sum += loss_mae_image.item()
 
         # image infonce loss
         if self.args.info_nce_mult:
-            loss_nce_image = utils.info_nce(fmri_image, git_feature_map, 0.05)
+            loss_nce_image = utils.info_nce(fmri_image, clip_image, 0.5)
             loss += self.args.info_nce_mult * loss_nce_image
             self.loss_nce_image_sum += loss_nce_image.item()
 
@@ -234,8 +230,7 @@ class Trainer_fmri_image:
         self.lrs.append(self.optimizer.param_groups[0]['lr'])
         self.lr_scheduler.step()
 
-        self.sims_image += nn.functional.cosine_similarity(fmri_image.flatten(1),
-                                                           git_feature_map.flatten(1)).mean().item()
+        self.sims_image += nn.functional.cosine_similarity(fmri_image, clip_image).mean().item()
 
     @abstractmethod
     def eval_epoch(self, epoch):
@@ -244,37 +239,41 @@ class Trainer_fmri_image:
     def eval_step(self, voxel, image, subj_id, epoch):
         val_loss = 0.
         with torch.no_grad():
-            git_feature_map = self.clip_extractor.embed_image_for_GIT(image).flatten(1)
-            fmri_image, fmri_rec, loss_cyc = self.voxel2clip(self.input(voxel, subj_id))
+            # get clip text embedding and fmri results
+            _, featuremaps = self.clip_extractor.embed_image_with_hook(image)
+            featuremaps = featuremaps[16 :]
+            featuremaps = torch.stack(featuremaps)
+            clip_image = torch.mean(featuremaps, dim = 0).flatten(1)
+            fmri_image, fmri_rec, loss_cyc = self.voxel2clip((voxel, subj_id))
+
+            # norm clip_image and fmriimage_
+            clip_image = nn.functional.normalize(clip_image, dim = -1)
+            fmri_image = nn.functional.normalize(fmri_image, dim = -1)
 
             # image mse loss
             if self.args.mse_mult:
-                val_loss_mse_image = nn.MSELoss()(fmri_image, git_feature_map)
+                val_loss_mse_image = nn.MSELoss()(fmri_image, clip_image)
+                utils.check_loss(val_loss_mse_image, "loss_mse_image")
                 val_loss += self.args.mse_mult * val_loss_mse_image
                 self.val_loss_mse_image_sum += val_loss_mse_image.item()
 
-            # # image mae loss
-            # if self.args.mae_mult:
-            #     val_loss_mae_image = nn.L1Loss()(fmri_image, git_feature_map)
-            #     val_loss += self.args.mae_mult * val_loss_mae_image
-            #     self.val_loss_mae_image_sum += val_loss_mae_image.item()
-
-            # image cos loss
-            if self.args.cos_mult:
-                val_loss_cos_image = 1 - nn.functional.cosine_similarity(fmri_image, git_feature_map).mean()
-                val_loss += self.args.cos_mult * val_loss_cos_image
-                self.val_loss_cos_image_sum += val_loss_cos_image.item()
+            # image mae loss
+            if self.args.mae_mult:
+                val_loss_mae_image = nn.L1Loss()(fmri_image, clip_image)
+                utils.check_loss(val_loss_mae_image, "loss_mae_image")
+                val_loss += self.args.mae_mult * val_loss_mae_image
+                self.val_loss_mae_image_sum += val_loss_mae_image.item()
 
             # image infonce loss
             if self.args.info_nce_mult:
-                val_loss_nce_image = utils.info_nce(fmri_image, git_feature_map, 0.05)
+                val_loss_nce_image = utils.info_nce(fmri_image, clip_image, 0.5)
                 val_loss += self.args.info_nce_mult * val_loss_nce_image
                 self.val_loss_nce_image_sum += val_loss_nce_image.item()
 
             # brain reconstruction loss
             if self.args.rec_mult:
                 val_loss_rec = nn.MSELoss()(voxel, fmri_rec)
-                utils.check_loss(val_loss_rec, "val_loss_rec")
+                utils.check_loss(val_loss_rec, "loss_rec")
                 val_loss += self.args.rec_mult * val_loss_rec
                 self.val_loss_rec_sum += val_loss_rec.item()
 
@@ -284,14 +283,16 @@ class Trainer_fmri_image:
                 val_loss += self.args.cyc_mult * loss_cyc
                 self.val_loss_cyc_sum += loss_cyc.item()
 
+            utils.check_loss(val_loss)
+
             self.val_losses.append(val_loss.item())
-            self.val_sims_image += nn.functional.cosine_similarity(fmri_image, git_feature_map).mean().item()
+            self.val_sims_image += nn.functional.cosine_similarity(fmri_image, clip_image).mean().item()
 
     def vis(self, ):
         pass
 
     def save_ckpt(self, tag, epoch):
-        if epoch >= 10:
+        if epoch >= 20:
             ckpt_path = self.outdir + f"/{tag}.pth"
             print(f"saving {ckpt_path}", flush = True)
             unwrapped_model = self.accelerator.unwrap_model(self.voxel2clip)
@@ -315,6 +316,7 @@ class Trainer_fmri_image:
         self.save_ckpt(f'last', epoch)
         # save best model
         current_sim = (self.val_sims_image) / (self.val_i + 1)
+        # current_sim = (self.val_sims_image + self.val_sims_text) / (self.val_i + 1)
         if current_sim > self.best_sim:
             self.best_sim = current_sim
             self.best_epoch = epoch
@@ -348,49 +350,43 @@ class Trainer_fmri_image:
             "train/lr": self.lrs[-1],
             "train/num_steps": len(self.losses),
             "train/cosine_sim_image": self.sims_image / (self.train_i + 1),
+            "train/loss_nce_image": self.loss_nce_image_sum / (self.train_i + 1),
             "train/loss_mse_image": self.loss_mse_image_sum / (self.train_i + 1),
             "train/loss_mae_image": self.loss_mae_image_sum / (self.train_i + 1),
-            "train/loss_cos_image": self.loss_cos_image_sum / (self.train_i + 1),
-            "train/loss_nce_image": self.loss_nce_image_sum / (self.train_i + 1),
             "train/loss_rec": self.loss_rec_sum / (self.train_i + 1),
             "train/loss_cyc": self.loss_cyc_sum / (self.train_i + 1),
         }
         print(f"train/loss: {np.mean(self.losses[-(self.train_i + 1):])}")
         print(f"train/lr: {self.lrs[-1]}")
         print(f"train/num_steps: {len(self.losses)}")
-
         print(f"train/cosine_sim_image: {self.sims_image / (self.train_i + 1)}")
+        print(f"train/loss_nce_image: {self.loss_nce_image_sum / (self.train_i + 1)}")
         print(f"train/loss_mse_image: {self.loss_mse_image_sum / (self.train_i + 1)}")
         print(f"train/loss_mae_image: {self.loss_mae_image_sum / (self.train_i + 1)}")
-        print(f"train/loss_cos_image: {self.loss_cos_image_sum / (self.train_i + 1)}")
-        print(f"train/loss_nce_image: {self.loss_nce_image_sum / (self.train_i + 1)}")
         print(f"train/loss_rec: {self.loss_rec_sum / (self.train_i + 1)}")
         print(f"train/loss_cyc: {self.loss_cyc_sum / (self.train_i + 1)}")
 
     def log_val(self):
         self.logs.update(
             {
-                "val/val_loss": np.mean(self.val_losses[-(self.val_i + 1):]),
-                "val/val_num_steps": len(self.val_losses),
-                "val/val_cosine_sim_image": self.val_sims_image / (self.val_i + 1),
-                "val/val_loss_mse_image": self.val_loss_mse_image_sum / (self.val_i + 1),
-                "val/val_loss_mae_image": self.val_loss_mae_image_sum / (self.val_i + 1),
-                "val/val_loss_cos_image": self.val_loss_cos_image_sum / (self.val_i + 1),
-                "val/val_loss_nce_image": self.val_loss_nce_image_sum / (self.val_i + 1),
-                "val/val_loss_rec": self.val_loss_rec_sum / (self.val_i + 1),
-                "val/val_loss_cyc": self.val_loss_cyc_sum / (self.val_i + 1),
+                "val/loss": np.mean(self.val_losses[-(self.val_i + 1):]),
+                "val/num_steps": len(self.val_losses),
+                "val/cosine_sim_image": self.val_sims_image / (self.val_i + 1),
+                "val/loss_nce_image": self.val_loss_nce_image_sum / (self.val_i + 1),
+                "val/loss_mse_image": self.val_loss_mse_image_sum / (self.val_i + 1),
+                "val/loss_mae_image": self.val_loss_mae_image_sum / (self.val_i + 1),
+                "val/loss_rec": self.val_loss_rec_sum / (self.val_i + 1),
+                "val/loss_cyc": self.val_loss_cyc_sum / (self.val_i + 1),
             }
         )
-        print(f"val/val_loss: {np.mean(self.val_losses[-(self.val_i + 1):])}")
-        print(f"val/val_num_steps: {len(self.val_losses)}")
-
-        print(f"val/val_cosine_sim_image: {self.val_sims_image / (self.val_i + 1)}")
-        print(f"val/val_loss_mse_image: {self.val_loss_mse_image_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_mae_image: {self.val_loss_mae_image_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_cos_image: {self.val_loss_cos_image_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_nce_image: {self.val_loss_nce_image_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_rec: {self.val_loss_rec_sum / (self.val_i + 1)}")
-        print(f"val/val_loss_cyc: {self.val_loss_cyc_sum / (self.val_i + 1)}")
+        print(f"val/loss: {np.mean(self.val_losses[-(self.val_i + 1):])}")
+        print(f"val/num_steps: {len(self.val_losses)}")
+        print(f"val/cosine_sim_image: {self.val_sims_image / (self.val_i + 1)}")
+        print(f"val/loss_nce_image: {self.val_loss_nce_image_sum / (self.val_i + 1)}")
+        print(f"val/loss_mse_image: {self.val_loss_mse_image_sum / (self.val_i + 1)}")
+        print(f"val/loss_mae_image: {self.val_loss_mae_image_sum / (self.val_i + 1)}")
+        print(f"val/loss_rec: {self.val_loss_rec_sum / (self.val_i + 1)}")
+        print(f"val/loss_cyc: {self.val_loss_cyc_sum / (self.val_i + 1)}")
 
 
 class Trainer_fmri_image_single(Trainer_fmri_image):
@@ -429,13 +425,18 @@ class Trainer_fmri_image_single(Trainer_fmri_image):
             self.train_i = train_i
             repeat_index = train_i % 3  # randomly choose the one in the repeated three
 
-            voxel, image, subj_id = data_i
-            voxel = torch.mean(voxel, axis = 1)
-            # voxel = voxel[:, repeat_index, ...].float()
+            voxel, coco, subj_id = data_i
+            # voxel, image, coco, subj_id = data_i
+            voxel = voxel[:, repeat_index, ...].float()
             subj_id = subj_id[[0], ...]
 
+            coco_ids = coco.squeeze().tolist()
+            current_prompts_list = [self.prompts_list[coco_id] for coco_id in coco_ids]
+            captions = [prompts[repeat_index]['caption'] for prompts in current_prompts_list]
+
             print(">>> Epoch{} | Iter{} | voxel: {}".format(epoch, train_i, voxel.shape), flush = True)
-            self.train_step(voxel, image, subj_id, epoch)
+            self.train_step(voxel, captions, subj_id, epoch)
+            # self.train_step(voxel, image, captions, subj_id, epoch)
 
     def eval_epoch(self, epoch):
         print("evaluating...")
@@ -444,12 +445,18 @@ class Trainer_fmri_image_single(Trainer_fmri_image):
         for val_i, data_i in enumerate(self.val_dl):
             self.val_i = val_i
             repeat_index = val_i % 3  # randomly choose the one in the repeated three
-            voxel, image, subj_id = data_i
+            voxel, coco, subj_id = data_i
+            # voxel, image, coco, subj_id = data_i
             voxel = torch.mean(voxel, axis = 1)
             subj_id = subj_id[[0], ...]
 
+            coco_ids = coco.squeeze().tolist()
+            current_prompts_list = [self.prompts_list[coco_id] for coco_id in coco_ids]
+            captions = [prompts[repeat_index]['caption'] for prompts in current_prompts_list]
+
             print(">>> Epoch{} | Eval{} | voxel: {}".format(epoch, val_i, voxel.shape), flush = True)
-            self.eval_step(voxel, image, subj_id, epoch)
+            self.eval_step(voxel, captions, subj_id, epoch)
+            # self.eval_step(voxel, image, captions, subj_id, epoch)
 
 
 class Trainer_fmri_image_bridge(Trainer_fmri_image):
@@ -494,14 +501,11 @@ class Trainer_fmri_image_bridge(Trainer_fmri_image):
         # train loop
         for train_i, datas in enumerate(zip(*self.train_dls)):
             self.train_i = train_i
-            repeat_index = train_i % 3  # randomly choose the one in the repeated three
 
             # ensemble data from multiple subjects
             voxel_list, image_list, subj_id_list = [], [], []
             for voxel, image, subj_id in datas:
-                # for voxel, image, coco, subj_id in datas:
                 voxel_list.append(torch.mean(voxel, axis = 1))
-                # voxel_list.append(voxel[:, repeat_index, ...])
                 image_list.append(image)
                 subj_id_list.append(subj_id[[0], ...])
             voxel = torch.cat(voxel_list, dim = 0)
@@ -510,21 +514,17 @@ class Trainer_fmri_image_bridge(Trainer_fmri_image):
 
             print(">>> Epoch{} | Iter{} | voxel: {}".format(epoch, train_i, voxel.shape), flush = True)
             self.train_step(voxel, image, subj_id, epoch)
-            # self.train_step(voxel, image, captions, subj_id, epoch)
 
     def eval_epoch(self, epoch):
         print("Evaluating...")
         self.voxel2clip.eval()
         for val_i, datas in enumerate(zip(*self.val_dls)):
             self.val_i = val_i
-            repeat_index = val_i % 3  # randomly choose the one in the repeated three
 
             # ensemble data from multiple subjects
             voxel_list, image_list, subj_id_list = [], [], []
             for voxel, image, subj_id in datas:
-                # for voxel, image, coco, subj_id in datas:
                 voxel_list.append(torch.mean(voxel, axis = 1))
-                # voxel_list.append(voxel[:, repeat_index, ...])
                 image_list.append(image)
                 subj_id_list.append(subj_id[[0], ...])
             voxel = torch.cat(voxel_list, dim = 0)
@@ -533,12 +533,11 @@ class Trainer_fmri_image_bridge(Trainer_fmri_image):
 
             print(">>> Epoch{} | Eval{} | voxel: {}".format(epoch, val_i, voxel.shape), flush = True)
             self.eval_step(voxel, image, subj_id, epoch)
-            # self.eval_step(voxel, image, captions, subj_id, epoch)
 
 
 class Trainer_fmri_image_adapt(Trainer_fmri_image):
-    def __init__(self, args, accelerator, voxel2clip, clip_extractor, prompts_list, device) -> None:
-        super().__init__(args, accelerator, voxel2clip, clip_extractor, prompts_list, device)
+    def __init__(self, args, accelerator, voxel2clip, clip_extractor, device) -> None:
+        super().__init__(args, accelerator, voxel2clip, clip_extractor, device)
 
     def prepare_dataloader(self):
         # Prepare data and dataloader

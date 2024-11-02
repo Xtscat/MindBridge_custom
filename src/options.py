@@ -54,7 +54,7 @@ parser.add_argument(
     "--clip_variant",
     type = str,
     default = "ViT-L/14",
-    choices = ["RN50", "RN101", "ViT-L/14", "ViT-B/32", "RN50x64", "GIT-ViT"],
+    choices = ["RN50", "RN101", "ViT-L/14", "ViT-B/32", "ViT-B/16", "RN50x64", "GIT-ViT"],
     help = 'OpenAI clip variant',
 )
 parser.add_argument("--clearclip", type = bool, default = False, help = "Whether to use clearclip")
